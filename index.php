@@ -1,8 +1,10 @@
-<html>
- <head>
-  <title>Test PHP</title>
- </head>
- <body>
- <?php echo '<p>Bonjour le monde</p>'; ?>
- </body>
-</html>
+<?php
+	require_once("elements/header.php");
+?>
+
+<h1>Bienvenue sur DodoCiné ! </h1>
+<h5>Les cinémas sont fermés, mais pas notre canapé !</h5>
+
+<?php 
+	require_once ("elements/footer.php");
+?>
