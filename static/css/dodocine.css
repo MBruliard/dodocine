@@ -1,6 +1,6 @@
 h1 {
 	padding-top: 2rem;
-	padding-bottom: 1.5rem;
+	padding-bottom: 4rem;
 	color: #000066;
 	text-align: center;
 }
@@ -73,4 +73,8 @@ h2 {
 	margin-left:10px;
 	margin-right:10px;
 	margin-bottom:15px;
+}
+
+.align-center {
+	text-align: center;
 }

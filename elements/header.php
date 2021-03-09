@@ -1,6 +1,11 @@
 <?php 
   require_once("controller/authentification.php");
-  is_connected();
+  session_start();
+
+  if (isset($_POST['logout'])) {
+    session_destroy();
+    header("location: /index.php");
+  }
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +27,11 @@
             ?>
         </title>
 
-
+        <link rel="icon" href="static/img/pillow.ico" />
         <link href="static/css/dodocine.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <link rel="shortcut icon" href="fas fa-book" />
-
     </head>
 
     
@@ -35,6 +39,7 @@
     <body>
         <header>
           <!-- Mise en place de la banderolle de DodoCine -->
+          <!--<img src="/static/img/pillow.jpg" alt="Pillow" />-->
           
         </header>
 
@@ -51,10 +56,10 @@
                 <a class="nav-link" href="/index.php"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-home"></i> Cinéma <span class="sr-only"></span></a>
+                <a class="nav-link" href="#"><i class="fas fa-film"></i> Cinéma <span class="sr-only"></span></a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-home"></i> Acteurs <span class="sr-only"></span></a>
+                <a class="nav-link" href="#"><i class="fas fa-portrait"></i> Acteurs <span class="sr-only"></span></a>
               </li>
             </ul>
 
@@ -67,7 +72,7 @@
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                       <a class="dropdown-item" href="#"><i class="fas fa-hammer"></i> Préférences</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#"><i class="fas fa-power-off"></i> Déconnexion</a>
+                      <a class="dropdown-item" href="logout.php"><i class="fas fa-power-off"></i> Déconnexion</a>
                   </div>
                 </li>
               <?php else : ?>
