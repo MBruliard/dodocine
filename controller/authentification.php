@@ -87,4 +87,53 @@
 
 	}
 
+	/**
+	 * Modification du mot de passe d'un utilisateur
+	 * @param db la base de données
+	 * @param pseudo l'utilisateur sur lequel les modifications sont apportées
+	 * @param pwd le nouveau mot de passe
+	 * @param confpwd confirmation du mot de passe
+	 * @return array ('res' => bool, 'msg' => message a affiché pour l'utilisateur)
+	 */
+	function modify_password($db, $pseudo, $pwd, $confpwd): array {
+		if ($pwd != $confpwd) {
+			return ['res' => false, 'msg' => "Les entrées de mot de passe ne correspondent pas"];
+		}
+
+		$q =$db->prepare("UPDATE users SET password = :pwd WHERE pseudo = :pseudo");
+		$q->execute([
+			'pwd' => password_hash($pwd, PASSWORD_DEFAULT, []),
+			'pseudo' => $pseudo
+		]);
+
+		return ['res' => true, 'msg' => "Le changement de mot de passe a bien été pris en compte"];
+	}
+
+
+	/**
+	 * Modification de l'email d'un utilisateur
+	 * @param db la base de données
+	 * @param pseudo l'utilisateur sur lequel les modifications sont apportées
+	 * @param email le nouvel email
+	 */
+	function modify_email($db, $pseudo, $email): void {
+		
+		$q =$db->prepare("UPDATE users SET email = :email WHERE pseudo = :pseudo");
+		$q->execute([
+			'email' => $email,
+			'pseudo' => $pseudo
+		]);
+	}
+
+
+	/**
+	 * Suppression d'un utilisateur dans la base de données
+	 * @param db la base de données
+	 * @param pseudo le nom de l'utilisateur que l'on souhaite supprimer
+	 */
+	function delete_user ($db, $pseudo) : void {
+		$q = $db->prepare("DELETE FROM users WHERE pseudo = :pseudo");
+		$q->execute(['pseudo' => $pseudo]);
+	}
+
 ?>

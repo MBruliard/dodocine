@@ -11,10 +11,16 @@ Nous vous proposons ici un "clone" du site web AlloCiné.com revisité.
 
 Il s'agit d'un projet universitaire
 
+## Outils utilisés
+
+* PHP 7
+* HTML5/CSS3
+* Bootstrap 4
+* Fontawesome
+
 ## TODO:
 
-* adaptation nom de fichiers accès bdd
-* Ecrire une page prévenant que ce site est un projet universitaire et non pas un véritable site web
+* Mentions légales = Ecrire une page prévenant que ce site est un projet universitaire et non pas un véritable site web
 
 ### BDD
 * Construction de la base de données avec Modele entité association
@@ -22,13 +28,16 @@ Il s'agit d'un projet universitaire
 
 ### Section Utilisateurs
 
-* création de la base de données
-* CSS Bootstrap sur signin.php et login.php
-* Code BDD pour login.php
-* Mettre en place les préférences utilisateurs dans une nouvelle page (couleur, ...)
+* Apparence dans Paramètres Utilisateurs:
+	* faire JS associé au dark mode
+	* mettre en place des fenetres modales pour annoncer que les changements mdp/email ont bien été effectués
+
+### Description des films et acteurs/réalisateurs
+* Script PHP pour générer les pages d'informations automatiquement avec utilisation des urls
+* BDD pour les films/acteurs/réalisateurs
 
 ### Page d'accueil
-* Mise en place d'un caroussel
+* Mise en place d'un caroussel (option)
 * Mise en place de la recherche automatique
 
 
