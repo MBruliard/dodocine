@@ -1,10 +1,25 @@
 <?php
+	/**
+	 * @file deleteaccount.php
+	 * @brief Suppression d'un utilisateur
+	 * @author Nahida BENHAFFAF
+	 * @author Margaux BRULIARD
+	 * @date 11 mars 2021
+	 */
+
 	session_start();
 	require_once("controller/authentification.php");
+	
+	/**
+	 * Variable relative à la base de données
+	 */
 	global $db;
 
+
+	/**
+	 * Vérification: Si aucun utilisateur connecté, impossible de supprimer son compte
+	 */
 	if (!isset($_SESSION['user'])) {
-		// pas d'utilisateur connecte donc impossible de supprimer son compte
 		header("location: /index.php");
 	}
 

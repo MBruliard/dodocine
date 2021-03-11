@@ -1,3 +1,14 @@
+<?php
+	/**
+	 * @file elements/footer.php
+	 * @brief Template de fin de page HTML
+	 * @author Nahida BENHAFFAF
+	 * @author Margaux BRULIARD
+	 * @date 11 mars 2021
+	 */	
+?>
+
+
 			</div> <!-- fin base container -->
 			
 			<footer id="sticky-footer" class="bg-dark footer-dark">

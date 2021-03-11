@@ -18,6 +18,18 @@ Il s'agit d'un projet universitaire
 * Bootstrap 4
 * Fontawesome
 
+## API et Documentation
+
+Une documentation des sources du projet est disponible. Ecrite à l'aide du logiciel Doxygen, elle est disponible sous format HTML
+
+Pour relancer la compilation de la documentation
+> doxygen Doxyfile
+
+
+L'ensemble de l'API se trouve dans le répertoire documentation/
+Pour afficher la documentation, ouvrir dans le navigateur
+> documentation/html/index.html
+
 ## TODO:
 
 * Mentions légales = Ecrire une page prévenant que ce site est un projet universitaire et non pas un véritable site web

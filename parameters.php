@@ -1,9 +1,23 @@
 <?php
+	/**
+	 * @file parameters.php
+	 * @brief Page des paramètres utilisateurs
+	 * @author Nahida BENHAFFAF
+	 * @author Margaux BRULIARD
+	 * @date 11 mars 2021
+	 */
+
+	/**
+	 * Titre de la page
+	 */
 	$title_page = "DodoCiné | Paramètres Utilisateurs" ;
+	
 	require_once ("elements/header.php");
 
+	/**
+	 * Vérification: Si pas d'utilisateur connecté, l'accès est interdit
+	 */
 	if (!isset($_SESSION['user'])) {
-		// si pas de compte utilisateur, l'accès est interdit
 		header ("location: /index.php");
 		exit();
 	}

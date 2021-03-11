@@ -1,6 +1,18 @@
 <?php
+	/**
+	 * @file controller/authentification.php
+	 * @brief Définition des fonctions utilisées pour l'authentification d'un utilisateur sur le site 
+	 * @details L'ensemble des fonctions est notamment utilisé pour accéder et modifier les informations relatives aux utilisateurs dans la base de données
+	 * @author Margaux BRULIARD
+	 * @author Nahida BENHAFFAF
+	 * @date 11 mars 2021
+	 */
 
 	include ("database.php");
+
+	/**
+	 * Variable relative à la base de données
+	 */
 	global $db;
 
 	/**

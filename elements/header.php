@@ -1,11 +1,12 @@
 <?php 
+  
+  /**
+   * @file elements/header.php
+   * @brief Template de début de page HTML
+   */
+  
   require_once("controller/authentification.php");
   session_start();
-
-  if (isset($_POST['logout'])) {
-    session_destroy();
-    header("location: /index.php");
-  }
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +18,9 @@
  
         <title>
             <?php
+                /**
+                 * Titre de la page
+                 */
                 if (isset($title_page))
                 {
                     echo $title_page;

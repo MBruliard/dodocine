@@ -1,14 +1,39 @@
 <?php
+	/**
+	 * @file login.php
+	 * @brief Page de connexion pour les utilisateurs
+	 * @author Nahida BENHAFFAF
+	 * @author Margaux BRULIARD
+	 * @date 11 mars 2021
+	 */
+
+	/**
+	 * Titre de la page
+	 */
 	$title_page = "DodoCiné - Connexion" ;
+	
 	require_once("elements/header.php") ;
 
+	/**
+	 * Message à afficher quand à la réussite ou l'échec de la connexion
+	 */
+	$message = null;
+	
+	/** 
+	 * Couleur du message (Vert pour réussite/Rouge pour échec) à afficher
+	 */
+	$color_message = null;
+
+	/**
+	 * Vérification: Pas d'utilisateur déjà connecté
+	 */
 	if (isset($_SESSION['user'])) {
-		// on vérifie que l'utilisateur ne tente pas de se connecter alors qu'une session est déjà en cours
 		header ("location: index.php");
 	}
 	
-	$message = null;
-	$color_message = null;
+	/**
+	 * Tentative de connexion après envoi des informations via le formulaire
+	 */
 	if (isset($_POST['loginsend'])) {
 		extract($_POST);
 		$res = login_user($db, $username, $password);

@@ -1,4 +1,13 @@
 <?php
+	
+	/**
+	 * @file index.php
+	 * @brief Page d'accueil de notre site
+	 * @author Nahida BENHAFFAF
+	 * @author Margaux BRULIARD
+	 * @date 11 mars 2021
+	 */
+
 	require_once("elements/header.php");
 ?>
 

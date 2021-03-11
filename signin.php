@@ -1,14 +1,39 @@
 <?php
+	
+	/**
+	 * @file signin.php
+	 * @brief Page d'inscription au site
+	 * @author Nahida BENHAFFAF
+	 * @author Margaux BRULIARD
+	 * @date 11 mars 2021
+	 */
+
+	/**
+	 * Titre de la page
+	 */
 	$title_page = "DodoCiné - Inscription" ;
 	require_once("elements/header.php") ;
 
+	/**
+	 * Message à afficher quand à la réussite ou l'échec de la connexion
+	 */
+	$message = null;
+	
+	/** 
+	 * Couleur du message (Vert pour réussite/Rouge pour échec) à afficher
+	 */
+	$color_message = null;
+
+	/**
+	 *	On vérifie que l'utilisateur ne tente pas de se connecter alors qu'une session est déjà en cours
+	 */
 	if (isset($_SESSION['user'])) {
-		// on vérifie que l'utilisateur ne tente pas de se connecter alors qu'une session est déjà en cours
 		header ("location: index.php");
 	}
 
-	$message = null;
-	$color_message = null;
+	/**
+	 * Inscription d'une personne après récupération des informations envoyées via le formulaire
+	 */
 	if (isset($_POST['signsend'])) {
 		extract($_POST);
 		$res = create_new_user($db, $username, $email, $password, $password2);
