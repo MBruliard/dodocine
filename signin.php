@@ -36,6 +36,7 @@
 	 */
 	if (isset($_POST['signsend'])) {
 		extract($_POST);
+		// $_POST['res'] = $res , ...
 		$res = create_new_user($db, $username, $email, $password, $password2);
 		$message = $res['msg'];
 		$color_message = $res['res'];

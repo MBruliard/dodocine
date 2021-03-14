@@ -35,9 +35,15 @@ Pour afficher la documentation, ouvrir dans le navigateur
 
 * Mentions légales = Ecrire une page prévenant que ce site est un projet universitaire et non pas un véritable site web
 
-### BDD
-* Construction de la base de données avec Modele entité association
-* Mise en service 
+### Partie I:
+* Construction de la base de données avec Modele entité association -> rapport
+* Ecriture dans SQLite
+* Remplissage de la base de données
+
+### Partie II: PHP
+* Architecture page film
+* Architecture page acteur/réalisateur
+
 
 ### Section Utilisateurs
 
@@ -45,9 +51,8 @@ Pour afficher la documentation, ouvrir dans le navigateur
 	* faire JS associé au dark mode
 	* mettre en place des fenetres modales pour annoncer que les changements mdp/email ont bien été effectués
 
-### Description des films et acteurs/réalisateurs
-* Script PHP pour générer les pages d'informations automatiquement avec utilisation des urls
-* BDD pour les films/acteurs/réalisateurs
+* Noter un film et laisser un commentaire
+* Forum par film
 
 ### Page d'accueil
 * Mise en place d'un caroussel (option)
