@@ -17,6 +17,7 @@ Il s'agit d'un projet universitaire
 * HTML5/CSS3
 * Bootstrap 4
 * Fontawesome
+* SQLite3
 
 ## API et Documentation
 
