@@ -1,0 +1,23 @@
+id_film;titre;duree;id_categorie;annee;pays;id_realisateur;photo
+1;Act of Piracy;101;9;1990;;NULL;
+2;Split Decisions;96;5;1988;;19;
+3;Vampire's Kiss;103;3;1989;;NULL;
+4;Nightmare at Noon;96;1;1988;;29;
+5;Presumed Innocent;127;9;1990;;25;
+6;Reap the Wild Wind;123;5;1942;;7;
+7;Pocket Money;100;3;1972;;50;
+8;Mary White;102;5;1977;;36;
+9;Catch a Rising Star, Tenth Anniversary;NULL;3;1982;;NULL;
+10;Guilty by Suspicion;105;5;1990;;46;
+11;Secret Beyond the Door;99;9;1948;;11;
+12;Scarlet Street;103;5;1945;;11;
+13;Daffy Duck's Quackbusters;76;1;1988;;44;
+14;Rowlf's Rhapsodies with the Muppets;55;3;1985;;NULL;
+15;Gandhi;188;5;1982;;23;
+16;Wind & the Lion, The;120;1;1975;;12;
+17;Carnal Knowledge;96;5;1971;;31;
+18;Getting Straight;126;3;1970;;15;
+19;Scarlet Letter, The;90;5;1972;;33;
+20;Count of Old Town, The;75;3;1935;;3;
+21;Autumn Sonata;97;5;1978;;49;
+22;Gaslight;114;5;1944;;47;

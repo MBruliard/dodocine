@@ -24,12 +24,12 @@ Il s'agit d'un projet universitaire
 Une documentation des sources du projet est disponible. Ecrite à l'aide du logiciel Doxygen, elle est disponible sous format HTML
 
 Pour relancer la compilation de la documentation
-> doxygen Doxyfile
+> ```doxygen Doxyfile```
 
 
 L'ensemble de l'API se trouve dans le répertoire documentation/
 Pour afficher la documentation, ouvrir dans le navigateur
-> documentation/html/index.html
+> ```documentation/html/index.html```
 
 ## TODO:
 
@@ -37,8 +37,12 @@ Pour afficher la documentation, ouvrir dans le navigateur
 
 ### Partie I:
 * Construction de la base de données avec Modele entité association -> rapport
-* Ecriture dans SQLite
-* Remplissage de la base de données
+* Remplissage de la base de données:
+	* films
+	* individus
+	* users -> manuellement avec PHP
+	* notes 
+	* forum
 
 ### Partie II: PHP
 * Architecture page film
