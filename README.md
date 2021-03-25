@@ -38,22 +38,27 @@ Pour afficher la documentation, ouvrir dans le navigateur
 ### Partie I:
 * Construction de la base de données avec Modele entité association -> rapport
 * Remplissage de la base de données:
-	* films
-	* individus
-	* users -> manuellement avec PHP
-	* notes 
-	* forum
+	* films : ajouter les urls des films ainsi que leur année de parution
+	* individus : ajouter les infos sur les individus
+	* forum : remplissage partiel de la table -> remplissage manuel directement dans la base de données ?
 
 ### Partie II: PHP
 * Architecture page film
 * Architecture page acteur/réalisateur
 
 
+### Partie III : Connexion/inscriptions
+* Mettre l'inscription/la connexion sur la même page avec un button pour switcher entre les deux ce sera plus joli
+* Créer une fenetre modale pour indiquer connexion/inscription puis retour à l'accueil lors de la fermeture de la fenetre
+* Dans le cas contraire on garde l'affichage dans la fenetre comme avant
+
 ### Section Utilisateurs
 
 * Apparence dans Paramètres Utilisateurs:
 	* faire JS associé au dark mode
 	* mettre en place des fenetres modales pour annoncer que les changements mdp/email ont bien été effectués
+	* Faire les statistiques sur l'utilisateur
+	* Accèder rapide à ses messages sur les forums des films auxquels il participe 
 
 * Noter un film et laisser un commentaire
 * Forum par film
