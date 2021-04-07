@@ -1,0 +1,21 @@
+/**
+ * @brief CSS pour les pages d'inscription et de connexion
+ * @file static/css/login.css
+ */
+
+ body .btn-login-selected {
+	background-color:green;
+	color:black;
+}
+
+body .btn-login-notselected {
+	background-color: red;
+	color:white;
+}
+
+
+.form-container {
+	margin: auto;
+	width: 80%;
+	padding: 10px;
+}

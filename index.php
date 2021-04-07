@@ -11,7 +11,7 @@
 	require_once("elements/header.php");
 ?>
 
-<h1>Bienvenue sur DodoCiné ! </h1>
+<h1 class="dodo-red">Bienvenue sur DodoCiné ! </h1>
 <h5>Les cinémas sont fermés, mais pas notre canapé !</h5>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
