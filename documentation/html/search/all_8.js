@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['login_2ephp_14',['login.php',['../login_8php.html',1,'']]],
-  ['login_5fuser_15',['login_user',['../authentification_8php.html#a3ae82fca4df04f2b8c2ab71f84257568',1,'authentification.php']]],
-  ['logout_2ephp_16',['logout.php',['../logout_8php.html',1,'']]]
+  ['if_20',['if',['../parameters_8php.html#ad7600dd987c01f4a527e57cad5ee5cbb',1,'parameters.php']]],
+  ['index_2ephp_21',['index.php',['../index_8php.html',1,'']]]
 ];

@@ -1,3 +1,13 @@
+<?php
+	/**
+	 * @file elements/header2.php
+	 * @brief Définiton du header de chaque page HTML
+	 * @author Nahida BENHAFFAF
+	 * @author Margaux BRULIARD
+	 * @date 7 avril 2021
+	 */
+?>
+
 <div class="row">
 	<div class="header-container">
 		<div class="col-md-3 col-sm-2">

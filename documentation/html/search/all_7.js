@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['if_12',['if',['../parameters_8php.html#ad7600dd987c01f4a527e57cad5ee5cbb',1,'parameters.php']]],
-  ['index_2ephp_13',['index.php',['../index_8php.html',1,'']]]
+  ['head_2ephp_17',['head.php',['../head_8php.html',1,'']]],
+  ['header_2ephp_18',['header.php',['../header_8php.html',1,'']]],
+  ['header2_2ephp_19',['header2.php',['../header2_8php.html',1,'']]]
 ];

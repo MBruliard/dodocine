@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * @file elements/footer.php
+	 * @file elements/footer2.php
 	 * @brief Définiton du footer de chaque page HTML
 	 * @author Nahida BENHAFFAF
 	 * @author Margaux BRULIARD

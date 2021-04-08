@@ -29,6 +29,16 @@ h2 {
 	text-align: center;
 }
 
+a {
+	color: #AD6C80;
+}
+
+
+body p .category-name {
+	color:#350B40;
+	font-size: 1.1em;
+	font-style: bold;
+}
 
 /* Les container de la page*/
 #page-container {
