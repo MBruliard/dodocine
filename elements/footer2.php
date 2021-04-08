@@ -8,11 +8,9 @@
 	 */
 ?>
 
-<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-	<div class="container my-auto">
-  		<div class="copyright text-center my-auto">
-    		<span>Copyright &copy; L3 Informatique USPN - 2021</span>
-  		</div>
+<footer class="py-4 bg-dark flex-shrink-0 text-white-50">
+	<div class="container text-center">
+		<span>Copyright &copy; L3 Informatique USPN - 2021</span>
 	</div>
 </footer>
 

@@ -1,23 +1,45 @@
 <?php
-
+	
 	/**
 	 * @file legales.php
-	 * @brief Page des mentions légales du site 
+	 * @brief Page d'accueil de notre site
+	 * @author Nahida BENHAFFAF
+	 * @author Margaux BRULIARD
+	 * @date 11 mars 2021
 	 */
 
-	$title_page = "Dodociné | Mentions Légales";
-	require_once("elements/header.php");
+	require("controller/authentification.php");
+	session_start();
 ?>
 
+<!DOCTYPE html>
+<html lang='fr'>
 
-<h1>Mentions Légales</h1>
+	<?php require("elements/head.php"); ?>
 
-<p>Ce site est un projet universitaire et qui ne cherche absolument pas à présenter l'ensemble de la cinématographie. Le site <a href='https://allocine.fr'>AlloCiné</a> reste un bien meilleur outil !</p>
+	<body class="d-flex flex-column">
+		<div class="flex-grow-1 flex-shrink-0">
+			<?php require('elements/navigation.php'); ?>
 
-<p>L'ensemble des images présentées sur ce site sont libres de droits et proviennent de la banque d'images en ligne <a href='https://pixabay.com/fr/'>Pixabay</a>. N'hésitez pas à aller y jeter un petit coup d'oeil !
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="dodo-red">Mentions légales </h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<p>Ce site est la présentation d'un projet universitaire</p>
+					</div>
+				</div>
+
+				
+		</div>
 
 
-
-<?php
-	require_once("elements/footer.php")
-?>
+		<?php require('elements/footer2.php'); ?>
+		<?php require('elements/js_files.php'); ?>
+	</body>
+</html>

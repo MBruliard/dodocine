@@ -31,9 +31,13 @@
 	 */
 	$same_cat = aleaSameCategory($db, $film_id);
 	
+	/**
+	 * Film du même réalisateur
+	 */
 
-
-	// si id erroné -> redirect filmslist.php
+	/**
+	 * Film ayant un acteur en commun
+	 */
 ?>
 
 <!DOCTYPE html>
@@ -45,11 +49,10 @@
 	?>
 
 	<body class="d-flex flex-column">
-		<div id="page-container">
+		<div class="flex-grow-1 flex-shrink-0">
+			<?php require('elements/navigation.php'); ?>
 
-			<!-- <?php //require("elements/header2.php"); ?> -->
 
-			<?php require("elements/navigation.php"); ?>
 			<div class="container">
 
 				<!-- presentation -->
@@ -135,8 +138,9 @@
 				</div>
 
 			</div>
-			<?php require("elements/footer2.php"); ?>
 		</div>
+
+		<?php require("elements/footer2.php"); ?>
 		<?php require("elements/js_files.php"); ?>
 	</body>
 </html>

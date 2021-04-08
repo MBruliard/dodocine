@@ -20,7 +20,7 @@
 				<a class="nav-link" href="/index.php"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item active">
-				<a class="nav-link" href="#"><i class="fas fa-film"></i> Cinéma <span class="sr-only"></span></a>
+				<a class="nav-link" href="/filmslist.php"><i class="fas fa-film"></i> Cinéma <span class="sr-only"></span></a>
 			</li>
 			<li class="nav-item active">
 				<a class="nav-link" href="#"><i class="fas fa-portrait"></i> Acteurs <span class="sr-only"></span></a>

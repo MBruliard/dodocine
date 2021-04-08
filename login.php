@@ -1,18 +1,11 @@
 <?php
 	/**
 	 * @file login.php
-	 * @brief Page de connexion pour les utilisateurs
-	 * @author Nahida BENHAFFAF
-	 * @author Margaux BRULIARD
-	 * @date 11 mars 2021
+	 * @brief nouvelle version pour s'inscrire et se connecter à notre site
+	 * 
 	 */
-
-	/**
-	 * Titre de la page
-	 */
-	$title_page = "DodoCiné - Connexion" ;
-	
-	require_once("elements/header.php") ;
+	require_once("controller/authentification.php");
+  	session_start();
 
 	/**
 	 * Message à afficher quand à la réussite ou l'échec de la connexion
@@ -48,65 +41,83 @@
 		}
 	}
 
+	/**
+	 * Inscription d'une personne après récupération des informations envoyées via le formulaire
+	 */
+	if (isset($_POST['signsend'])) {
+		extract($_POST);
+		// $_POST['res'] = $res , ...
+		$res = create_new_user($db, $username, $email, $password, $password2);
+		$message = $res['msg'];
+		$color_message = $res['res'];
+
+		if ($res['res']) {
+			// on retourne directement à la page d'accueil
+			$_SESSION['user'] = $username;
+			header("location: /index.php");
+			exit();
+		}
+	}
 ?>
 
-<div class="row">
-	<div class="col">
-		<h1>Connexion</h1>
-	</div>
-</div>
-<div class="row">
-	<div class="col col-md-9 col-sm-8">
-		<?php if (isset($color_message)) : ?>
-			<?php if ($color_message) : ?>
-				<div class='alert alert-success' >
-			<?php else : ?>
-				<div class='alert alert-danger' >
-			<?php endif ?>	
-				<p><?php echo $message ?></p>
-			</div>
-		<?php endif ?>
 
-		<div class="card centered-container">
-			<div class="card-body">
-				<form method="post" action="">
-					<div class="form-group row">
-						<label class="col col-md-3">Identifiant: </label>
-						<input name="username" id="username" type="text" placeholder="pseudo" aria-describedby="descrPseudo" class="form-control col col-md-9">
-					</div>
-					
-					<div class="form-group row">
-						<label class="col col-md-4">Mot de passe: </label>
-						<input name="password" id="password" type="password" placeholder="****" class="form-control col col-md-8">
-					</div>
-					
+<DOCTYPE html>
+<html lang='fr'>
 
-					<div class="row">
-						<div class="col text-right">
-							<button type="submit" id="loginsend" name="loginsend" class="btn btn-primary">Se connecter</button>
+	<?php 
+		$title_page = 'Test login';
+		$css_addon = "<link href='static/css/login.css' rel='stylesheet' />";
+		require_once("elements/head.php"); 
+	?>
+
+	<body class="d-flex flex-column dodo-background">
+		<div id="page-container">
+
+			<?php require("elements/navigation.php"); ?>
+	
+			<div class="container">
+
+				<div class="row full-row">
+			
+					<div class="col-md-6 col-sm-12">
+						<div class="card form-container">
+							<div class="card-header">
+								<h4 class="align-center" id='login-title'>Se Connecter</h4>
+							</div>
+							<div class="card-body text-center">
+
+								<div class="space-before-row btn-group">
+									<button id='login-btn' class="btn  btn-primary">Se connecter</button>
+									<button id='signup-btn' class="btn">S'inscrire</button>
+								</div>
+
+								<!-- login -->
+								<?php require("views/login-form.php"); ?>
+
+								<!-- signup -->
+								<?php require("views/signup-form.php"); ?>
+
+							</div>
 						</div>
 					</div>
-				</form>
-				<a href="#">Mot de passe oublié ?</a>	
-			</div>
-		
-		</div>
-	</div>
 
-	<div class="col col-md-3 col-sm-4 text-center">
-		<div class="card">
-			<div class="card-header">
-				Pas encore inscrit ?
-			</div>
-			<div class="card-body">
-				<h6 class="card-title">Rejoignez la communauté des férus du divan</h6>
-				<p class="card-text">Créez votre compte maintenant</p>
-				<a href="signin.php" class="btn btn-info">S'inscrire</a>
+					<div class="col-md-6 col-sm-12 container-align-middle">
+						<img class="img-fluid img-align-middle" src="static/img/popcorn-155602_1280.png">
+					</div>
 			</div>
 		</div>
-	</div>
-</div>
 
-<?php
-	require_once("elements/footer.php");
-?>
+
+
+			<!-- footer -->
+			<?php require("elements/footer2.php"); ?>
+			<?php 
+				$js_addon = "<script src='static/js/login.js'></script>";
+				require("elements/js_files.php"); 
+			?>
+
+
+		</div> <!-- page-container -->
+	</body>
+
+</html>
