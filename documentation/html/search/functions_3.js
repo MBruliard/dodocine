@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['login_5fuser_60',['login_user',['../authentification_8php.html#a3ae82fca4df04f2b8c2ab71f84257568',1,'authentification.php']]]
+  ['getfilm_76',['getFilm',['../datafilms_8php.html#a5efd44101df1fa1d9ee2f57231807052',1,'datafilms.php']]],
+  ['getfilms_77',['getFilms',['../datafilms_8php.html#a2ecf20190f6942229b97c968b3aae331',1,'datafilms.php']]]
 ];

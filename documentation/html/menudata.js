@@ -25,6 +25,16 @@ var menudata={children:[
 {text:"Fichiers",url:"files.html",children:[
 {text:"Liste des fichiers",url:"files.html"},
 {text:"Variables globale",url:"globals.html",children:[
-{text:"Tout",url:"globals.html"},
+{text:"Tout",url:"globals.html",children:[
+{text:"$",url:"globals.html#index__24"},
+{text:"a",url:"globals.html#index_a"},
+{text:"c",url:"globals.html#index_c"},
+{text:"d",url:"globals.html#index_d"},
+{text:"e",url:"globals.html#index_e"},
+{text:"g",url:"globals.html#index_g"},
+{text:"i",url:"globals.html#index_i"},
+{text:"l",url:"globals.html#index_l"},
+{text:"m",url:"globals.html#index_m"},
+{text:"t",url:"globals.html#index_t"}]},
 {text:"Fonctions",url:"globals_func.html"},
 {text:"Variables",url:"globals_vars.html"}]}]}]}

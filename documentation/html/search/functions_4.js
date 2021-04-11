@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['modify_5femail_61',['modify_email',['../authentification_8php.html#a249382bdd765800d24405be3366dd8ed',1,'authentification.php']]],
-  ['modify_5fpassword_62',['modify_password',['../authentification_8php.html#a417daacb5815cc30487af3f9efed2db3',1,'authentification.php']]]
+  ['login_5fuser_78',['login_user',['../authentification_8php.html#a3ae82fca4df04f2b8c2ab71f84257568',1,'authentification.php']]]
 ];

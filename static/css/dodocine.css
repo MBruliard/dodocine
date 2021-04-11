@@ -19,12 +19,12 @@ html, body {
 h1 {
 	padding-top: 2rem;
 	padding-bottom: 4rem;
-	color:  #000066; 
+	color: #350B40; 
 	text-align: center;
 }
 
 h2 {
-	color:#000666;
+	color: #94B5C0;
 	margin-bottom: :20px;
 	text-align: center;
 }
@@ -33,11 +33,43 @@ a {
 	color: #AD6C80;
 }
 
+/* dodo-card */
+.dodo-card {
+	margin:5px;
+}
 
-.category-name {
+.dodo-card-header {
+	font-size:1.2em;
 	color:#350B40;
+	font-weight: bold;
+}
+
+#dodo-card-btn {
+	color: white;
+	background-color: #350B40;
+}
+
+.dodo-card-content {
+	text-align:center;
+	vertical-align: center;
+	font-weight: bold;
+	font-style:italic;
+}
+
+.dodo-card-btn {
+    color: blue;
+}
+
+.dodo-card-img { /* unused*/
+	width:100%;
+	height:auto;
+}
+
+/* */
+.category-name {
+	color: #EE99A0;
 	font-size: 1.1em;
-	font-style: bold;
+	font-weight: bold;
 }
 
 .header-container {

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['try_35',['try',['../database_8php.html#abe4cc9788f52e49485473dc699537388',1,'database.php']]]
+  ['signin_2ephp_46',['signin.php',['../signin_8php.html',1,'']]],
+  ['signup_2dform_2ephp_47',['signup-form.php',['../signup-form_8php.html',1,'']]]
 ];

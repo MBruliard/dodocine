@@ -30,10 +30,16 @@
 	 */
 	function getFilm($db, $id_film) : array {
 		
-		$q = $db->prepare("SELECT titre, annee, duree, categories.nom AS catnom FROM films
+		$q = $db->prepare("SELECT titre, duree, films.annee as annee, (individus.prenom || ' ' || individus.nom) as nom_real, categories.nom as nom_cat FROM films 
 			INNER JOIN categories
 			ON categories.id_categorie = films.id_categorie
+			INNER JOIN individus
+			ON individus.id_individu = films.id_realisateur
 			WHERE id_film = :id_film");
+		/*$q = $db->prepare("SELECT titre, annee, duree, categories.nom AS catnom FROM films
+			INNER JOIN categories
+			ON categories.id_categorie = films.id_categorie
+			WHERE id_film = :id_film");*/
 		$q->execute([
 			'id_film' => $id_film
 		]);
@@ -73,6 +79,16 @@
 		$alea_row = array_rand($other_films, 1);
 
 		return ['res' => true, 'values' => $other_films[$alea_row], 'msg' => 'ok'];
+	}
+
+
+	function addRating($db, $id_user, $id_film, $rate) : bool {
+		$q = $db->prepare("INSERT INTO notes VALUES (:id_film, :id_user, :note, NULL)");
+		$q->execute([
+			'id_film' => $id_film,
+			'id_user' => $is_user,
+			'note' => $rate
+		]);
 	}
 
 ?>

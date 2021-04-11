@@ -38,18 +38,14 @@ Pour afficher la documentation, ouvrir dans le navigateur
 
 ## TODO:
 
-* Couper en plusieurs sections le header et le footer:
-	* navigation - ok
-	* header - ok
-	* head - ok
-	* javascript - ok
-	* footer - ok
 * Faire un header (banderolle) pour la présentation du site 
-* Faire le choix des couleurs - ok
 * Avoir une navigation plus agréable -> voir les templates disponibles
 
+## CSS:
+* Appliquer les couleurs pour homogeneiser le site
+* construire des cards aux couleurs du site pour que ce soit plus joli
+
 ### Partie I:
-* Dans index.php : Mettre des cards à la place des jubotrons pour que ce soit plus joli
 * Construction de la base de données avec Modele entité association -> rapport
 * Remplissage de la base de données:
 	* films : ajouter les urls des films ainsi que leur année de parution
@@ -64,8 +60,8 @@ Pour afficher la documentation, ouvrir dans le navigateur
 ### Partie III : Connexion/inscriptions
 * Mettre l'inscription/la connexion sur la même page avec un button pour switcher entre les deux ce sera plus joli 
 	* utiliser du jquery pour l'affichage des messages pour plus de lisibilité
-	* Migrer vers la deuxième version de connexion/inscription
-	* Mettre à jour le choix des images 
+	* Mettre à jour le choix des images
+	* gestion de l'affichage des erreurs
 * Créer une fenetre modale pour indiquer connexion/inscription puis retour à l'accueil lors de la fermeture de la fenetre
 * Dans le cas contraire on garde l'affichage dans la fenetre comme avant
 

@@ -45,7 +45,7 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-12">
 						<div class="card">
-							<img class="card-img-top" src="..." alt="Card image cap">
+							<img class="card-img-top" src="static/img/template_img.jpg" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Spotlight sur "mettre le nom de l'acteur"</h5>
 								<p class="card-text">Le retour de Ryan Reynolds.</p>
@@ -56,7 +56,7 @@
 
 					<div class="col-md-6 col-sm-12">
 						<div class="card">
-							<img class="card-img-top" src="..." alt="Card image cap">
+							<img class="card-img-top" src="static/img/template_img.jpg" alt="Card image cap">
 							<div class="card-body">
 								<h5 class="card-title">Mise en lumière "nom du film"</h5>
 								<p class="card-text">Un nouveau film</p>

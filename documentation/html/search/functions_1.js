@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['delete_5fuser_58',['delete_user',['../authentification_8php.html#a5849afc837f9ac541eaa765d5645e2bc',1,'authentification.php']]]
+  ['create_5fnew_5fuser_74',['create_new_user',['../authentification_8php.html#a45f01a3bd64c015c45db6801474b2b9a',1,'authentification.php']]]
 ];

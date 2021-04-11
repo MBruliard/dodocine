@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['head_2ephp_43',['head.php',['../head_8php.html',1,'']]],
-  ['header_2ephp_44',['header.php',['../header_8php.html',1,'']]],
-  ['header2_2ephp_45',['header2.php',['../header2_8php.html',1,'']]]
+  ['filmslist_2ephp_55',['filmslist.php',['../filmslist_8php.html',1,'']]],
+  ['footer_2ephp_56',['footer.php',['../footer_8php.html',1,'']]],
+  ['footer2_2ephp_57',['footer2.php',['../footer2_8php.html',1,'']]]
 ];

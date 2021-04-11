@@ -57,6 +57,34 @@
 
 		\section{Création et connexion à son compte utilisateur}
 
+
+		\section{Page de présentation d'un film}
+
+			\subsection{Construction du système de notation des films}
+				2 fonctionnalités : Afficher la note du film donné par les utilisateurs ET faire noter le film par l'utilisateur
+
+				\subsubsection{Mise en place du système de notation pour l'utilisateur}
+
+					On utilisera u système de notation allant de 1 à 5 pour noter les films et sera visualiser par un système d'étoiles.
+
+					Les étoiles ici proviennent du framework "Font Awesome".
+
+					\bigskip
+					Mise en place de AJAX: deux formats de retour possibles: XML ou JSON. Comme le XML est généralement plus lourd et plus compliqué à manier, on préfère utiliser ici le JSON.
+
+					Ici on a simplement, une méthode POST qui renvoie 3 choses: l'ID de l'utilisateur, l'ID du film à noter et la note. On pourrait presque simplement renvoyer du HTML ou passer directement les arguments dans la fenetre
+
+
+			\subsection{Fonctions supplémentaires:}
+
+				On propose à l'utilisateur des films en lien avec le film sélectionné:
+				\begin{itemize}
+					\item un film de même catégorie
+					\item un film fait par le même réalisateur
+					\item un autre film dans lequel a joué un des acteurs
+				\end{itemize}
+
+				POur cela on va utiliser des requetes SQL (via PDO de PHP) pour récupérer les résultats puis nous tirerons au hasard un des ses résultats pour l'afficher à l'aide d'une fonction incluse dans PHP : array\_rand 
 		% Illustrations réalisées à l'aide du site https://app.diagrams.net/
 \end{document}
 

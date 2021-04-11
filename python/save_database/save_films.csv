@@ -1,23 +1,23 @@
 id_film;titre;duree;id_categorie;annee;pays;id_realisateur;photo
-1;Act of Piracy;101;9;1990;;NULL;
-2;Split Decisions;96;5;1988;;8;
-3;Vampire's Kiss;103;3;1989;;NULL;
-4;Nightmare at Noon;96;1;1988;;7;
-5;Presumed Innocent;127;9;1990;;44;
-6;Reap the Wild Wind;123;5;1942;;3;
-7;Pocket Money;100;3;1972;;14;
-8;Mary White;102;5;1977;;39;
+1;Act of Piracy;101;9;1990;US;NULL; 'https://upload.wikimedia.org/wikipedia/en/b/b1/Act_of_Piracy_FilmPoster.jpeg'
+2;Split Decisions;96;5;1988;US;8;'https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Split_decisions_dvd_cover.jpg/220px-Split_decisions_dvd_cover.jpg'
+3;Vampire's Kiss;103;3;1989;US;NULL;'https://upload.wikimedia.org/wikipedia/en/thumb/d/d0/Vampires_kiss.jpg/220px-Vampires_kiss.jpg'
+4;Nightmare at Noon;96;1;1988;US;7;NULL
+5;Presumed Innocent;127;9;1990;US;44;'https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Presumed_Innocent.jpg/220px-Presumed_Innocent.jpg'
+6;Reap the Wild Wind;123;5;1942;US;3;'https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Reap_the_Wild_Wind.jpg/220px-Reap_the_Wild_Wind.jpg'
+7;Pocket Money;100;3;1972;US;14;'https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Pocket_money.jpg/220px-Pocket_money.jpg'
+8;Mary White;102;5;1977;US;39;NULL
 9;Catch a Rising Star, Tenth Anniversary;NULL;3;1982;;NULL;
-10;Guilty by Suspicion;105;5;1990;;45;
-11;Secret Beyond the Door;99;9;1948;;5;
-12;Scarlet Street;103;5;1945;;5;
-13;Daffy Duck's Quackbusters;76;1;1988;;41;
+10;Guilty by Suspicion;105;5;1990;US;45;'https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/Guilty_by_suspicion.jpg/220px-Guilty_by_suspicion.jpg'
+11;Secret Beyond the Door;99;9;1948;US;5;'https://upload.wikimedia.org/wikipedia/en/5/51/SecretBeyondtheDoorPoster.jpg'
+12;Scarlet Street;103;5;1945;US;5;'https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Scarlet_Street_p.jpg/220px-Scarlet_Street_p.jpg'
+13;Daffy Duck's Quackbusters;76;1;1988;US;41;'https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Daffy_ducks_quackbusters.jpg/220px-Daffy_ducks_quackbusters.jpg'
 14;Rowlf's Rhapsodies with the Muppets;55;3;1985;;NULL;
-15;Gandhi;188;5;1982;;34;
-16;Wind & the Lion, The;120;1;1975;;2;
-17;Carnal Knowledge;96;5;1971;;25;
-18;Getting Straight;126;3;1970;;21;
+15;Gandhi;188;5;1982;UK;34;'https://upload.wikimedia.org/wikipedia/en/1/10/Gandhi-poster.png'
+16;Wind & the Lion, The;120;1;1975;US;2;'https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Wind_and_the_lion_movie_poster.jpg/220px-Wind_and_the_lion_movie_poster.jpg'
+17;Carnal Knowledge;96;5;1971;US;25;'https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Carnal_knowledge.jpg/220px-Carnal_knowledge.jpg'
+18;Getting Straight;126;3;1970;US;21;'https://upload.wikimedia.org/wikipedia/en/thumb/9/91/Getting_straight.jpg/220px-Getting_straight.jpg'
 19;Scarlet Letter, The;90;5;1972;;49;
-20;Count of Old Town, The;75;3;1935;;37;
-21;Autumn Sonata;97;5;1978;;50;
-22;Gaslight;114;5;1944;;51;
+20;Count of Old Town, The;75;3;1935;SE;37;NULL
+21;Autumn Sonata;97;5;1978;DE;50;'https://upload.wikimedia.org/wikipedia/en/thumb/3/34/Autumnsonataposter.jpg/220px-Autumnsonataposter.jpg'
+22;Gaslight;114;5;1944;US;51;'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Gaslight_%281944_poster%29.jpg/220px-Gaslight_%281944_poster%29.jpg'

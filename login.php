@@ -88,7 +88,7 @@
 
 								<div class="space-before-row btn-group">
 									<button id='login-btn' class="btn  btn-primary">Se connecter</button>
-									<button id='signup-btn' class="btn">S'inscrire</button>
+									<button id='signup-btn' class="btn btn-outline-primary">S'inscrire</button>
 								</div>
 
 								<!-- login -->

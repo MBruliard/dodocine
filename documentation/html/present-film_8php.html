@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>DodoCiné: Référence du fichier present-film.php</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="pillow.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">DodoCiné
+   &#160;<span id="projectnumber">1.1</span>
+   </div>
+   <div id="projectbrief">Projet de programmation Web - Réalisé par Nahida BENHAFFAF et Margaux BRULIARD - L3 Informatique - Université Sorbonne Paris Nord - Année Universitaire 2020-2021 - Réalisation d&#39;un mini-clone du site web www.allocine.fr</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier present-film.php</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Présentation d'un film donné  
+<a href="#details">Plus de détails...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a51eb558cf4a46f2fd28b9eac448dfca3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a>(!isset($_GET['id_film']))&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#a51eb558cf4a46f2fd28b9eac448dfca3">$film_id</a> = htmlspecialchars($_GET[&quot;id_film&quot;])</td></tr>
+<tr class="separator:a51eb558cf4a46f2fd28b9eac448dfca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a697f20bb465adeab6a51e03978fda04c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#a697f20bb465adeab6a51e03978fda04c">$film</a> = <a class="el" href="datafilms_8php.html#a5efd44101df1fa1d9ee2f57231807052">getFilm</a>($db, $film_id)</td></tr>
+<tr class="separator:a697f20bb465adeab6a51e03978fda04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bd2b835e9c65b93dfbad9e29579f141"><td class="memItemLeft" align="right" valign="top"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a>(! $film['res'])&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#a7bd2b835e9c65b93dfbad9e29579f141">$same_cat</a> = <a class="el" href="datafilms_8php.html#afbd5e4e72043961f847f5dd0dceb576c">aleaSameCategory</a>($db, $film_id)</td></tr>
+<tr class="separator:a7bd2b835e9c65b93dfbad9e29579f141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2aa6fdc1c6fc418fd3bdc01a1dc0fc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#ac2aa6fdc1c6fc418fd3bdc01a1dc0fc3">$title_page</a> = &quot;Fiche Film&quot;</td></tr>
+<tr class="separator:ac2aa6fdc1c6fc418fd3bdc01a1dc0fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae36f3b3b240965d17f8a5fd497fc509e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#ae36f3b3b240965d17f8a5fd497fc509e">$css_addon</a> = &quot;&lt;link rel='stylesheet' href='static/css/rating.css' /&gt;&quot;</td></tr>
+<tr class="separator:ae36f3b3b240965d17f8a5fd497fc509e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7debf7a458ed715d541505bad675007e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a> ( $film[ 'res'])</td></tr>
+<tr class="separator:a7debf7a458ed715d541505bad675007e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf40433772d1686fbc74b1420541ad12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a>($film['res'])&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#acf40433772d1686fbc74b1420541ad12">$header_dodo_card</a> = &quot;Dans la même catégorie&quot;</td></tr>
+<tr class="separator:acf40433772d1686fbc74b1420541ad12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d79156eb7048875013c75c70a91196d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#a5d79156eb7048875013c75c70a91196d">$img_dodo_card</a> = &quot;/static/img/template_img.jpg&quot;</td></tr>
+<tr class="separator:a5d79156eb7048875013c75c70a91196d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac765586c02611349f29dba2bf3e2d9bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#ac765586c02611349f29dba2bf3e2d9bd">$content_dodo_card</a> = $same_cat['values']['titre']</td></tr>
+<tr class="separator:ac765586c02611349f29dba2bf3e2d9bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfc7d25e53a11c91456e4b84580628d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#abfc7d25e53a11c91456e4b84580628d7">$link_dodo_card</a> = &quot;/present-film.php?id_film=&quot; . $same_cat['values']['id_film']</td></tr>
+<tr class="separator:abfc7d25e53a11c91456e4b84580628d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed0284188dc14e7e20e0d937982d834a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a>($same_cat['res'])&lt; img class=&quot;card-img-top&quot; src=&quot;...&quot; alt=&quot;TODO url du film à afficher&quot;&gt;&lt; div class=&quot;card-body&quot;&gt;&lt; h5 class=&quot;card-title&quot;&gt; Dans la même catégorie&lt;/h5 &gt;&lt; p class=&quot;card-text&quot;&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#aed0284188dc14e7e20e0d937982d834a">endif</a></td></tr>
+<tr class="separator:aed0284188dc14e7e20e0d937982d834a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16377f623f563362f656aa0bc7f228f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="present-film_8php.html#a16377f623f563362f656aa0bc7f228f3">$js_addon</a> = &quot;&lt;script src='static/js/rating.js'&gt;&lt;/script&gt;&quot;</td></tr>
+<tr class="separator:a16377f623f563362f656aa0bc7f228f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Présentation d'un film donné </p>
+<dl class="section author"><dt>Auteur</dt><dd>Nahida BENHAFFAF </dd>
+<dd>
+Margaux BRULIARD </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>8 avril 2021 </dd></dl>
+</div><h2 class="groupheader">Documentation des variables</h2>
+<a id="ac765586c02611349f29dba2bf3e2d9bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac765586c02611349f29dba2bf3e2d9bd">&#9670;&nbsp;</a></span>$content_dodo_card</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$content_dodo_card = $same_cat['values']['titre']</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae36f3b3b240965d17f8a5fd497fc509e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae36f3b3b240965d17f8a5fd497fc509e">&#9670;&nbsp;</a></span>$css_addon</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$css_addon = &quot;&lt;link rel='stylesheet' href='static/css/rating.css' /&gt;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a697f20bb465adeab6a51e03978fda04c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a697f20bb465adeab6a51e03978fda04c">&#9670;&nbsp;</a></span>$film</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$film = <a class="el" href="datafilms_8php.html#a5efd44101df1fa1d9ee2f57231807052">getFilm</a>($db, $film_id)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51eb558cf4a46f2fd28b9eac448dfca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51eb558cf4a46f2fd28b9eac448dfca3">&#9670;&nbsp;</a></span>$film_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a> (!isset( $_GET[ 'id_film'])) $film_id = htmlspecialchars($_GET[&quot;id_film&quot;])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf40433772d1686fbc74b1420541ad12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf40433772d1686fbc74b1420541ad12">&#9670;&nbsp;</a></span>$header_dodo_card</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a> ( $film[ 'res']) $header_dodo_card = &quot;Dans la même catégorie&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d79156eb7048875013c75c70a91196d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d79156eb7048875013c75c70a91196d">&#9670;&nbsp;</a></span>$img_dodo_card</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$img_dodo_card = &quot;/static/img/template_img.jpg&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16377f623f563362f656aa0bc7f228f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16377f623f563362f656aa0bc7f228f3">&#9670;&nbsp;</a></span>$js_addon</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$js_addon = &quot;&lt;script src='static/js/rating.js'&gt;&lt;/script&gt;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abfc7d25e53a11c91456e4b84580628d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfc7d25e53a11c91456e4b84580628d7">&#9670;&nbsp;</a></span>$link_dodo_card</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$link_dodo_card = &quot;/present-film.php?id_film=&quot; . $same_cat['values']['id_film']</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7bd2b835e9c65b93dfbad9e29579f141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bd2b835e9c65b93dfbad9e29579f141">&#9670;&nbsp;</a></span>$same_cat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a> (! $film[ 'res']) $same_cat = <a class="el" href="datafilms_8php.html#afbd5e4e72043961f847f5dd0dceb576c">aleaSameCategory</a>($db, $film_id)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>On cherche un film dans la même catégorie </p>
+
+</div>
+</div>
+<a id="ac2aa6fdc1c6fc418fd3bdc01a1dc0fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2aa6fdc1c6fc418fd3bdc01a1dc0fc3">&#9670;&nbsp;</a></span>$title_page</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$title_page = &quot;Fiche Film&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Film du même réalisateur Film ayant un acteur en commun </p>
+
+</div>
+</div>
+<a id="aed0284188dc14e7e20e0d937982d834a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed0284188dc14e7e20e0d937982d834a">&#9670;&nbsp;</a></span>endif</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="present-film_8php.html#a7debf7a458ed715d541505bad675007e">if</a> ( $same_cat[ 'res'])&lt;img class=&quot;card-img-top&quot; src=&quot;...&quot; alt=&quot;TODO url du film à afficher&quot;&gt;&lt;div class=&quot;card-body&quot;&gt;&lt;h5 class=&quot;card-title&quot;&gt; Dans la même catégorie&lt;/h5&gt;&lt;p class=&quot;card-text&quot;&gt; endif</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7debf7a458ed715d541505bad675007e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7debf7a458ed715d541505bad675007e">&#9670;&nbsp;</a></span>if</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">if($film['res'])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

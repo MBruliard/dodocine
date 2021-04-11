@@ -84,6 +84,12 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a2ecf20190f6942229b97c968b3aae331"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="datafilms_8php.html#a2ecf20190f6942229b97c968b3aae331">getFilms</a> ($first_letter_title=null)</td></tr>
 <tr class="memdesc:a2ecf20190f6942229b97c968b3aae331"><td class="mdescLeft">&#160;</td><td class="mdescRight">récupère de la base de données les films  <a href="datafilms_8php.html#a2ecf20190f6942229b97c968b3aae331">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2ecf20190f6942229b97c968b3aae331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5efd44101df1fa1d9ee2f57231807052"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="datafilms_8php.html#a5efd44101df1fa1d9ee2f57231807052">getFilm</a> ($db, $id_film)</td></tr>
+<tr class="memdesc:a5efd44101df1fa1d9ee2f57231807052"><td class="mdescLeft">&#160;</td><td class="mdescRight">récupère de la base de données un film  <a href="datafilms_8php.html#a5efd44101df1fa1d9ee2f57231807052">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5efd44101df1fa1d9ee2f57231807052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd5e4e72043961f847f5dd0dceb576c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="datafilms_8php.html#afbd5e4e72043961f847f5dd0dceb576c">aleaSameCategory</a> ($db, $id_film)</td></tr>
+<tr class="memdesc:afbd5e4e72043961f847f5dd0dceb576c"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie un film de la même catégory  <a href="datafilms_8php.html#afbd5e4e72043961f847f5dd0dceb576c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afbd5e4e72043961f847f5dd0dceb576c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -97,6 +103,80 @@ Variables</h2></td></tr>
 Margaux BRULIARD </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>11 mars 2021 </dd></dl>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="afbd5e4e72043961f847f5dd0dceb576c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd5e4e72043961f847f5dd0dceb576c">&#9670;&nbsp;</a></span>aleaSameCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">aleaSameCategory </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_film</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie un film de la même catégory </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$id_film</td><td>id du film dont on souhaite un autre film de la meme categorie </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>array contenu des informations de l'autre film </dd></dl>
+
+</div>
+</div>
+<a id="a5efd44101df1fa1d9ee2f57231807052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5efd44101df1fa1d9ee2f57231807052">&#9670;&nbsp;</a></span>getFilm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getFilm </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$id_film</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>récupère de la base de données un film </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id_film</td><td>le numéro d'identification du film que l'on souhaite voir </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>array contenu du film en question ou False si pas de résultat </dd></dl>
+
+</div>
+</div>
 <a id="a2ecf20190f6942229b97c968b3aae331"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ecf20190f6942229b97c968b3aae331">&#9670;&nbsp;</a></span>getFilms()</h2>
 
@@ -114,21 +194,13 @@ Margaux BRULIARD </dd></dl>
 </div><div class="memdoc">
 
 <p>récupère de la base de données les films </p>
-<p>récupère de la base de données un film</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">first_letter_title</td><td>1ere lettre des films que l'on souhaite récupérer. Si null alors on renvoie tous les films </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>array tableau des films</dd></dl>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id_film</td><td>le numéro d'identification du film que l'on souhaite voir </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>array contenu du film en question </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>array tableau des films </dd></dl>
 
 </div>
 </div>

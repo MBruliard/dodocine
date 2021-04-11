@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getfilms_59',['getFilms',['../datafilms_8php.html#a2ecf20190f6942229b97c968b3aae331',1,'datafilms.php']]]
+  ['delete_5fuser_75',['delete_user',['../authentification_8php.html#a5849afc837f9ac541eaa765d5645e2bc',1,'authentification.php']]]
 ];
