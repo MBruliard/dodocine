@@ -33,6 +33,21 @@ a {
 	color: #AD6C80;
 }
 
+/* carousel */
+.dodo-carousel {
+	height: 400px;
+	width: auto;
+	text-align:center;
+	background-color: #e0e0e0;
+}
+
+.dodo-carousel-img {
+	height: 100%;
+	width: auto;
+	object-fit: cover;
+}
+
+
 /* dodo-card */
 .dodo-card {
 	margin:5px;
@@ -60,9 +75,20 @@ a {
     color: blue;
 }
 
-.dodo-card-img { /* unused*/
-	width:100%;
-	height:auto;
+.card-img-top { /* unused*/
+	width: 100%;
+    height: 20vw;
+    object-fit: scale-down;
+}
+
+
+/* presentation */
+.dodo-present-img {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+    height: 30vw;
+    object-fit: scale-down;
 }
 
 /* */
@@ -113,11 +139,6 @@ a {
     align-items: center;
 }
 
-
-.img-middle-size {
-	width:200px;
-	height: auto;
-}
 
 
 /* La barre de navigation */

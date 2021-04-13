@@ -39,7 +39,7 @@
 		</div>
 
 
-		<?php require('elements/footer2.php'); ?>
+		<?php require('elements/footer.php'); ?>
 		<?php require('elements/js_files.php'); ?>
 	</body>
 </html>

@@ -45,24 +45,17 @@ function reset_star_colors(color) {
 }
 
 function save_to_db() {
-	/*$.ajax({
-		url: 'present-film.php?id_film=1',
-		method: "POST",
-		datatype: "html",
-		data: "&rating=" + (ratedIndex + 1)
-	});*/
-	//alert(ratedIndex);
-	$.ajax({
-       'url': "controller/rating.php",
-       'method': "POST",
-       'data': {"rating": ratedIndex}, 
-       'dataType': 'text',
-       success: function() {
-       		alert('ok');
-       },
-       error: function(xhr, textStatus, errorThrown) {
-       		alert(errorThrown);
-       }
-    });
+	// $.ajax({
+ //       'url': "controller/rating.php",
+ //       'method': "POST",
+ //       'data': {"rating": ratedIndex}, 
+ //       'dataType': 'text',
+ //       success: function() {
+ //       		alert('ok');
+ //       },
+ //       error: function(xhr, textStatus, errorThrown) {
+ //       		alert(errorThrown);
+ //       }
+ //    });
 }
 

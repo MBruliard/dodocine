@@ -71,53 +71,42 @@
 	?>
 
 	<body class="d-flex flex-column dodo-background">
-		<div id="page-container">
-
-			<?php require("elements/navigation.php"); ?>
 	
-			<div class="container">
+		<div class="container">
 
-				<div class="row full-row">
-			
-					<div class="col-md-6 col-sm-12">
-						<div class="card form-container">
-							<div class="card-header">
-								<h4 class="align-center" id='login-title'>Se Connecter</h4>
+			<div class="row full-row">
+		
+				<div class="col-md-6 col-sm-12">
+					<div class="card form-container">
+						<div class="card-header">
+							<h4 class="align-center" id='login-title'>Se Connecter</h4>
+						</div>
+						<div class="card-body text-center">
+
+							<div class="space-before-row btn-group">
+								<button id='login-btn' class="btn  btn-primary">Se connecter</button>
+								<button id='signup-btn' class="btn btn-outline-primary">S'inscrire</button>
 							</div>
-							<div class="card-body text-center">
 
-								<div class="space-before-row btn-group">
-									<button id='login-btn' class="btn  btn-primary">Se connecter</button>
-									<button id='signup-btn' class="btn btn-outline-primary">S'inscrire</button>
-								</div>
+							<!-- login -->
+							<?php require("elements/login-form.php"); ?>
 
-								<!-- login -->
-								<?php require("views/login-form.php"); ?>
+							<!-- signup -->
+							<?php require("elements/signup-form.php"); ?>
 
-								<!-- signup -->
-								<?php require("views/signup-form.php"); ?>
-
-							</div>
 						</div>
 					</div>
+				</div>
 
-					<div class="col-md-6 col-sm-12 container-align-middle">
-						<img class="img-fluid img-align-middle" src="static/img/popcorn-155602_1280.png">
-					</div>
+				<div class="col-md-6 col-sm-12 container-align-middle">
+					<img class="img-fluid img-align-middle" src="static/img/popcorn-155602_1280.png">
+				</div>
 			</div>
 		</div>
-
-
-
-			<!-- footer -->
-			<?php require("elements/footer2.php"); ?>
-			<?php 
-				$js_addon = "<script src='static/js/login.js'></script>";
-				require("elements/js_files.php"); 
-			?>
-
-
-		</div> <!-- page-container -->
+		<?php 
+			$js_addon = "<script src='static/js/login.js'></script>";
+			require("elements/js_files.php"); 
+		?>
 	</body>
 
 </html>

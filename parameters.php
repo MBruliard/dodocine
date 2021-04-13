@@ -9,7 +9,6 @@
 
 	require("controller/authentification.php");
 	session_start();
-
 	/**
 	 * Vérification: Si pas d'utilisateur connecté, l'accès est interdit
 	 */
@@ -17,29 +16,6 @@
 		header ("location: /index.php");
 		exit();
 	}
-
-	/**
-	 * Si le bouton modifier mot de passe a été selectionné
-	 */
-	if (isset($_POST['changpwd'])) {
-		extract($_POST);
-		$mod = modify_password($db, $_SESSION['user'], $new_pwd, $conf_new_pwd);;
-		
-		// TODO: une fenetre modale pour annoncer la réussite
-	}
-
-
-
-	/**
-	 * Si le bouton Modifier email a été sélectionné
-	 */
-	if (isset($_POST['changemail'])) {
-		extract($_POST);
-		modify_email($db, $_SESSION['user'], $new_email);
-
-		// TODO: une fenetre modale pour annoncer la réussite
-	}
-
 ?>
 
 <!DOCTYPE html>
@@ -54,12 +30,11 @@
 			<?php require('elements/navigation.php'); ?>
 
 
-			<div class="container">
+			<div id="main-container" class="container">
 
 				<div class="row">
 					<div class="col">	
 						<h1>Paramètres Utilisateurs</h1>
-						<h2><?php echo $_SESSION['user']; ?></h2>
 					</div>
 				</div>
 
@@ -100,10 +75,10 @@
 									</div>
 
 									<div class="card-body">
-										<form method="post">
+										<form id="pwd-form" action="controller/change-password.php" method="POST">
 											<div class="row">
 												<div class="form-group col col-md-5">
-													<label>Nouveau mot de passe</label>
+													<label for="new_pwd">Nouveau mot de passe</label>
 													<input type="password" class="form-control" id="new_pwd" name="new_pwd" placeholder="*****">
 												</div>
 												<div class="form-group col col-md-5">
@@ -156,8 +131,10 @@
 				</div>
 			</div>
 
-			<?php require ("elements/footer2.php"); ?>
-			<?php require ("elements/js_files.php"); ?>
+			<?php require ("elements/footer.php"); ?>
+			<?php 
+				$js_addon = "<script src='static/js/parameters.js'></script>";
+				require ("elements/js_files.php"); ?>
 		</div>
 	</body>
 	

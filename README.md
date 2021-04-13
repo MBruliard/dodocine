@@ -38,35 +38,44 @@ Pour afficher la documentation, ouvrir dans le navigateur
 
 ## TODO:
 
+* Choisir de nouvelles teintes de couleurs sur colorhunt
+* Mettre du AJAX un peu partout
 * Faire un header (banderolle) pour la présentation du site 
 * Avoir une navigation plus agréable -> voir les templates disponibles
 
 ## CSS:
 * Appliquer les couleurs pour homogeneiser le site
-* construire des cards aux couleurs du site pour que ce soit plus joli
 
 ### Partie I:
 * Construction de la base de données avec Modele entité association -> rapport
 * Remplissage de la base de données:
-	* films : ajouter les urls des films ainsi que leur année de parution
-	* individus : ajouter les infos sur les individus
 	* forum : remplissage partiel de la table -> remplissage manuel directement dans la base de données ?
 
 ### Partie II: PHP
-* Architecture page film
-* Architecture page acteur/réalisateur
+* Architecture page acteur/réalisateur 
+	* faire la zone de filmographie/réalisation en utilisant une forme de carousel comme dans list-film
 
+* Architecture de la page filmslist.php
+	* utilisation de carousel type netflix avec des catégories
+
+* Architecture de la page actorslist.php
+	*
+
+> Ne pas oublier la partie de recherche de films en AJAX
 
 ### Partie III : Connexion/inscriptions
 * Mettre l'inscription/la connexion sur la même page avec un button pour switcher entre les deux ce sera plus joli 
-	* utiliser du jquery pour l'affichage des messages pour plus de lisibilité
+	* utiliser du jquery/AJAX pour la connexion/inscription pour l'affichage des messages pour plus de lisibilité et les tests de vérification
 	* Mettre à jour le choix des images
 	* gestion de l'affichage des erreurs
 * Créer une fenetre modale pour indiquer connexion/inscription puis retour à l'accueil lors de la fermeture de la fenetre
 * Dans le cas contraire on garde l'affichage dans la fenetre comme avant
 
 ### Section Utilisateurs
-
+* Faire une plus jolie présentation des la page paramètres
+* Utiliser du AJAX pour tous les changements mot de passe, email etc
+	* une fenetre modale pour annoncer le résultat
+	
 * Apparence dans Paramètres Utilisateurs:
 	* faire JS associé au dark mode
 	* mettre en place des fenetres modales pour annoncer que les changements mdp/email ont bien été effectués
@@ -77,7 +86,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
 * Forum par film
 
 ### Page d'accueil
-* Mise en place d'un caroussel (option)
 * Mise en place de la recherche automatique
 
 

@@ -6,10 +6,10 @@
 	 */
 	require('controller/datafilms.php');
 	
-	var_dump($_POST);
 	// si il y a eu une note
 	if (isset($_POST['rating'])) {
-			addRating($db, 'toto', 1, $_POST['rating'] + 1);
+
+		//addRating($db, 'toto', 1, $_POST['rating'] + 1);
 	}
 
 
