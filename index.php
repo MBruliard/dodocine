@@ -55,7 +55,7 @@
 							$header_dodo_card = "Spotlight sur";
 							$img_dodo_card = $alea_actor['photo'];
 							$content_dodo_card = $alea_actor['prenom'] .  " " . $alea_actor['nom'];
-							$link_dodo_card = "/present-actor.php?id_ind=" . $alea_actor['id_individu'];
+							$link_dodo_card = "/actor.php?id_ind=" . $alea_actor['id_individu'];
 							include ("elements/dodo-card.php");
 						?>
 					</div>
@@ -66,7 +66,7 @@
 							$header_dodo_card = "Connaissez vous ce film ?";
 							$img_dodo_card = $alea_film['photo'];
 							$content_dodo_card = $alea_film['titre'];
-							$link_dodo_card = "/present-film.php?id_film=" . $alea_film['id_film'];
+							$link_dodo_card = "/film.php?id_film=" . $alea_film['id_film'];
 							include ("elements/dodo-card.php");
 						?>
 					</div>
