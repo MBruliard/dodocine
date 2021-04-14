@@ -15,6 +15,7 @@
 			<p><?php echo $message ?></p>
 		</div>
 	<?php endif ?>
+	
 	<form method="post" action="">
 		<div class="form-group">
 			<label class="sr-only" for="username">Identifiant</label>

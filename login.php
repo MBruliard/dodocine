@@ -23,41 +23,6 @@
 	if (isset($_SESSION['user'])) {
 		header ("location: index.php");
 	}
-	
-	/**
-	 * Tentative de connexion après envoi des informations via le formulaire
-	 */
-	if (isset($_POST['loginsend'])) {
-		extract($_POST);
-		$res = login_user($db, $username, $password);
-		$message = $res['msg'];
-		$color_message = $res['res'];
-
-		if ($res['res']) {
-			// on retourne directement à la page d'accueil
-			$_SESSION['user'] = $username;
-			header("location: /index.php");
-			exit();
-		}
-	}
-
-	/**
-	 * Inscription d'une personne après récupération des informations envoyées via le formulaire
-	 */
-	if (isset($_POST['signsend'])) {
-		extract($_POST);
-		// $_POST['res'] = $res , ...
-		$res = create_new_user($db, $username, $email, $password, $password2);
-		$message = $res['msg'];
-		$color_message = $res['res'];
-
-		if ($res['res']) {
-			// on retourne directement à la page d'accueil
-			$_SESSION['user'] = $username;
-			header("location: /index.php");
-			exit();
-		}
-	}
 ?>
 
 
@@ -65,44 +30,37 @@
 <html lang='fr'>
 
 	<?php 
-		$title_page = 'Test login';
+		$title_page = 'Dodociné | Se connecter';
 		$css_addon = "<link href='static/css/login.css' rel='stylesheet' />";
 		require_once("elements/head.php"); 
 	?>
 
-	<body class="d-flex flex-column dodo-background">
-	
-		<div class="container">
+	<body class="d-flex flex-column login-body">
 
-			<div class="row full-row">
+		<!-- n'est pas responsive ... utilisé les colonnes de bootstrap -->
+		<div class="center-container">
 		
-				<div class="col-md-6 col-sm-12">
-					<div class="card form-container">
-						<div class="card-header">
-							<h4 class="align-center" id='login-title'>Se Connecter</h4>
+				<div class="card form-container">
+					<div class="card-header">
+						<h4 class="align-center" id='login-title'>Se Connecter</h4>
+					</div>
+					<div class="card-body text-center">
+
+						<div class="space-before-row btn-group">
+							<button id='login-btn' class="btn btn-lg btn-primary">Se connecter</button>
+							<button id='signup-btn' class="btn btn-lg btn-outline-primary">S'inscrire</button>
 						</div>
-						<div class="card-body text-center">
 
-							<div class="space-before-row btn-group">
-								<button id='login-btn' class="btn  btn-primary">Se connecter</button>
-								<button id='signup-btn' class="btn btn-outline-primary">S'inscrire</button>
-							</div>
+						<!-- login -->
+						<?php require("elements/login-form.php"); ?>
 
-							<!-- login -->
-							<?php require("elements/login-form.php"); ?>
+						<!-- signup -->
+						<?php require("elements/signup-form.php"); ?>
 
-							<!-- signup -->
-							<?php require("elements/signup-form.php"); ?>
-
-						</div>
 					</div>
 				</div>
-
-				<div class="col-md-6 col-sm-12 container-align-middle">
-					<img class="img-fluid img-align-middle" src="static/img/popcorn-155602_1280.png">
-				</div>
-			</div>
 		</div>
+
 		<?php 
 			$js_addon = "<script src='static/js/login.js'></script>";
 			require("elements/js_files.php"); 
