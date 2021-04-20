@@ -2,3 +2,29 @@
  * @file static/css/rating.css
  * @brief Fichier CSS pour la gestion du système de notes
  */
+
+
+.rating-header {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 1.4em;
+	font-weight: bold;
+	color:  #FFC300 ;
+}
+
+.rating-review {
+	font-style: italic;
+	text-align: center;
+	color:  #FFC300 ;
+}
+
+
+#giveRating {
+	vertical-align: center;
+	text-align:center;
+}
+
+.star-avg {
+	border-color: #FFC300;
+	color: #FFC300;
+}

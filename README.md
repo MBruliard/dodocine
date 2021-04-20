@@ -41,11 +41,10 @@ Pour afficher la documentation, ouvrir dans le navigateur
 * Choisir de nouvelles teintes de couleurs sur colorhunt
 	* https://colorhunt.co/palette/219763
 
-* Mettre du AJAX un peu partout
 * Faire un header (banderolle) pour la présentation du site 
 * Avoir une navigation plus agréable -> voir les templates disponibles
 
-## CSS:
+### CSS:
 * Appliquer les couleurs pour homogeneiser le site
 
 ### Partie I:
@@ -65,14 +64,7 @@ Pour afficher la documentation, ouvrir dans le navigateur
 
 > Ne pas oublier la partie de recherche de films en AJAX
 
-### Partie III : Connexion/inscriptions
-* Créer une fenetre modale pour indiquer connexion/inscription puis retour à l'accueil lors de la fermeture de la fenetre
-
 ### Section Utilisateurs
-* Faire une plus jolie présentation des la page paramètres -> en cours parameters2.php
-* Utiliser du AJAX pour tous les changements mot de passe, email etc
-	* une fenetre modale pour annoncer le résultat
-
 * proposer de voir les statistiques dans Mes notes et messages
 * proposer d'enregistrer des films favoris (à ajouter dans BDD + un bouton dans filmographie)
 * zone apparence
@@ -82,7 +74,8 @@ Pour afficher la documentation, ouvrir dans le navigateur
 	* faire JS associé au dark mode
 	* mettre en place des fenetres modales pour annoncer que les changements mdp/email ont bien été effectués
 
-* Noter un film et laisser un commentaire
+* Changer les couleurs des étoiles dans rating-system
+* faire un arrondi des notes récupérées pour une meilleure visualisation
 * Forum par film
 * enregistrer un film comme favori
 

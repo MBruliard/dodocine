@@ -186,16 +186,84 @@
 		return $t_res;
 	}
 
-	/** Merde !!!!!! */
-	function addRating($db, $id_user, $id_film, $rate) : bool {
-		$q = $db->prepare("INSERT INTO notes VALUES (:id_film, :id_user, :note, NULL)");
-		$q->execute([
-			'id_film' => $id_film,
-			'id_user' => $is_user,
-			'note' => $rate
+	/** 
+	 * Ajoute ou modifie la note d'un utilisateur concernant un film
+	 * @param $db la base de données
+	 * @param $id_user l'utilisateur
+	 * @param $id_film le film concerné
+	 * @param $rate la nouvelle note a enregistrer
+	 */
+	function addRating($db, $id_user, $id_film, $rate) : array {
+		
+		// on commence par vérifier si il existe déjà une note 
+		$check = $db->prepare("SELECT note FROM notes WHERE id_film= :id_film AND id_user = :id_user");
+		$check->execute([
+			"id_user" => $id_user,
+			"id_film" => $id_film
 		]);
 
-		return false;
+		if ($check->fetch() == 0) {
+			// pas de note
+			$q = $db->prepare("INSERT INTO notes VALUES (:id_film, :id_user, :note, NULL)");
+			$q->execute([
+				'id_film' => $id_film,
+				'id_user' => $id_user,
+				'note' => $rate
+			]);
+		}
+		else {
+			// la note existe déjà donc on va la modifier 
+			$q = $db->prepare("UPDATE notes SET note = :note WHERE id_film = :id_film AND id_user = :id_user");
+			$q->execute([
+				'id_film' => $id_film,
+				'id_user' => $id_user,
+				'note' => $rate
+			]);
+		}
+
+		return ['res' => true];
+	}
+
+	/**
+	 * Renvoie les informations sur les notes concernant les films: le nombre de note données et la moyenne de ces notes
+	 * @param db la base de données
+	 * @param id_film l'id du film dont on veut les informations
+	 * @return res un array avec les clés 'mean' pour la moyenne et 'nb' pour le nombre de votants
+	 */
+	function getRatingInfos($db, $id_film): array {
+		$q = $db->prepare("SELECT AVG(note) as mean, COUNT(note) as nb FROM notes WHERE id_film = :id");
+		$q->execute(["id" => $id_film]);
+
+		$res = $q->fetch();
+		if ($res == 0) {
+			return ['res' => false];
+		}
+		$res['res'] = true;
+		
+		return $res;
+	}
+
+	/**
+	 * Permet de récupérer la note d'un utilisateur pour un certain film si elle est existe
+	 * @param $db la base de données
+	 * @param $user l'utilisateur dont on veut la note
+	 * @param $id_film le film dont on veut la note
+	 * @return $res résultat de l'opération et si c'est un succès la note associée
+	 */
+	function getRatingUser($db, $user, $id_film) : array {
+		// on recupere la note de l'utilisateur si elle existe
+		$q2 = $db->prepare("SELECT note FROM notes WHERE id_film = :id AND id_user = :pseudo");
+		$q2->execute([
+			"id" => $id_film,
+			"pseudo" => $user
+		]);
+
+		$rate = $q2->fetch();
+		if ($rate != 0) {
+			return ['res' => true, 'myrating' => $rate['note']];
+		}
+
+		return ['res' => false];
 	}
 
 ?>

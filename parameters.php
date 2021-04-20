@@ -104,6 +104,4 @@
 			require ("elements/js_files.php"); 
 		?>
 	</body>
-	
-
-?>
+</html>

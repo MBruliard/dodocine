@@ -60,7 +60,7 @@
 			<div class="container">
 
 				<!-- presentation -->
-				<div class="row">
+				<div class="row space-before-row">
 
 					<div class="col-md-4 col-sm-12">
 						<img class="img-fluid" src=
@@ -77,20 +77,21 @@
 					</div> 
 
 					<div class="col-md-8 col-sm-12">
-						<div class="row">
-							<h2 class="align-center"><?php if ($film['res']) {echo $film['values']['titre'];} ?></h2>
+						<div class="row align-center">
+							<h2><?php if ($film['res']) {echo $film['values']['titre'];} ?></h2>
 						</div>
 
-						<div class="row">
-							<div class="col align-self-end">
-								<?php include ("elements/rating-system.php"); ?>
-							</div>
-						</div>
-
-						<div class="row">
+						
+						<div class="row space-before-row">
 							<div class="col-sm-12">
 
 								<table class="table full-row">
+									<tr>
+										<td colspan="4">
+											<div class="category-name">Note de la communauté:</div>
+											<?php include("elements/rating-system.php"); ?>
+										</td>
+									</tr>
 									<tr>
 										<td><div class="category-name">Catégorie:</div></td>
 										<td>
@@ -165,13 +166,6 @@
 					<?php endif ?>
 
 				</div>
-
-				<!-- suggestions -->
-				<div class="row">
-
-					todo gérer les tailles des images -> image du film doit être plus grande que celles des suggestions
-				</div>
-
 			</div>
 		</div>
 
