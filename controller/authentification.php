@@ -25,9 +25,34 @@
 	 * @return array ( "res" : bool , "msg" : string - message à indiquer à l'utilisateur)
 	 */
 	function create_new_user($db, $pseudo, $email, $pwd, $confirm_pwd): array {
-		if (!empty($pseudo) && !empty($email) && !empty($pwd) && !empty($confirm_pwd)) {
+		
+		$result = array ();
+
+		$result['res'] = true;
+		if (empty($pseudo)) {
+			$result['res'] = false;
+			$result['pseudo'] = "Le champs n'est pas renseigné";
+		}
+
+		if (empty($email)) {
+			$result['res'] = false;
+			$result['pseudo'] = "Le champs n'est pas renseigné";	
+		}
+
+		if (empty($pwd)) {
+			$result['res'] = false;
+			$result['password'] = "Le champs n'est pas renseigné";	
+		}
+
+		if (empty($confirm_pwd)) {
+			$result['res'] = false;
+			$result['conf_password'] = "Le champs n'est pas renseigné";	
+		}
+
+
+		if ($result['res']) {
 			if ($pwd != $confirm_pwd) {
-				return ['res' => false, 'msg' => "Les entrées de mots de passe ne correspondent pas"];
+				return ['res' => false, 'password' => "Les entrées de mots de passe ne correspondent pas", 'conf_password' => "Les entrées de mots de passe ne correspondent pas"];
 			}
 
 			// on verifie que le pseudo est bien unique ainsi que l'email
@@ -36,7 +61,7 @@
 				'pseudo' => $pseudo
 			]);
 			if ($q1->fetch() != 0) {
-				return ['res' => false, 'msg' => "Ce nom d'utilisateur existe déjà. Veuillez renseigner un autre nom d'utilisateur"];
+				return ['res' => false, 'pseudo' => "Ce nom d'utilisateur existe déjà. Veuillez renseigner un autre nom d'utilisateur"];
 			}
 
 
@@ -45,7 +70,7 @@
 				'email' => $email
 			]);
 			if ($q2->fetch() != 0) {
-				return ['res' => false, 'msg' => "Cette adresse email est déjà utilisée pour un autre compte. Veuillez renseigner une nouvelle adresse email"];
+				return ['res' => false, 'email' => "Cette adresse email est déjà utilisée pour un autre compte. Veuillez renseigner une nouvelle adresse email"];
 			}
 
 			$new = $db->prepare("INSERT INTO users (pseudo, email, password) VALUES (:pseudo, :email, :password)");
@@ -55,11 +80,8 @@
 				'password' => password_hash($pwd, PASSWORD_DEFAULT, [])
 			]);
 		}
-		else {
-			return ['res' => false, 'msg' => "Au moins un des champs n'a pas été renseigné"];
-		}
 
-		return ['res' => true, 'msg' => "Le nouvel utilisateur vient d'être ajouté. Bienvenue à toi " . $pseudo . " !"];
+		return $result;
 	}
 
 	/**
@@ -67,10 +89,24 @@
 	 * @param db la base de données
 	 * @param pseudo l'identifiant de connexion
 	 * @param password le mot de passe rensigné lors de la tentative de connexion
-	 * @return array ('res': bool, 'msg' : string - message en cas d'erreur) 
+	 * @return array ('res': bool, 'pseudo' : string - message en cas d'erreur, 'password' : string - message en cas d'erreur) 
 	 */
 	function login_user ($db, $pseudo, $password) : array {
-		if (!empty($pseudo) && !empty($password)) {
+		
+		$result = array();
+
+		$result['res'] = true;
+		if (empty($pseudo)) {
+			$result['res'] = false;
+			$result['pseudo'] = "Le champs est vide !";
+		}
+
+		if (empty($password)) {
+			$result['res'] = false;
+			$result['password'] = "Le champs est vide !";
+		}
+
+		if ($result['res']) {
 
 			// on cherche ce pseudo dans la base de données
 			$q = $db->prepare("SELECT * FROM users WHERE pseudo = :pseudo");
@@ -79,7 +115,7 @@
 
 			if ($user == 0) {
 				//pas d'utilisateur trouvé
-				return ['res' => false, 'msg' => "Aucun utilisateur trouvé sous ce nom ..."];
+				return ['res' => false, 'pseudo' => "Aucun utilisateur trouvé sous ce nom ..."];
 
 			}
 
@@ -87,16 +123,15 @@
 			$res = password_verify( $password , $user['password']); 
 
 			if (!$res) {
-				return ['res' => false, 'msg' => "Mot de passe incorrect ..."];
+				return ['res' => false, 'password' => "Mot de passe incorrect ..."];
 			}
 
 			// on connecte l'utilisateur
-			return ['res' => true, 'msg' => ""];
+			return ['res' => true];
 
 		}
 		
-		return ['res' => false, 'msg'=>"Au moins des champs n'est pas renseigné ..."];
-
+		return $result;
 	}
 
 	/**
@@ -108,17 +143,35 @@
 	 * @return array ('res' => bool, 'msg' => message a affiché pour l'utilisateur)
 	 */
 	function modify_password($db, $pseudo, $pwd, $confpwd): array {
-		if ($pwd != $confpwd) {
-			return ['res' => false, 'msg' => "Les entrées de mot de passe ne correspondent pas"];
+		
+		$result = array();
+		$result['res'] = true;
+		if (empty($pwd)) {
+			$result['res'] = false;
+			$result['password'] = "Le champs est vide";
 		}
 
-		$q =$db->prepare("UPDATE users SET password = :pwd WHERE pseudo = :pseudo");
-		$q->execute([
-			'pwd' => password_hash($pwd, PASSWORD_DEFAULT, []),
-			'pseudo' => $pseudo
-		]);
+		if (empty($confpwd)) {
+			$result['res'] = false;
+			$result['confirmation'] = "Le champs est vide";	
+		}
 
-		return ['res' => true, 'msg' => "Le changement de mot de passe a bien été pris en compte"];
+		if ($result['res']) {
+			if ($pwd != $confpwd) { 
+				return ['res' => false, 'confirmation' => "les entrées ne correspondent pas ..."];	
+			}
+
+			$q =$db->prepare("UPDATE users SET password = :pwd WHERE pseudo = :pseudo");
+			$q->execute([
+				'pwd' => password_hash($pwd, PASSWORD_DEFAULT, []),
+				'pseudo' => $pseudo
+			]);
+
+			return ['res' => true];
+		}
+		
+		return $result;
+
 	}
 
 
@@ -127,14 +180,20 @@
 	 * @param db la base de données
 	 * @param pseudo l'utilisateur sur lequel les modifications sont apportées
 	 * @param email le nouvel email
+	 * @return res un array contenant le résultat de l'opération
 	 */
-	function modify_email($db, $pseudo, $email): void {
+	function modify_email($db, $pseudo, $email): array {
 		
+		if (empty($email)) {
+			return ['res' => false, 'email' => 'Le champs est vide ...'];
+		}
+
 		$q =$db->prepare("UPDATE users SET email = :email WHERE pseudo = :pseudo");
 		$q->execute([
 			'email' => $email,
 			'pseudo' => $pseudo
 		]);
+		return ['res' => true];
 	}
 
 
@@ -142,10 +201,13 @@
 	 * Suppression d'un utilisateur dans la base de données
 	 * @param db la base de données
 	 * @param pseudo le nom de l'utilisateur que l'on souhaite supprimer
+	 * @return res l'array contenant le résultat de l'opération
 	 */
-	function delete_user ($db, $pseudo) : void {
+	function delete_user ($db, $pseudo) : array {
 		$q = $db->prepare("DELETE FROM users WHERE pseudo = :pseudo");
 		$q->execute(['pseudo' => $pseudo]);
+
+		return ['res' => true];
 	}
 
 ?>

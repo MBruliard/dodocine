@@ -1,0 +1,23 @@
+/**
+ * @file static/css/parameters.css
+ * @brief CSS pour la page "espace/paramètres" d'un utilisateur
+ */
+
+body {
+	background-color: orange;
+}
+.title-menu-param {
+	padding-top: 10px;
+	padding-bottom:20px;
+	color:#03506f;
+}
+
+.content-param {
+	padding: 10px;
+}
+
+.user-name-param {
+	font-weight:bold;
+	text-align: center;
+	vertical-align: center;
+}

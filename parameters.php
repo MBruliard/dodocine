@@ -21,11 +21,14 @@
 <!DOCTYPE html>
 <html>
 	<?php
-		$title_page = "DodoCiné | Paramètres Utilisateurs" ;
+		$title_page = "DodoCiné | Mon espace" ;
+
+		$css_addon = "<link href='static/css/parameters.css' rel='stylesheet' />";
 		require_once ("elements/head.php");
 	?>
 
 	<body class="d-flex flex-column">
+
 		<div class="flex-grow-1 flex-shrink-0">
 			<?php require('elements/navigation.php'); ?>
 
@@ -34,116 +37,73 @@
 
 				<div class="row">
 					<div class="col">	
-						<h1>Paramètres Utilisateurs</h1>
+						<h1>Mon espace</h1>
 					</div>
 				</div>
+
+				<?php
+					// inclusion de la fenetre modale que l'on va réutiliser pour chaque affichage de 	message
+					$header_dodo_modal = "Information";
+					$content_dodo_modal = "message d'information";
+					include ("elements/dodo-modal.php");
+				?>
 
 				<div class="row">
-					<div class="col col-md-9">
-						<div class="card">
-							<h6 class="card-header">Statistiques</h6>
 
-							<div class="card-body">
-								<p>un joli tableau sera bientot ici</p>
-							</div>
-						</div>
+					<!-- Le menu -->
+					<div class="col-md-4 col-sm-12">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
+								<div class="title-menu-param"><h4 class="user-name-param"><?php echo $_SESSION['user'];?></h4>
+								</div>
+							</li>
+							<button id="menu-rating" class="list-group-item d-flex justify-content-between buttonalign-items-center active">
+								Mes notes et messages
+								<span class="badge badge-primary badge-pill">14</span>
+							</button>
+							<button id="menu-fav" class="list-group-item d-flex justify-content-between align-items-center">
+								Mes Favoris
+								<span class="badge badge-primary badge-pill">14</span>
+							</button>
+							<button id="menu-looking" class="list-group-item d-flex justify-content-between align-items-center">
+								Apparence
+							</button>
+							<button id="menu-param" class="list-group-item d-flex justify-content-between align-items-center">
+								Paramètres du compte
+							</button>
+						</ul>
 					</div>
 
-					<div class="col col-md-3">
-						<div class="card">
-							<h6 class="card-header">Apparence</h6>
-							<div class="card-body">
-								<div class="custom-control custom-switch">
-									<input type="checkbox" class="custom-control-input" id="customSwitch1">
-									<label class="custom-control-label" for="customSwitch1">Activer le mode Nuit</label>
-								</div>
-							</div>
+					<!-- la partie content -->
+					<div class="col-md-8 col-sm-12 card">
+						
+						<div id="menu-content-rating" class="content-param">
+							<?php include ("elements/parameters-rating.php") ?>
 						</div>
-					</div>
-				</div>
 
-				<div class="row space-before-row">
-					<div class="col offset-md-1 col-md-10 offset-md-1">
-						<div class="card">
-							<h6 class="card-header">Paramètres du compte</h6>
-							<div class="card-body">
-								
-								<!-- changer le mot de passe -->
-								<div class="card">
-									<div class="card-header alert alert-warning">
-										Changer son mot de passe
-									</div>
+						<div id="menu-content-fav" class="content-param">
+							<?php include ("elements/parameters-fav.php") ?>
+						</div>
 
-									<div class="card-body">
-										<form id="pwd-form" action="controller/change-password.php" method="POST">
-											<div class="row">
-												<div class="form-group col col-md-5">
-													<label for="new_pwd">Nouveau mot de passe</label>
-													<input type="password" class="form-control" id="new_pwd" name="new_pwd" placeholder="*****">
-												</div>
-												<div class="form-group col col-md-5">
-													<label>Confirmation</label>
-													<input type="password" class="form-control" id="conf_new_pwd" name="conf_new_pwd" placeholder="*****">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col offset-md-10 col-md-2">
-													<button type="submit" id="changpwd" name="changpwd" class="btn btn-warning">Modifier</button>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
+						<div id="menu-content-looking" class="content-param">
+							<?php include ("elements/parameters-looking.php") ?>
+						</div>						
 
-								<!-- changer l'email -->
-								<div class="card space-before-row">
-									<div class="card-header alert alert-info">Changer son adresse email</div>
-									<div class="card-body">
-										<form method="post">
-											<div class="row">
-												<div class="form-group col col-md-10">
-													<label for="new_email">Nouvel Email</label>
-													<input type="email" class="form-control" id="new_email" name="new_email" placeholder="exemple@domain.com">
-												</div>
-											</div>
-											<div class="row">
-												<div class="col offset-md-10 col-md-2">
-													<button type="submit" id="changemail" name="changemail" class="btn btn-info">Modifier</button>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
 
-								<!-- Supprimer son compte -->
-								<div class="card space-before-row">
-									<div class="card-header alert alert-danger">Supprimer mon compte</div>
-									<div class="card-body">
-										<p>Votre compte sera supprimé immédiatement à la suite de cette action et toutes vos informations seront perdues</p>
-										<div class="text-right">
-											<a class="btn btn-danger btn-lg" href="deleteaccount.php">Supprimer</a>
-										</div>
-									</div>
-								</div>
-							</div>
+						<div id="menu-content-param" class="content-param">
+							<?php include ("elements/parameters-config.php") ?>
 						</div>
 					</div>
 				</div>
+
 			</div>
-
-			<?php require ("elements/footer.php"); ?>
-			<?php 
-				$js_addon = "<script src='static/js/parameters.js'></script>";
-				require ("elements/js_files.php"); ?>
 		</div>
+		<?php require ("elements/footer.php"); ?>
+		<?php 
+			$js_addon = "<script src='static/js/parameters.js'></script>";
+			require ("elements/js_files.php"); 
+		?>
 	</body>
 	
 
 ?>
-
-
-
-
-
-Theme Dark/Light à choisir
-Statistiques nbr de notes, moyenne des notes, nbr de messages publiés 

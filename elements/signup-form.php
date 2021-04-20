@@ -5,55 +5,48 @@
 	 */
 ?>
 
-<div id="signup-form" class="space-before-row text-center">
-	<?php if (isset($color_message)) : ?>
-		<?php if ($color_message) : ?>
-			<div class='alert alert-success' >
-		<?php else : ?>
-			<div class='alert alert-danger' >
-		<?php endif ?>	
-			<p><?php echo $message ?></p>
-		</div>
-	<?php endif ?>
-	<form method="post" action="">
-		<div class="form-group">
+<div id="signup-container" class="space-before-row text-center">
+	
+	<form id="signup-form" method="post" action="">
+		
+		<div id="username-signup-group" class="form-group">
 			<label class="sr-only" for="username">Identifiant</label>
 			<div class="input-group mb-2">
 				<div class="input-group-prepend">
 					<div class="input-group-text"><i class="fas fa-user"></i></div>
 				</div>
-				<input name="username" id="username" type="text" aria-describedby="descrPseudo" placeholder="identifiant" class="form-control">
+				<input name="username-signup" id="username-signup" type="text" aria-describedby="descrPseudo" placeholder="identifiant" class="form-control">
 			</div>
 		</div>
 
-		<div class="form-group">
+		<div id="email-signup-group" class="form-group">
 			<label class="sr-only">Email: </label>
 			<div class="input-group mb-2">
 				<div class="input-group-prepend">
 					<div class="input-group-text"><i class="fas fa-at"></i></div>
 				</div>
-				<input name="email" id="email" type="email" placeholder="ulysse@odyssee.fr" class="form-control">
+				<input name="email-signup" id="email-signup" type="email" placeholder="ulysse@odyssee.fr" class="form-control">
 			</div>
 			
 		</div>
 		
-		<div class="form-group">
+		<div id="password-signup-group" class="form-group">
 			<label class="sr-only">Mot de passe: </label>
 			<div class="input-group mb-2">
 				<div class="input-group-prepend">
 					<div class="input-group-text"><i class="fas fa-key"></i></div>
 				</div>
-				<input name="password" id="password" type="password" placeholder="****" class="form-control">
+				<input name="password-signup" id="password-signup" type="password" placeholder="****" class="form-control">
 			</div>
 		</div>
 
-		<div class="form-group">
+		<div id="password2-signup-group" class="form-group">
 			<label class="sr-only">Confirmation: </label>
 			<div class="input-group mb-2">
 				<div class="input-group-prepend">
 					<div class="input-group-text"><i class="fas fa-key"> Vérification</i></div>
 				</div>
-				<input name="password2" id="password2" type="password" placeholder="****" class="form-control">		
+				<input name="password2-signup" id="password2-signup" type="password" placeholder="****" class="form-control">		
 			</div>
 			
 		</div>

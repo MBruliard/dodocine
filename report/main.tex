@@ -30,12 +30,15 @@
 		\section*{Présentation du projet}
 		\addsectiontable{Présentation du projet}
 
-		un petit peu de maths ... 
+			\todo{écrire l'introduction }
+		
 
 		\section*{Mise en production}
 		\addsectiontable{Mise en production}
 
+			\todo{faire un encart avec le lien de la mise en production. Ajouter aussi le gihub pour visualiser le code source}
 
+			\todo{écire un environnement pour afficher le code inclut dans le projet}
 	% --------------------------------------------------------------------------------
 	% 	CREATION DE LA BASE DE DONNÉES
 	% --------------------------------------------------------------------------------	
@@ -57,6 +60,22 @@
 
 		\section{Création et connexion à son compte utilisateur}
 
+			\begin{itemize}
+				\item on utilise la table "users" de la base de données
+				\item on décide de construit une unique page pour faire l'inscription/connexion
+				avec du JS pour passer de l'un à l'autre.
+				\item Pour une meilleure visualisation coté client, on utilise AJAX pour lancer nos requetes suites aux entrées clients. (fichier login-resonse.php)
+			\end{itemize}
+
+			\begin{rmq}
+				Suite à l'utilisation d'AJAX pour passer nos requêtes, nous constatons que l'utilisation de la fonction "header('Location: index.php')" ne fonctionne plus. 
+
+				Après recherches dans la documentation de PHP, nous découvrons que cela est dû au fait que cette fonction ne fonctionne que si aucun code html n'est encore affiché sur la page. Pour effectuer cette redirection, nous choisissons dorénavant d'utiliser la méthode Javascript "window.location.replace(url\_redirection);"  
+			\end{rmq}
+
+			\begin{rmq}
+				Une petite subtilité de AJAX avec JQuery: l'utilisation "event.preventDefault();" pour éviter le rechargement de la page sur laquelle on se trouve.  Ce qui annule tout le travail d'Ajax et ce serait dommage quand même ;).
+			\end{rmq}
 
 		\section{Page de présentation d'un film}
 
@@ -84,8 +103,11 @@
 					\item un autre film dans lequel a joué un des acteurs
 				\end{itemize}
 
-				POur cela on va utiliser des requetes SQL (via PDO de PHP) pour récupérer les résultats puis nous tirerons au hasard un des ses résultats pour l'afficher à l'aide d'une fonction incluse dans PHP : array\_rand 
-		% Illustrations réalisées à l'aide du site https://app.diagrams.net/
+				POur cela on va utiliser des requetes SQL (via PDO de PHP) pour récupérer les résultats puis nous tirerons au hasard un des ses résultats pour l'afficher à l'aide d'une fonction incluse dans PHP : "array\_rand"
+
+
+
+		\todo{Créer une annexe avec l'arborescence des fichiers du projet}
 \end{document}
 
 

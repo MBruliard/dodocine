@@ -35,34 +35,18 @@
 		require_once("elements/head.php"); 
 	?>
 
-	<body class="d-flex flex-column login-body">
-
-		<!-- n'est pas responsive ... utilisé les colonnes de bootstrap -->
-		<div class="center-container">
-		
-				<div class="card form-container">
-					<div class="card-header">
-						<h4 class="align-center" id='login-title'>Se Connecter</h4>
-					</div>
-					<div class="card-body text-center">
-
-						<div class="space-before-row btn-group">
-							<button id='login-btn' class="btn btn-lg btn-primary">Se connecter</button>
-							<button id='signup-btn' class="btn btn-lg btn-outline-primary">S'inscrire</button>
-						</div>
-
-						<!-- login -->
-						<?php require("elements/login-form.php"); ?>
-
-						<!-- signup -->
-						<?php require("elements/signup-form.php"); ?>
-
-					</div>
-				</div>
-		</div>
+	<body>
 
 		<?php 
-			$js_addon = "<script src='static/js/login.js'></script>";
+			$header_dodo_modal = "coucou";
+			$content_dodo_modal = "je suis du contenu";
+			include ("elements/dodo-modal.php");
+		?>
+
+		<button class="btn btn-secondary" id="buttonModal" data-toggle="modal" data-target="#dodo-modal">Clik pour ouvrir</button>
+
+		<?php 
+			$js_addon = "<script src='static/js/parameters2.js'></script>";
 			require("elements/js_files.php"); 
 		?>
 	</body>
