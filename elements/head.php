@@ -28,6 +28,7 @@
     </title>
 
     <link rel="icon" href="static/img/pillow.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <link href="static/css/dodocine.css" rel="stylesheet" />
 
     <?php 

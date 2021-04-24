@@ -47,35 +47,34 @@ Pour afficher la documentation, ouvrir dans le navigateur
 ### CSS:
 * Appliquer les couleurs pour homogeneiser le site
 
+### Base de données:
+* Gérer les problèmes d'images et de noms dans la base de données -> via CSV ?
+
 ### Partie I:
 * Construction de la base de données avec Modele entité association -> rapport
 * Remplissage de la base de données:
 	* forum : remplissage partiel de la table -> remplissage manuel directement dans la base de données ?
 
 ### Partie II: PHP
-* Architecture page acteur/réalisateur 
-	* faire la zone de filmographie/réalisation en utilisant une forme de carousel comme dans list-film
+* Architecture page Film
+	* ajout du film en favori
+	* afficher le nom des acteurs et du réalisateur (via fonction php)
 
 * Architecture de la page filmslist.php
-	* utilisation de carousel type netflix avec des catégories
+	* Faire la recherche en ajax
+	* construire un tooltip pour un film avec son nom, sa note et l'ajout possible en favori
 
 * Architecture de la page actorslist.php
-	*
-
-> Ne pas oublier la partie de recherche de films en AJAX
+	* A faire en entier
 
 ### Section Utilisateurs
 * proposer de voir les statistiques dans Mes notes et messages
 * proposer d'enregistrer des films favoris (à ajouter dans BDD + un bouton dans filmographie)
 * zone apparence
-* zone de paramètrage du compte
 
 * Apparence dans Paramètres Utilisateurs:
 	* faire JS associé au dark mode
-	* mettre en place des fenetres modales pour annoncer que les changements mdp/email ont bien été effectués
 
-* Changer les couleurs des étoiles dans rating-system
-* faire un arrondi des notes récupérées pour une meilleure visualisation
 * Forum par film
 * enregistrer un film comme favori
 

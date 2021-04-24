@@ -57,7 +57,7 @@
 			<?php require('elements/navigation.php'); ?>
 
 
-			<div class="container">
+			<div class="container main-container">
 
 				<!-- presentation -->
 				<div class="row space-before-row">

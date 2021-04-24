@@ -33,7 +33,7 @@
 			<?php require('elements/navigation.php'); ?>
 
 
-			<div id="main-container" class="container">
+			<div class="container main-container">
 
 				<div class="row">
 					<div class="col">	

@@ -25,6 +25,9 @@
 	if (!$ind['res']) {
 			header ("location: /indlist.php");
 	}
+
+	$as_actor = getFilmsFromActor($db, $id_ind);
+	$as_real = getFilmsFromReal($db, $id_ind);
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +35,7 @@
 
 	<?php
 		$title_page = "Fiche Film";
-		$css_addon = "<link rel='stylesheet' href='static/css/rating.css' />";
+		$css_addon = "<link rel='stylesheet' href='static/css/rating.css' /><link rel='stylesheet' href='static/css/slider.js' />";
 		require("elements/head.php"); 
 	?>
 
@@ -41,7 +44,7 @@
 			<?php require('elements/navigation.php'); ?>
 
 
-			<div id="main-container" class="container dodo-background">
+			<div class="container main-container">
 
 				<!-- presentation -->
 				<div class="row">
@@ -93,29 +96,34 @@
 				</div>
 
 				<!-- acteur -->
-				<div class="row">
-					<h4 class="dodo-taupe">En tant qu'acteur</h4> 
-				</div>
+				<?php if (count($as_actor) > 0) : ?>
+					<div class="row">
+						<h4 class="dodo-taupe">En tant qu'acteur</h4> 
+					</div>
 
-				<div class="row">
-					todo
-				</div>
-
+					<?php
+						$films_array = $as_actor;
+						include ("elements/films-slider.php");
+					?>
+				<?php endif ?>
+				
 				<!-- realisateur -->
-				<div class="row">
-					<h4 class="dodo-taupe">En tant que réalisateur</h4>
-				</div>
+				<?php if (count($as_real) > 0) : ?>
+					<div class="row">
+						<h4 class="dodo-taupe">En tant que réalisateur</h4>
+					</div>
 
-				<div class="row">
-					todo
-				</div>
-
+					<?php
+						$films_array = $as_real;
+						include ("elements/films-slider.php");
+					?>
+				<?php endif ?>
 			</div>
 		</div>
 
 		<?php require("elements/footer.php"); ?>
 		<?php 
-			$js_addon = "<script src='static/js/rating.js'></script>";
+			$js_addon = "<script src='static/js/rating.js'></script><script src='static/js/slider.js'></script>";
 			require("elements/js_files.php"); 
 		?>
 	</body>

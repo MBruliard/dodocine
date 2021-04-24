@@ -1,0 +1,16 @@
+\BOOKMARK [0][-]{chapter*.1}{Table des mati\350res}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section*.3}{Pr\351sentation du projet}{chapter*.2}% 3
+\BOOKMARK [1][-]{section*.3}{Mise en production}{chapter*.2}% 4
+\BOOKMARK [0][-]{chapter.1}{Cr\351ation de la base de donn\351es}{}% 5
+\BOOKMARK [1][-]{section.1.1}{Choix de la base de donn\351es}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{Mod\350le Entit\351-Association}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Utilisation du site web}{}% 8
+\BOOKMARK [1][-]{section.2.1}{la page d'accueil}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{Presentation du menu}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{Cr\351ation et connexion \340 son compte utilisateur}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.4}{Pr\351sentation des films disponibles sur le site}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{Page de pr\351sentation d'un film}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.5.1}{Construction du syst\350me de notation des films}{section.2.5}% 14
+\BOOKMARK [3][-]{subsubsection.2.5.1.1}{Mise en place du syst\350me de notation pour l'utilisateur}{subsection.2.5.1}% 15
+\BOOKMARK [2][-]{subsection.2.5.2}{Fonctions suppl\351mentaires:}{section.2.5}% 16

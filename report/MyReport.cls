@@ -148,7 +148,17 @@
 % ----------------------------------------------------------------
 %       COMMANDES POUR CHAPITRES ET SECTIONS
 % ----------------------------------------------------------------
-%\RequirePackage{hyperref}
+
+% Les liens
+\RequirePackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=darkBlue,
+  urlcolor=lightBlue
+}
+
+
+
 \RequirePackage{tocbibind} 
 \setcounter{secnumdepth}{4}
 

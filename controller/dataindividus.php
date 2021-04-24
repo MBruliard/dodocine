@@ -71,4 +71,31 @@
 
 		return $res;
 	}
+
+
+	/**
+	 * Renvoie un array contenant tous les films dans l'acteur a tourné
+	 * @param $db la base de données
+	 * @param $id_actor l'id de l'acteur que l'on étudie
+	 * @return $res l'array contenant toutes les informations de chacun des films auquels il a participé
+	 */
+	function getFilmsFromActor($db, $id_actor): array {
+		$q = $db->prepare("SELECT * FROM films INNER JOIN distribution ON films.id_film = distribution.id_film WHERE id_acteur = :id_acteur");
+		$q->execute(['id_acteur' => $id_actor]);
+
+		return $q->fetchAll();
+	}
+
+	/**
+	 * Renvoie un array contenant tous les films réalisé par un réalisateur donné
+	 * @param $db la base de données
+	 * @param $id_real l'id du réalisateur que l'on étudie
+	 * @return $res l'array contenant toutes les informations de chacun des films auquels il a participé
+	 */
+	function getFilmsFromReal($db, $id_real): array {
+		$q = $db->prepare("SELECT * FROM films WHERE id_realisateur = :id_real");
+		$q->execute(['id_real' => $id_real]);
+
+		return $q->fetchAll();
+	}
 ?>

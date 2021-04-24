@@ -7,22 +7,16 @@
 	require_once("controller/authentification.php");
   	session_start();
 
-	/**
-	 * Message à afficher quand à la réussite ou l'échec de la connexion
-	 */
-	$message = null;
-	
-	/** 
-	 * Couleur du message (Vert pour réussite/Rouge pour échec) à afficher
-	 */
-	$color_message = null;
+	$q = $db->query("SELECT * FROM categories");
+	$categories = $q->fetchAll();
 
-	/**
-	 * Vérification: Pas d'utilisateur déjà connecté
-	 */
-	// if (isset($_SESSION['user'])) {
-	// 	header ("location: index.php");
-	// }
+	for ($i = 0; $i < count($categories); $i++) {
+		$q = $db->prepare("SELECT * FROM films WHERE id_categorie = :id_cat");
+		$q->execute(['id_cat' => $categories[$i]['id_categorie']]);
+
+		$categories[$i]['films'] = $q->fetchAll();
+	}
+
 ?>
 
 
@@ -31,22 +25,101 @@
 
 	<?php 
 		$title_page = 'Dodociné | Se connecter';
-		$css_addon = "<link href='static/css/login.css' rel='stylesheet' />";
+		//$css_addon = "<link href='static/css/slider.css' rel='stylesheet' />";
 		require_once("elements/head.php"); 
 	?>
 
-	<body>
+	<body class="d-flex flex-column">
+		<div class="flex-grow-1 flex-shrink-0">
+			<div class="container">
+				<div class="row">
+					<h2><?php echo $categories[0]['nom']; ?></h2>
+				</div>
+					<?php
+						$films_array = $categories[2]['films'];
+						include ("elements/films-slider.php");
+					?>
+
+				<div class="row">
+					<h3><?php echo $categories[1]['nom'] ?></h3>
+				</div>
+
+				<?php
+					$films_array = $categories[0]['films'];
+					include ("elements/films-slider.php");
+				?>
+				
+			</div>
+		</div>
+
+		<?php require("elements/footer.php"); ?>
+		
+
+		
+
+
+		
+
+		<!-- <div class="main-carousel">
+			<?php for ($i=0; $i<count($categories[0]['films']); $i++) : ?> 
+				<div class="carousel-cell">
+					<img src=<?php echo "'" . $categories[0]['films'][$i]['photo'] . "'"; ?> />			
+				</div>
+			<?php endfor ?>
+  			<div class="carousel-cell">1</div>
+  			<div class="carousel-cell">2</div>
+  			<div class="carousel-cell">3</div>
+		</div> -->
+
+
+
+		<div class="film-slider">
+
+			<div class="film-slider-container">
+				<div class="film-slider-item">
+					1
+				</div>
+				<div class="film-slider-item">
+					2
+				</div>
+				<div class="film-slider-item">
+					3
+				</div>
+				<div class="film-slider-item">
+					4
+				</div>
+				<div class="film-slider-item">
+					5
+				</div>
+				<div class="film-slider-item">
+					6
+				</div>
+				<div class="film-slider-item">
+					7
+				</div>
+				<div class="film-slider-item">
+					8
+				</div>
+			</div>
+
+			<div class="film-slider-actions">
+				<span id="film-slider-btn-prev" aria-label="Précédent"><i class="fas fa-arrow-circle-left fa-3x"></i></span>
+				<span id="film-slider-btn-next" aria-label="Suivant"><i class="fas fa-arrow-circle-right fa-3x"></i></span>
+			</div>
+			<?php for ($i=0; $i<count($categories[0]['films']); $i++) : ?> 
+				<div class="film-slider-item">
+					<img src=<?php echo "'" . $categories[0]['films'][$i]['photo'] . "'"; ?> />			
+				</div>
+			<?php endfor ?>
+
+			<div class="film-slider-actions">
+				<button id="film-slider-btn-prev" aria-label="Précédent"><</button>
+				<button id="film-slider-btn-next" aria-label="Suivant">></button>
+			</div>
+		</div>
 
 		<?php 
-			$header_dodo_modal = "coucou";
-			$content_dodo_modal = "je suis du contenu";
-			include ("elements/dodo-modal.php");
-		?>
-
-		<button class="btn btn-secondary" id="buttonModal" data-toggle="modal" data-target="#dodo-modal">Clik pour ouvrir</button>
-
-		<?php 
-			$js_addon = "<script src='static/js/parameters2.js'></script>";
+			$js_addon = "<script src='static/js/slider.js'></script>";
 			require("elements/js_files.php"); 
 		?>
 	</body>

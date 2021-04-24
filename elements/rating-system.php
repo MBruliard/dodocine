@@ -7,7 +7,6 @@
 
 ?>
 
-
 <div class="modal fade" id="modal-rating" tabindex="-1" role="dialog" aria-labelledby="modal-rating" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
@@ -60,6 +59,8 @@
 
 	<div class="col-md-6 col-sm-12 align-center">
 		<!-- donner sa propre note -->
-		<button id="giveRating" data-toggle="modal" data-target="#modal-rating" class="btn btn-warning">Noter ce film</button>
+		<?php if (isset($_SESSION['user'])): ?>
+			<button id="giveRating" data-toggle="modal" data-target="#modal-rating" class="btn btn-warning">Noter ce film</button>
+		<?php endif ?>
 	</div>
 </div>

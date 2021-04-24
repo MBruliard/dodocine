@@ -23,7 +23,7 @@
 			<?php require('elements/navigation.php'); ?>
 
 
-			<div class="container">
+			<div class="container main-container">
 				<div class="row">
 					<div class="col-md-12">
 						<h1>Tous les acteurs et les réalisateurs de renoms</h1>

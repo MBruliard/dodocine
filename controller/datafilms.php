@@ -239,6 +239,7 @@
 			return ['res' => false];
 		}
 		$res['res'] = true;
+		$res['mean'] = round($res['mean'], 1, PHP_ROUND_HALF_UP);
 		
 		return $res;
 	}
