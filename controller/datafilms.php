@@ -15,27 +15,13 @@
 	global $db;
 
 	/**
-	 * @brief récupère de la base de données les films 
-	 * @param first_letter_title 1ere lettre des films que l'on souhaite récupérer. Si null alors on renvoie tous les films
-	 * @return array tableau des films
-	 */
-	function getFilms($first_letter_title=null) : array {
-		return array();
-	}
-
-	/**
 	 * @brief récupère de la base de données un film 
 	 * @param id_film le numéro d'identification du film que l'on souhaite voir
 	 * @return array contenu du film en question ou False si pas de résultat
 	 */
 	function getFilm($db, $id_film) : array {
 		
-		// $q = $db->prepare("SELECT titre, duree, films.annee as annee, (individus.prenom || ' ' || individus.nom) as nom_real, categories.nom as nom_cat FROM films 
-		// 	INNER JOIN categories
-		// 	ON categories.id_categorie = films.id_categorie
-		// 	INNER JOIN individus
-		// 	ON individus.id_individu = films.id_realisateur
-		// 	WHERE id_film = :id_film");
+
 		$q = $db->prepare("SELECT titre, annee, duree, photo, pays, categories.nom AS catnom FROM films
 			INNER JOIN categories
 			ON categories.id_categorie = films.id_categorie
@@ -45,7 +31,43 @@
 		]);
 
 		$res = $q->fetch();
-		return ['res' => !($res == 0), 'values' => $res];
+		if ($res == 0) {
+			return ['res' => false];
+		}
+
+		$result = array('res' => true, 'values' => $res);
+		return $result;
+	}
+
+
+	/**
+	 * Renvoie le nom du realisateur ainsi que son identifiant pour un film donné
+	 * @param $db la base de données
+	 * @param $id_film l'identifiant du film
+	 */
+	function getDirectorFilm($db, $id_film): array {
+		$q = $db->prepare("SELECT id_individu as id_real, prenom || ' ' || nom as realisateur FROM individus INNER JOIN films ON films.id_realisateur = individus.id_individu WHERE id_film = :id_film");
+		$q->execute(["id_film" => $id_film]);
+
+		$res = $q->fetch();
+		if ($res == 0) {
+			return ['res' => false];
+		}
+
+		$res['res'] = true;
+		return $res;
+	}
+
+	/**
+	 * Renvoie les noms des acteurs ainsi que leurs identifiants pour un film donné
+	 * @param $db la base de données
+	 * @param $id_film l'identifiant du film
+	 */
+	function getActorsFilm($db, $id_film): array {
+		$q = $db->prepare("SELECT id_individu as id_acteur, prenom || ' ' || nom as acteur FROM individus INNER JOIN distribution ON distribution.id_acteur = individus.id_individu WHERE id_film = :id_film");
+		$q->execute(["id_film" => $id_film]);
+
+		return $q->fetchAll();
 	}
 
 

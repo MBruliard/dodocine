@@ -47,6 +47,9 @@ Pour afficher la documentation, ouvrir dans le navigateur
 
 ### Base de données:
 * Gérer les problèmes d'images et de noms dans la base de données -> via CSV ?
+* Ajouter des films et acteurs plus connus
+	* Jennifer Lawrence (Hunger Games, Passengers)
+	* Blockbusters -> Marvel/DC 
 
 ### Partie I:
 * Construction de la base de données avec Modele entité association -> rapport
@@ -56,7 +59,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
 ### Partie II: PHP
 * Architecture page Film
 	* ajout du film en favori
-	* afficher le nom des acteurs et du réalisateur (via fonction php)
 
 * Architecture de la page filmslist.php
 	* construire un tooltip pour un film avec son nom, sa note et l'ajout possible en favori

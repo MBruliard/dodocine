@@ -27,6 +27,16 @@
 	}
 
 	/**
+	 * On récupère le nom du réalisateur du film
+	 */
+	$real = getDirectorFilm($db, $film_id);
+
+	/**
+	 * On récupère les noms des acteurs principaux du film
+	 */
+	$actors = getActorsFilm($db, $film_id);
+
+	/**
 	 * On cherche un film dans la même catégorie
 	 */
 	$same_cat = aleaSameCategory($db, $film_id);
@@ -105,7 +115,13 @@
 									<tr>
 									<tr>
 										<td><div class="category-name">Réalisateur:</div></td>
-										<td></td>
+										<td>
+											<?php if($real['res']) : ?>
+												<a href=<?php echo "'/actor.php?id_ind=" . $real['id_real'] . "'"; ?>><?php echo $real['realisateur']; ?></a> 
+											<?php else: ?>
+												<p>Inconnu</p>
+											<?php endif ?>
+										</td>
 										<td><div class="category-name">Nationalité:</div></td>
 										<td>
 											<?php if ($film['res']) { echo $film['values']['pays']; } ?>
@@ -113,7 +129,13 @@
 									</tr>
 									<tr>
 										<td><div class="category-name">Acteurs principaux:</div></td>
-										<td colspan="3"></td>
+										<td colspan="3">
+											<?php for ($i=0; $i<count($actors); $i++) : ?>
+												<a href=<?php echo "'/actor.php?id_ind=" . $actors[$i]['id_acteur'] . "'";  ?> >
+													<?php echo "  " . $actors[$i]['acteur'] . ","; ?>
+												</a>
+											<?php endfor ?>
+										</td>
 									</tr>
 									<tr>
 										<td><div class="category-name">Durée:</div></td>
