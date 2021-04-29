@@ -41,8 +41,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
 * Choisir de nouvelles teintes de couleurs sur colorhunt
 	* https://colorhunt.co/palette/219763
 
-* Faire un header (banderolle) pour la présentation du site 
-* Avoir une navigation plus agréable -> voir les templates disponibles
 
 ### CSS:
 * Appliquer les couleurs pour homogeneiser le site
@@ -61,14 +59,13 @@ Pour afficher la documentation, ouvrir dans le navigateur
 	* afficher le nom des acteurs et du réalisateur (via fonction php)
 
 * Architecture de la page filmslist.php
-	* Faire la recherche en ajax
 	* construire un tooltip pour un film avec son nom, sa note et l'ajout possible en favori
 
 * Architecture de la page actorslist.php
 	* A faire en entier
 
 ### Section Utilisateurs
-* proposer de voir les statistiques dans Mes notes et messages
+* construire les fonction sur les messages dans le forum
 * proposer d'enregistrer des films favoris (à ajouter dans BDD + un bouton dans filmographie)
 * zone apparence
 
@@ -76,10 +73,10 @@ Pour afficher la documentation, ouvrir dans le navigateur
 	* faire JS associé au dark mode
 
 * Forum par film
-* enregistrer un film comme favori
 
-### Page d'accueil
-* Mise en place de la recherche automatique
+### Accueil
+* modifier le carousel pour le rendre plus joli
+* Faire CSS pour la partie recherche
 
 
 

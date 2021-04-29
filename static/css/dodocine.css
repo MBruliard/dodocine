@@ -176,3 +176,14 @@ a {
 }
 
 
+
+/*  barre de recherche */
+#list-results-search {
+   position: absolute;
+   width: 100%;
+   cursor: pointer;
+   overflow-y: auto;
+   max-height: 200px;
+   box-sizing: border-box;
+   z-index: 1001;
+}

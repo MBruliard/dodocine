@@ -28,14 +28,15 @@
 		<div class="flex-grow-1 flex-shrink-0">
 
 			<?php require('elements/navigation.php'); ?>
-			<div class="container main-container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1 class="dodo-red">Bienvenue sur DodoCiné ! </h1>
-						<h5>Les cinémas sont fermés, mais pas notre canapé !</h5>
-					</div>
-				</div>
+			<div class="jumbotron jumbotron-fluid">
+				<h1 class="display-4">Bienvenue sur DodoCiné!</h1>
+				<p class="lead">Sortez le plaid et installez vous confortablement pour binge-watcher avec nous !</p>
+			</div>
 
+			<div class="alert alert-danger">
+				Et si on coupait en 3 la suite pour faire tourner les images différemment ?... A revoir car c'est pas très joli tout ça...
+			</div>
+			<div class="container main-container">
 				<div class="row">
 					<div class="col-md-12">
 						<?php require('elements/carousel.php'); ?>

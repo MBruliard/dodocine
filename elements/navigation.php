@@ -28,6 +28,23 @@
 		</ul>
 
 		<ul class="navbar-nav ml-auto ml-md-0">
+			<li class="nav-item-active">
+				<form id="search-form" class="form inline-form" method="post" action="search.php">
+					<div class="form-row">
+						<div class="col-sm-9 my-1">
+							<label class="sr-only" for="search-input-navbar">Recherche</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="search-input-navbar" id="search-input-navbar" placeholder="Recherche...">
+							</div>
+							<div id="list-results-search">
+							</div>
+	    				</div>
+						<div class="col-sm-3 my-1">
+							<button id="search-btn" class="btn btn-primary"><i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</form>
+			</li>
 			<?php if (isset($_SESSION['user'])) : ?>
 				<li class="nav-item dropdown">
 			  		<a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> 

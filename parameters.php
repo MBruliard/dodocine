@@ -8,6 +8,7 @@
 	 */
 
 	require("controller/authentification.php");
+	require("controller/datafilms.php");
 	session_start();
 	/**
 	 * Vérification: Si pas d'utilisateur connecté, l'accès est interdit

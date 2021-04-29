@@ -7,7 +7,7 @@
 	 * @date 11 mars 2021
 	 */
 
-	include ("database.php");
+	require_once ("database.php");
 	
 	/**
 	 * Variable globale pour l'accès à la base de données
@@ -266,5 +266,40 @@
 
 		return ['res' => false];
 	}
+
+
+
+	/**
+	 * @brief Renvoie toutes les notes donné par un utilisateur
+	 * @param $db la base de données
+	 * @param $id_user l'utilisateur 
+	 */
+	function getRatingsFromUser ($db, $pseudo_user): array {
+		$q = $db->prepare("SELECT films.titre as titre, films.id_film as id_film, note FROM films INNER JOIN notes ON films.id_film = notes.id_film WHERE id_user = :pseudo");
+		$q->execute(["pseudo" => $pseudo_user]);
+
+		return $q->fetchAll();
+	}
+
+
+	/**
+	 * @brief Renvoie la moyenne des notes données par un utilisateur
+	 * @param $db la base de données
+	 * @param $id_user l'utilisateur 
+	 */
+	function getAverageRatingFromUser ($db, $pseudo_user): array {
+		$q = $db->prepare("SELECT AVG(note) as mean FROM notes WHERE id_user = :pseudo");
+		$q->execute(["pseudo" => $pseudo_user]);
+
+		$res = $q->fetch();
+		if ($res == 0) {
+			return ['res' => false];
+		}
+
+		$res['res'] = true;
+		$res['mean'] = round($res['mean'], 1, PHP_ROUND_HALF_UP);
+		return $res;
+	}
+
 
 ?>

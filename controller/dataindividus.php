@@ -5,7 +5,7 @@
 	 * @brief Définition des fonctions PHP relatives à la présentation des individus - accès à la base de données
 	 */
 
-	require ('database.php');
+	require_once ('database.php');
 	global $db;
 
 	/**

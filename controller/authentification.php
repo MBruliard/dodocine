@@ -8,7 +8,7 @@
 	 * @date 11 mars 2021
 	 */
 
-	include ("database.php");
+	require_once ("database.php");
 
 	/**
 	 * Variable relative à la base de données

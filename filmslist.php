@@ -35,15 +35,13 @@
 	<body class="d-flex flex-column">
 		<div class="flex-grow-1 flex-shrink-0">
 
-			<?php require('elements/navigation.php'); ?> 
+			<?php require('elements/navigation.php'); ?>
+			<div class="jumbotron jumbotron-fluid">
+				<h1>Notre catalogue de films</h1>
+				<p class="lead">Parce qu'il y toujours quelque chose à regarder</p>
+			</div>
 
 			<div class="container main-container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Le catalogue de tous nos films</h1>
-						<h5>Quand on ne sait pas quoi regarder, il suffit de cliquer !</h5>
-					</div>
-				</div>
 
 				<?php for ($cat=0; $cat<count($categories); $cat++) : ?>
 					<?php if (count($categories[$cat]['films']) > 0) : ?>
