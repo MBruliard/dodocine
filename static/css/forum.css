@@ -1,0 +1,38 @@
+/**
+ * @file static/css/forum.css
+ * @brief Structure CSS des messages des forums de film
+ * @author Margaux BRULIARD
+ * @date 30 avril 2021
+ */
+
+.forum-card {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.forum-header {
+    padding:10px;
+    border-right: solid 1px;
+    border-color: lightgrey;
+}
+
+.forum-author {
+    font-weight: bold;
+    text-align: center;
+}
+
+.forum-date {
+    text-align: center;
+    font-style: italic;
+}
+
+.forum-buttons {
+    text-align:right;
+    margin-top:10px;
+    margin-right:5px;
+    margin-bottom:5px;
+}
+
+.forum-answer {
+    font-style: italic;
+}

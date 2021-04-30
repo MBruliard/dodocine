@@ -3,7 +3,6 @@
 	/**
 	 * @file present-film.php
 	 * @brief Présentation d'un film donné
-	 * @author Nahida BENHAFFAF
 	 * @author Margaux BRULIARD
 	 * @date 8 avril 2021
 	 */
@@ -190,7 +189,7 @@
 				</div>
 			</div>
 		</div>
-
+			
 		<?php require("elements/footer.php"); ?>
 		<?php 
 			$js_addon = "<script src='static/js/rating.js'></script>";

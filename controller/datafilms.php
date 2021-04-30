@@ -2,7 +2,6 @@
 	/**
 	 * @file controller/datafilms.php
 	 * @brief Définition des fonctions d'accès à la base de données pour les films 
-	 * @author Nahida BENHAFFAF
 	 * @author Margaux BRULIARD
 	 * @date 11 mars 2021
 	 */
