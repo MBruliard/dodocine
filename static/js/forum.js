@@ -11,9 +11,9 @@ var id_film = (new URLSearchParams(window.location.search)).get('id_film'); // i
  * Script au chargement de la page
  */
 $(document).ready(function() {
-    //update_messages();
-    reset_modal_errors();
 
+    update_messages();
+    reset_modal_errors();
 
     /**
      * Ajout d'un nouveau message dans le forum
@@ -31,7 +31,6 @@ $(document).ready(function() {
             dataType: "json",
             encode: true,
             success: function(data) {
-
                 if (!data.res) {
                     $("#new-message-input").addClass("is-invalid");
                         $("#new-message-form-group").append(
@@ -39,7 +38,7 @@ $(document).ready(function() {
                         );
                 }
                 else {
-                    $('#modal-new-message').hide();
+                    $('#modal-new-message').modal('hide');
                 }   
             },
             error: function (response, status, xhr) {
@@ -70,5 +69,21 @@ function reset_modal_errors() {
  * Récupération des messages et affichage 
  */
 function update_messages() {
-
+    $.ajax({
+        type: "GET",
+        url: "forum-response.php",
+        data: {
+            id_film: id_film
+        },
+        dataType: "html",
+        success: function(data) {
+            $("#content-forum").html(data);
+            //alert(data);
+        },
+        error: function (response, status, xhr) {
+                alert(xhr);
+        }
+    }).done(function (data) {
+        console.log(data);
+    });
 }

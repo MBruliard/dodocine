@@ -127,6 +127,38 @@
 				POur cela on va utiliser des requetes SQL (via PDO de PHP) pour récupérer les résultats puis nous tirerons au hasard un des ses résultats pour l'afficher à l'aide d'une fonction incluse dans PHP : "array\_rand"
 
 
+			\subsection{Gestion du forum relatif au film}
+
+				Dans ce projet, on considère que les utilisateurs connectés peuvent écrire dans le forum du film pour discuter entre eux. Si un visteur du site n'a pas de compte, il peut lire les messages postés mais ne peut pas écrire ou répondre à des messages.
+
+				\medskip
+				Un utilisateur connecté peut:
+				\begin{itemize}
+					\item écrire un message dans le forum du film
+					\item répondre à un message déjà posté (via le petit bouton) \todo{faire une capture d'écran pour montrer}
+					\item supprimer un message qu'il a posté auparavant
+				\end{itemize}
+
+
+				\bigskip
+				Idées à mettre en place si on a le temps:
+				\begin{itemize}
+					\item créer des filtres pour éviter les insultes dans les messages
+					\item créer des tables en cas de trop nombreux messages pour ne pas avoir des pages trop longues 
+				\end{itemize}
+
+				\bigskip
+				Fichiers :
+				\begin{itemize}
+					\item "elements/forum-message.php" : pour écrire un message
+					\item "elements/forum".php pour la gestion du forum. Il sera appelé pour chaque film
+					\item "static/css/forum.css" pour le style
+					\item "static/js/forum.js" pour la gestion des evenements
+					\item "controller/dataforum.php" pour les fônctions faisant appel a la base de données
+					\item "forum-response.php" pour les appels ajax
+				\end{itemize}
+
+				Finalement le fichier "elements/forum-message.php" n'est pas utilisé dans la construction du forum... A la place on passe directement cette partie du code dans le fichier "forum-response.php" pour renvoyer du code html. Ce n'est pas très joli au niveau du code mais ça marche et c'est la seule méthode que j'ai trouvé...
 
 		\todo{Créer une annexe avec l'arborescence des fichiers du projet}
 \end{document}

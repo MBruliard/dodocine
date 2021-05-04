@@ -74,8 +74,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
 * Apparence dans Paramètres Utilisateurs:
 	* faire JS associé au dark mode
 
-* Forum par film
-
 ### Accueil
 * modifier le carousel pour le rendre plus joli
 * Faire CSS pour la partie recherche

@@ -7,10 +7,8 @@
 	require_once("controller/authentification.php");
   	session_start();
 
-
-  	$q = $db->query("SELECT * FROM forum ORDER BY date DESC");
-  	var_dump($q->fetchAll());
-
+  	$q = $db->query("SELECT * FROM forum WHERE id_film = 1 ORDER BY date DESC");
+  	$res = $q->fetchAll();
 ?>
 
 
@@ -58,6 +56,19 @@
 						</div>
 					</div>
 				</div>
+
+
+				<!-- affichage du premier message -->
+				<?php include ("elements/forum.php"); ?>
+
+
+
+				<?php
+					$message_author = $res[0]['id_user'];
+					$message_date = $res[0]['date'];
+					$message_content = $res[0]['contenu'];
+					include ("elements/forum-message.php");
+				?>
 
 
 				<!-- exemple d'un message -->

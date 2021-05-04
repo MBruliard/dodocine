@@ -57,7 +57,7 @@
 
 	<?php
 		$title_page = "Fiche Film";
-		$css_addon = "<link rel='stylesheet' href='static/css/rating.css' />";
+		$css_addon = "<link rel='stylesheet' href='static/css/rating.css' /><link rel='stylesheet' href='static/css/forum.css' />";
 		require("elements/head.php"); 
 	?>
 
@@ -187,12 +187,19 @@
 					<?php endif ?>
 
 				</div>
+
+				<div class="row space-before-row">
+					<h2>Commentaires:</h2>
+				</div>
+
+				<?php include ("elements/forum.php"); ?>
+
 			</div>
 		</div>
 			
 		<?php require("elements/footer.php"); ?>
 		<?php 
-			$js_addon = "<script src='static/js/rating.js'></script>";
+			$js_addon = "<script src='static/js/rating.js'></script><script src='static/js/forum.js'></script>";
 			require("elements/js_files.php"); 
 		?>
 	</body>

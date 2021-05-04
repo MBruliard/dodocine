@@ -26,7 +26,7 @@
             return ['res' => false, 'content' => 'Le message est vide !'];
         }
 
-        $q = $db->prepare("INSERT INTO forum (id_user, id_film, id_msg_ans, contenu, 'date') VALUES(:pseudo, :film, :reponse, :contenu, :d)");
+        $q = $db->prepare("INSERT INTO forum (id_user, id_film, id_msg_ans, contenu, date) VALUES(:pseudo, :film, :reponse, :contenu, :d)");
         $q->execute([
             'pseudo' => $pseudo,
             'film' => $id_film,
@@ -38,6 +38,21 @@
         return ['res' => true];
     }
 
+    /**
+     * Renvoie tous les messages concernant un film 
+     * @param $db la base de données
+     * @param $id_film le film dont on veut récupérer les messages
+     * @return $array l'array qui contient tous les messages
+     */
+    function getMessagesAboutFilm($db, $id_film): array {
+        $q = $db->prepare("SELECT * FROM forum WHERE id_film = :id_film ORDER BY date DESC");
+        $q->execute([
+            'id_film' => $id_film
+        ]);
+
+
+        return $q->fetchAll();
+    }
 
 
 ?>
