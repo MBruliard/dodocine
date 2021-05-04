@@ -33,24 +33,21 @@
 				<p class="lead">Sortez le plaid et installez vous confortablement pour binge-watcher avec nous !</p>
 			</div>
 
-			<div class="alert alert-danger">
-				Et si on coupait en 3 la suite pour faire tourner les images différemment ?... A revoir car c'est pas très joli tout ça...
-			</div>
 			<div class="container main-container">
+
 				<div class="row">
 					<div class="col-md-12">
+						<h1>A découvrir</h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4 col-sm-12">
+						<h4>Les derniers films à l'affiche</h4>
 						<?php require('elements/carousel.php'); ?>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-md-12">
-						<h4>A découvrir</h4>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6 col-sm-12">
+					<div class="col-md-4 col-sm-12">
 						<?php 
 
 							$header_dodo_card = "Spotlight sur";
@@ -61,7 +58,7 @@
 						?>
 					</div>
 
-					<div class="col-md-6 col-sm-12">
+					<div class="col-md-4 col-sm-12">
 						<?php 
 
 							$header_dodo_card = "Connaissez vous ce film ?";

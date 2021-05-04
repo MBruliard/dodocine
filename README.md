@@ -65,9 +65,9 @@ Pour afficher la documentation, ouvrir dans le navigateur
 
 * Architecture de la page actorslist.php
 	* A faire en entier
+    * Ou alors on la supprime et on accède aux acteurs par la recherche ou les films
 
 ### Section Utilisateurs
-* construire les fonction sur les messages dans le forum
 * proposer d'enregistrer des films favoris (à ajouter dans BDD + un bouton dans filmographie)
 * zone apparence
 
@@ -75,7 +75,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
 	* faire JS associé au dark mode
 
 ### Accueil
-* modifier le carousel pour le rendre plus joli
 * Faire CSS pour la partie recherche
 
 

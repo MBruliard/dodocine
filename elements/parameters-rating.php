@@ -8,6 +8,8 @@
 
 <?php 
 	$rated_films = getRatingsFromUser($db, $_SESSION['user']);
+
+	$messages_posted = getMessagesFromUser($db, $_SESSION['user']);
 ?>
 
 <div class="row">
@@ -47,7 +49,7 @@
 		<div class="card">
 			<div class="card-header">Nombre de messages postés:</div>
 			<div class="card-body">
-
+				<p><?php echo count($messages_posted); ?>
 			</div>
 		</div>
 	</div>
@@ -88,10 +90,18 @@
 				</tr>
   			</thead>
   			<tbody>
+  				<?php for ($i=0; $i<count($messages_posted); $i++) : ?>
 				<tr>
-					<td>Mark</td>
-					<td>Otto</td>
+					<td><?php echo "<a href='/film.php?id_film=" . $messages_posted[$i]['id_film'] . "'>" . $messages_posted[$i]['titre'] . "</a>"; ?></td>
+					<td>
+						<?php 
+							// écrire les 50 premiers caractères
+							echo substr($messages_posted[$i]['contenu'], 0, min(strlen($messages_posted[$i]['contenu']), 50));
+
+						?>
+					</td>
 				</tr>
+				<?php endfor ?>
 			</tbody>
 		</table>
 	</div>

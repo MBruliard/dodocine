@@ -55,4 +55,20 @@
     }
 
 
+    /**
+     * Renvoie tous les messages postés par un même utilisateur 
+     * @param $db la base de données
+     * @param $id_user le pseudo de l'utilisateur dont on veut les messages
+     * @return $array l'array qui contient tous les messages
+     */
+    function getMessagesFromUser($db, $id_user): array {
+        $q = $db->prepare("SELECT forum.id_film as id_film, titre, contenu FROM forum INNER JOIN films ON forum.id_film = films.id_film WHERE id_user = :id_user ORDER BY date DESC");
+        $q->execute([
+            'id_user' => $id_user
+        ]);
+
+
+        return $q->fetchAll();
+    }
+
 ?>

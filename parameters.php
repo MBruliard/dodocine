@@ -9,6 +9,7 @@
 
 	require("controller/authentification.php");
 	require("controller/datafilms.php");
+	require("controller/dataforum.php");
 	session_start();
 	/**
 	 * Vérification: Si pas d'utilisateur connecté, l'accès est interdit
