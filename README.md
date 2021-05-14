@@ -46,10 +46,7 @@ Pour afficher la documentation, ouvrir dans le navigateur
 * Appliquer les couleurs pour homogeneiser le site
 
 ### Base de données:
-* Gérer les problèmes d'images et de noms dans la base de données -> via CSV ?
-* Ajouter des films et acteurs plus connus
-	* Jennifer Lawrence (Hunger Games, Passengers)
-	* Blockbusters -> Marvel/DC 
+* Gérer les problèmes les tailles des images
 
 ### Partie I:
 * Construction de la base de données avec Modele entité association -> rapport
