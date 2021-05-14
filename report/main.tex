@@ -13,6 +13,10 @@
 
 \begin{document}
 	\begin{printTitle}
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[width=15cm, height=10cm]{img/back.jpg}
+		\end{figure}
 	\end{printTitle}
 
 	% ------------------------------------------------------------------------------
@@ -34,113 +38,18 @@
 	% --------------------------------------------------------------------------------
 	% 	EXEMPLE D'UTILISATION DU SITE WEB
 	% --------------------------------------------------------------------------------	
-	\chapter{Page d'accueil et navigation}
-
-		\section{la page d'accueil}
-
-		\section{Presentation du menu}
-
-			\subsection{Barre de recherche}
-
-				On construit une barre de recherche dans la barre de navigation pour que l'utilisateur puisse rechercher un film, un acteur ou un réalisateur à n'importe quel moment.
-
-				La barre de recherche propose des noms de films en instantanée au fur et à mesure que l'utilisateur tape sa recherche. Cependant il ne propose pas en direct des noms d'acteurs ou de réalisateurs.
-
-				En cliquant sur une proposition, l'utilisateur peut directement se rendre sur la page correspondante.
-
-				Si aucune suggestion n'est faite lors de l'entrée de recherche, l'utilisateur peut effectuer sa recherche en cliquant sur le bouton. A ce moment, nous recherchons des informations dans les films, les acteurs, et les réalisateurs avant d'afficher les résultats dans une nouvelle page. A noter que si aucun résultat n'est trouvé, on affichera dans cette même nouvelle page un message d'erreur (page \url{search.php})
+	\input{includes/home.tex}
+	\input{includes/users.tex}
+	\input{includes/films.tex}
 
 
+	\input{includes/conclusion.tex}
 
-		\section{Création et connexion à son compte utilisateur}
-
-			\begin{itemize}
-				\item on utilise la table "users" de la base de données
-				\item on décide de construit une unique page pour faire l'inscription/connexion
-				avec du JS pour passer de l'un à l'autre.
-				\item Pour une meilleure visualisation coté client, on utilise AJAX pour lancer nos requetes suites aux entrées clients. (fichier login-resonse.php)
-			\end{itemize}
-
-			\begin{rmq}
-				Suite à l'utilisation d'AJAX pour passer nos requêtes, nous constatons que l'utilisation de la fonction "header('Location: index.php')" ne fonctionne plus. 
-
-				Après recherches dans la documentation de PHP, nous découvrons que cela est dû au fait que cette fonction ne fonctionne que si aucun code html n'est encore affiché sur la page. Pour effectuer cette redirection, nous choisissons dorénavant d'utiliser la méthode Javascript "window.location.replace(url\_redirection);"  
-			\end{rmq}
-
-			\begin{rmq}
-				Une petite subtilité de AJAX avec JQuery: l'utilisation "event.preventDefault();" pour éviter le rechargement de la page sur laquelle on se trouve.  Ce qui annule tout le travail d'Ajax et ce serait dommage quand même ;).
-			\end{rmq}
-
-		\section{Présentation des films disponibles sur le site}
-
-			On propose sur cette page de retrouver tous les films disponibles sur la plateforme. L'utilisateur peut ainsi rechercher le film qu'il désire, en tapant directement le nom du film dans la barre de recherche, ou plus simplement en parcourant les différentes listes présentées.
-
-			Chaque liste de films (présentée sous la forme d'un "slider carousel"\footnote{Pour la mise en place du "slider carousel", nous nous sommes largement inspirées du code source présenté par {\bfseries WebShalla} dans \href{https://www.youtube.com/watch?v=Gi4CTYOs7J4}{cette vidéo} }) correspond à une catégorie de films.
-
-			Ou alors là je viens de trouver un framework qui s'appelle {\bfseries \href{Flickity}{https://flickity.metafizzy.co} } qui à l'air vraiment top alors on va essayer. Ce framework est en "open-source" (licence GPLv3) pour les projets personnels et universitaires ce qui nous convient parfaitement.
+		
+		
 
 
-		\section{Page de présentation d'un film}
-
-			\subsection{Construction du système de notation des films}
-				2 fonctionnalités : Afficher la note du film donné par les utilisateurs ET faire noter le film par l'utilisateur
-
-				\subsubsection{Mise en place du système de notation pour l'utilisateur}
-
-					On utilisera u système de notation allant de 1 à 5 pour noter les films et sera visualiser par un système d'étoiles.
-
-					Les étoiles ici proviennent du framework "Font Awesome".
-
-					\bigskip
-					Mise en place de AJAX: deux formats de retour possibles: XML ou JSON. Comme le XML est généralement plus lourd et plus compliqué à manier, on préfère utiliser ici le JSON.
-
-					Ici on a simplement, une méthode POST qui renvoie 3 choses: l'ID de l'utilisateur, l'ID du film à noter et la note. On pourrait presque simplement renvoyer du HTML ou passer directement les arguments dans la fenetre
-
-
-			\subsection{Fonctions supplémentaires:}
-
-				On propose à l'utilisateur des films en lien avec le film sélectionné:
-				\begin{itemize}
-					\item un film de même catégorie
-					\item un film fait par le même réalisateur
-					\item un autre film dans lequel a joué un des acteurs
-				\end{itemize}
-
-				POur cela on va utiliser des requetes SQL (via PDO de PHP) pour récupérer les résultats puis nous tirerons au hasard un des ses résultats pour l'afficher à l'aide d'une fonction incluse dans PHP : "array\_rand"
-
-
-			\subsection{Gestion du forum relatif au film}
-
-				Dans ce projet, on considère que les utilisateurs connectés peuvent écrire dans le forum du film pour discuter entre eux. Si un visteur du site n'a pas de compte, il peut lire les messages postés mais ne peut pas écrire ou répondre à des messages.
-
-				\medskip
-				Un utilisateur connecté peut:
-				\begin{itemize}
-					\item écrire un message dans le forum du film
-					\item répondre à un message déjà posté (via le petit bouton) \todo{faire une capture d'écran pour montrer}
-					\item supprimer un message qu'il a posté auparavant
-				\end{itemize}
-
-
-				\bigskip
-				Idées à mettre en place si on a le temps:
-				\begin{itemize}
-					\item créer des filtres pour éviter les insultes dans les messages
-					\item créer des tables en cas de trop nombreux messages pour ne pas avoir des pages trop longues 
-				\end{itemize}
-
-				\bigskip
-				Fichiers :
-				\begin{itemize}
-					\item "elements/forum-message.php" : pour écrire un message
-					\item "elements/forum".php pour la gestion du forum. Il sera appelé pour chaque film
-					\item "static/css/forum.css" pour le style
-					\item "static/js/forum.js" pour la gestion des evenements
-					\item "controller/dataforum.php" pour les fônctions faisant appel a la base de données
-					\item "forum-response.php" pour les appels ajax
-				\end{itemize}
-
-				Finalement le fichier "elements/forum-message.php" n'est pas utilisé dans la construction du forum... A la place on passe directement cette partie du code dans le fichier "forum-response.php" pour renvoyer du code html. Ce n'est pas très joli au niveau du code mais ça marche et c'est la seule méthode que j'ai trouvé...
+			
 
 		\todo{Créer une annexe avec l'arborescence des fichiers du projet}
 \end{document}

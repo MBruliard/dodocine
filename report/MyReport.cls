@@ -29,7 +29,6 @@
 
 
 \RequirePackage{multicol}
-
 % ---------------------------------------------------------------
 %       COULEURS
 % ---------------------------------------------------------------
@@ -175,7 +174,9 @@
 \newcommand{\addchaptertable}[1]{\addcontentsline{toc}{chapter}{#1}}
 \newcommand{\addsectiontable}[1]{\addcontentsline{toc}{section}{#1}}
 
-\titleformat{\chapter}[display]{\huge \scshape \bfseries }{Chapitre \thechapter:}{0.7\baselineskip}{}[\hrule]
+%\titleformat{\chapter}[display]{\huge \scshape \bfseries }{Chapitre \thechapter:}{0.7\baselineskip}{}[\hrule]
+
+\titleformat{\chapter}[block]{\huge \scshape \bfseries }{\thechapter.}{0.7\baselineskip}{}[\hrule]
 
 \titleformat{\section}[block]{\large \bfseries \color{darkBlue}}{\thesection }{0.7\baselineskip}{}[]
 

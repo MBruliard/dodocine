@@ -60,19 +60,11 @@ Pour afficher la documentation, ouvrir dans le navigateur
 * Architecture de la page filmslist.php
 	* construire un tooltip pour un film avec son nom, sa note et l'ajout possible en favori
 
-* Architecture de la page actorslist.php
-	* A faire en entier
-    * Ou alors on la supprime et on accède aux acteurs par la recherche ou les films
-
 ### Section Utilisateurs
 * proposer d'enregistrer des films favoris (à ajouter dans BDD + un bouton dans filmographie)
-* zone apparence
 
 * Apparence dans Paramètres Utilisateurs:
 	* faire JS associé au dark mode
-
-### Accueil
-* Faire CSS pour la partie recherche
 
 
 

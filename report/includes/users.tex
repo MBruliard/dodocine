@@ -1,0 +1,25 @@
+\chapter{Accès utilisateurs}
+
+    Afin de filtrer et maîtriser les informations circulant sur le site, ainsi que fidéliser les visiteurs les plus assidus, nous construisons un espace membre permettant aux visiteurs de créer et/ou de se connecter pour avoir accès à des fonctionnalités supplémentaires du site.
+
+    \section{Inscription ou Connexion sur DodoCiné}
+
+
+    \section{Création et connexion à son compte utilisateur}
+
+            \begin{itemize}
+                \item on utilise la table "users" de la base de données
+                \item on décide de construit une unique page pour faire l'inscription/connexion
+                avec du JS pour passer de l'un à l'autre.
+                \item Pour une meilleure visualisation coté client, on utilise AJAX pour lancer nos requetes suites aux entrées clients. (fichier login-resonse.php)
+            \end{itemize}
+
+            \begin{rmq}
+                Suite à l'utilisation d'AJAX pour passer nos requêtes, nous constatons que l'utilisation de la fonction "header('Location: index.php')" ne fonctionne plus. 
+
+                Après recherches dans la documentation de PHP, nous découvrons que cela est dû au fait que cette fonction ne fonctionne que si aucun code html n'est encore affiché sur la page. Pour effectuer cette redirection, nous choisissons dorénavant d'utiliser la méthode Javascript "window.location.replace(url\_redirection);"  
+            \end{rmq}
+
+            \begin{rmq}
+                Une petite subtilité de AJAX avec JQuery: l'utilisation "event.preventDefault();" pour éviter le rechargement de la page sur laquelle on se trouve.  Ce qui annule tout le travail d'Ajax et ce serait dommage quand même ;).
+            \end{rmq}
