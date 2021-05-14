@@ -74,3 +74,29 @@
                 \item \f{parameters-response.php} contient le script PHP "pur" qui répond aux demandes Ajax du fichier \f{static/js/login.js} 
             \end{itemize}
         }  
+
+        \subsection{Rappels des notes et des messages postés}
+
+
+            Nous proposons à l'utilisateur, dans l'onglet "mes notes et messages", de retrouver quelques statistiques sur ces interventions sur le site:
+            \begin{itemize}
+                \item le nombre de messages postés
+                \item le nombre de films notés
+                \item la moyenne des notes données
+            \end{itemize}
+
+            De plus, il peut voir les derniers messages qu'il a posté et avoir un lien direct pour rejoindre le fil de discussion et continuer à échanger avec d'autres utilisateurs. 
+
+            \smallskip
+            Les messages sont présentés dans un tableau, avec le début du message ainsi que le film auquel se rapporte le message. En cliquant sur le nom du film, l'utilisateur retourne directement sur sa fiche et a accès au forum. Nous faisons le choix de n'afficher que les 5 derniers messages et ce pour éviter, le cas échéant, l'affichage d'un nombre trop important de messages.  
+
+
+        \subsection{Paramètres du compte}
+
+            Dans cette section, nous avons créé deux formulaires distincts, l'un permettant de modifier le mot de passe du compte et le second, l'email. Nous avons construit ces formulaires et les appels associés de la même façon que pour la connexion/inscription d'un utilisateur: à l'aide d'Ajax, nous vérifions les erreurs potentielles entrées par l'utilisateur et les affichons le cas échéant. En cas de succès, une fenêtre modale apparait pour indiquer que les informations ont bien été modifiées.
+
+            \medskip
+            Cette fenêtre modale est un composant intégré du framework Bootstrap, ce qui nous permet de l'utiliser de façon simplifiée sans s'inquiéter de la partie Javascript qui est pré-programmée. De plus, ces "modals" sont très facilement modulables ce qui les rends très simples d'utilisation.  
+
+            \medskip
+            Enfin, le bouton \erd{Suppression} permet à l'utilisateur, s'il le souhaite, de supprimer de façon définitive son compte. En cas de sélection, le compte est supprimé, et les informations concernant cet utilisateur seront supprimées. Néanmoins, les notes données, ainsi que les messages postés sont conservés car devenus publiques.

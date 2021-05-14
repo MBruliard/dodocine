@@ -42,18 +42,27 @@ Pour afficher la documentation, ouvrir dans le navigateur
 	* https://colorhunt.co/palette/219763
 
 
-### CSS:
-* Appliquer les couleurs pour homogeneiser le site
-
-### Base de données:
-* Gérer les problèmes les tailles des images
-
-### Partie I:
+### Rapport:
 * Construction de la base de données avec Modele entité association -> rapport
 * Remplissage de la base de données:
 	* forum : remplissage partiel de la table -> remplissage manuel directement dans la base de données ?
 
-### Partie II: PHP
+* Mise en production du site
+
+* écriture des parties :
+    * architecture des pages
+    * base de données
+    * accueil
+    * navigation
+    * utilisateurs
+    * films
+
+* Modifier le CSS des boutons pour la connexion/inscription
+
+* mettre un lien sur les derniers films à l'affiche
+
+
+### Bonus : PHP
 * Architecture page Film
 	* ajout du film en favori
 
