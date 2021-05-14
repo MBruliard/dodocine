@@ -47,7 +47,7 @@
 			<?php require("elements/navigation.php"); ?>
 			
 			<div class="container">
-				<h1>Votre recherche pour '<?php echo $_GET['search']; ?>'</h1>
+				<h1>Votre recherche pour '<?php if (isset($_GET['search'])) { echo $_GET['search']; } ?>'</h1>
 				<!-- si pas de résultat -->
 				<?php if (!isset($results_search['films']) && (!isset($results_search['ind']))) :?>
 					<div class="row">
