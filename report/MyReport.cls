@@ -301,7 +301,7 @@
 \RequirePackage{fancybox}
 \newcommand{\boiteinfo}[2]{%
     \begin{center}
-        { \color{darkGrey}
+        { \color{Fuchsia}
         \boxput*(0,1){%
             \colorbox{white}{\bfseries \itshape #1}}{%
                 \setlength{\fboxsep}{6pt}\fbox{%

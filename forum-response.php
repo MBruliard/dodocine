@@ -48,12 +48,13 @@
                     $to_print = $to_print . "<button type='button' id='forum-reply-btn' class='btn btn-outline-primary btn-sm' data-toggle='tooltip' data-placement='bottom' title='Répondre à ce message'>
                                                 <i class='fas fa-reply'></i>
                                             </button>";
-                }
+                
 
-                if ($_SESSION['user'] == $row['id_user']) {
-                    $to_print = $to_print . "<button type='button' id='forum-delete-btn' class='btn btn-outline-danger btn-sm' data-toggle='tooltip' data-placement='bottom' title='Supprimer le message'>
-                                                <i class='fas fa-trash-alt'></i>
-                                            </button>";
+                    if ($_SESSION['user'] == $row['id_user']) {
+                        $to_print = $to_print . "<button type='button' id='forum-delete-btn' class='btn btn-outline-danger btn-sm' data-toggle='tooltip' data-placement='bottom' title='Supprimer le message'>
+                                                    <i class='fas fa-trash-alt'></i>
+                                                </button>";
+                    }
                 }
                  
                 $to_print = $to_print . "</div></div></div></div>";

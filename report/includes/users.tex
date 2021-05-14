@@ -4,22 +4,73 @@
 
     \section{Inscription ou Connexion sur DodoCiné}
 
+        Les visiteurs du site peuvent se connecter à tout moment, en utilisant le bouton \erd{Connexion} situé à droite dans la barre de navigation. 
 
-    \section{Création et connexion à son compte utilisateur}
 
+        \todo{image page connexion/inscription}
+
+        \medskip
+        Si le visiteur ne possède pas encore son propre compte, il peut s'inscrire en se rendant sur l'onglet \erd{S'inscrire} et remplir un formulaire d'inscription. Pour plus de confidentialité, on demande au futur membre de choisir un pseudonyme: ce pseudonyme servira à l'identifier sur le site tout au long de sa visite auprès des autres membres du site.
+
+        \bigskip
+        \boiteinfo{Fichiers utilisées pour cette partie du site}{
             \begin{itemize}
-                \item on utilise la table "users" de la base de données
-                \item on décide de construit une unique page pour faire l'inscription/connexion
-                avec du JS pour passer de l'un à l'autre.
-                \item Pour une meilleure visualisation coté client, on utilise AJAX pour lancer nos requetes suites aux entrées clients. (fichier login-resonse.php)
+                \item \f{login.php} qui est la page appelée lorsque l'on clique sur le bouton "Connexion"
+                \item \f{elements/login-form.php} et \f{elements/signup-form.php} contiennent les formulaires de connexion et d'inscription. Nous avons fait le choix de les écrire dans des fichiers séparés avant d'améliorer la visibilité de notre fichier \f{login.php}.
+                \item \f{static/css/login.css} 
+                \item \f{static/js/login.js} est le script JQuery/Javascript permettant d'ajouter du dynamisme à la page.
+                \item \f{login-response.php} contient le script PHP "pur" qui répond aux demandes Ajax du fichier \f{static/js/login.js} 
+            \end{itemize}
+        }      
+
+        \bigskip
+        \subsection*{Présentation de la page}
+
+            En nous inpirant des dernières tendances, nous avons construit une unique page dans laquelle il est possible au choix de se connecter ou de s'inscrire. Le passage d'un formulaire à l'autre se fait via une fonction JQuery qui, en fonction du bouton sélectionné cache un formulaire et fait apparaître le second.
+
+
+        \bigskip
+        \subsection*{Vérification des informations renseignées dans les formulaires}
+
+            Afin d'offrir une meilleure expérience aux utilisateurs du site, nous avons fait le choix d'effectuer toutes les vérifications d'informations à l'aide de Ajax et d'un script PHP. Lorsque l'utilisateur appuie sur le bouton \erd{S'enregistrer} ou \erd{S'inscrire}, nous effectuons un appel Ajax qui appelle à son tour notre script PHP \f{login-response.php} par la méthode POST. A l'intérieur de ce script, nous vérifions tout d'abord si tous les champs sont bien renseignés puis si les informations entrées sont correctes vis-à-vis du contenu de la base de données (en particulier la table \erd{users} ici). Si des erreurs surviennent, celles-ci sont renvoyés afin que l'on puisse afficher une indication à l'utilisateur. A l'inverse, en l'absence d'erreur l'utilisateur est connecté et est renvoyé sur la page d'accueil du site. 
+
+            \todo{images des forumalaires avec et sans erreur}
+
+            \medskip
+            Une fois connecté, le visiteur peut remarquer que son pseudonyme remplace le bouton de connexion dans la barre de navigation. En cliquant dessus, il peut alors accéder à son espace personnel\footnote{voir plus loin} ou tout simplement se déconnecter.
+
+
+            \bigskip
+            Problèmes rencontrés lors de la programmation:
+            \begin{itemize}
+                \item Suite à l'utilisation d'AJAX pour passer nos requêtes, nous constatons que l'utilisation de la fonction "header('Location: index.php')" ne fonctionne plus. Après recherches dans la documentation de PHP, nous avons découvert que cela était dûe au fait que cette fonction ne fonctionne que si aucun code html n'est encore affiché sur la page. Pour effectuer cette redirection, nous choisissons dorénavant d'utiliser la méthode Javascript "window.location.replace(url\_redirection);"
+
+                \item Lors de l'écriture d'un script JQuery, l'utilisation d'un argument {\itshape event} dans la fonction {\itshape \$(document)\$.ready(function(event) \{\});} nécéssitait l'appel de la méthode {\itshape event.preventDefault();} afin d'empêcher le rechargement automatique de la page. Cependant, si {\itshape function} ne prend aucun argument, alors l'utilisation de la méthode n'est plus indispensable et la page ne se recharge pas. 
             \end{itemize}
 
-            \begin{rmq}
-                Suite à l'utilisation d'AJAX pour passer nos requêtes, nous constatons que l'utilisation de la fonction "header('Location: index.php')" ne fonctionne plus. 
 
-                Après recherches dans la documentation de PHP, nous découvrons que cela est dû au fait que cette fonction ne fonctionne que si aucun code html n'est encore affiché sur la page. Pour effectuer cette redirection, nous choisissons dorénavant d'utiliser la méthode Javascript "window.location.replace(url\_redirection);"  
-            \end{rmq}
+    \section{L'espace membre associé à un compte}
 
-            \begin{rmq}
-                Une petite subtilité de AJAX avec JQuery: l'utilisation "event.preventDefault();" pour éviter le rechargement de la page sur laquelle on se trouve.  Ce qui annule tout le travail d'Ajax et ce serait dommage quand même ;).
-            \end{rmq}
+        \todo{ajouter une image de la page}
+
+
+        Dans cet espace, l'utilisateur peut modifier les paramètres de son compte, tel que changer son mot de passe, son email, ou même se désinscrire (entrainant la suppression de son compte), ou bien accèder plus rapidement aux messages et aux notes qu'il a posté sur le site. Il peut également modifier l'apparence du site pour son utilisation personnel, en activant le "mode Nuit".
+
+        \bigskip
+        \boiteinfo{Fichiers utilisées pour la partie 'espace membre'}{
+            \begin{itemize}
+                \item \f{parameters.php} qui est la page principale.
+                \item architecture des onglets de la page:
+                    \begin{itemize}
+                        \item \f{parameters-config.php} pour modifier ses informations personnelles
+                        \item \f{parameters-looking.php} l'onglet Apparence
+                        \item \f{parameters-rating.php} est l'onglet rappelant à l'utilisateur les notes qu'il a donnés à différents films ainsi que ses derniers messages dans différents forum.
+
+                        \medskip
+                        Chacun des onglets est caché/affiché à l'aide de fonctions définies dans le script JQuery/Javascript.
+                    \end{itemize}
+                \item \f{static/css/parameters.css} 
+                \item \f{static/js/parameters.js} est le script JQuery/Javascript permettant d'ajouter du dynamisme à la page.
+                \item \f{parameters-response.php} contient le script PHP "pur" qui répond aux demandes Ajax du fichier \f{static/js/login.js} 
+            \end{itemize}
+        }  
