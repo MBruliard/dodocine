@@ -70,6 +70,43 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="container main-container">
+
+				<div class="row">
+					<div class="col-md-12">
+						<h1>A découvrir</h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4 col-sm-12">
+						<h4>Les derniers films à l'affiche</h4>
+						<?php require('elements/carousel.php'); ?>
+					</div>
+
+					<div class="spotlight-box">
+			 			<div class="spotlight-b-img">
+			 				<img src=<?php echo $alea_actor['photo'] ?>>
+			 			</div>
+			 			<div class="spotlight-b-text">
+			 				<strong><?php echo $alea_actor['prenom'] ?><?php echo $alea_actor['nom'] ?> </strong>
+
+			 			</div>
+			 		</div>
+
+					<div class="col-md-4 col-sm-12">
+						<?php 
+
+							$header_dodo_card = "Connaissez vous ce film ?";
+							$img_dodo_card = $alea_film['photo'];
+							$content_dodo_card = $alea_film['titre'];
+							$link_dodo_card = "/film.php?id_film=" . $alea_film['id_film'];
+							include ("elements/dodo-card.php");
+						?>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<?php require('elements/footer.php'); ?>

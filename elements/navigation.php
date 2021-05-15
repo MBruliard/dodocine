@@ -8,8 +8,10 @@
 	 */
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="#">DodoCiné</a>
+<nav class="navbar navbar-expand-lg">
+	<a class="navbar-brand" href="#">
+		<img class="logo-dodocine" src="static/img/logo2.jpg">DodoCiné
+	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	</button>
@@ -21,9 +23,6 @@
 			</li>
 			<li class="nav-item active">
 				<a class="nav-link" href="/filmslist.php"><i class="fas fa-film"></i> Cinéma <span class="sr-only"></span></a>
-			</li>
-			<li class="nav-item active">
-				<a class="nav-link" href="/indlist.php"><i class="fas fa-portrait"></i> Acteurs <span class="sr-only"></span></a>
 			</li>
 		</ul>
 
