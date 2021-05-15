@@ -51,7 +51,7 @@
 			
 		</div>
 		
-		<button type="submit" id="signsend" name="signsend" class="btn btn-primary">S'enregistrer</button>
+		<button type="submit" id="signsend" name="signsend" class="btn btn-dark">S'enregistrer</button>
 	</form>
 </div>
 					

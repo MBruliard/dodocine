@@ -47,8 +47,8 @@
 					<div class="card-body text-center">
 
 						<div class="space-before-row btn-group">
-							<button id='login-btn' class="btn btn-lg btn-primary">Se connecter</button>
-							<button id='signup-btn' class="btn btn-lg btn-outline-primary">S'inscrire</button>
+							<button id='login-btn' class="btn btn-lg btn-dark">Se connecter</button>
+							<button id='signup-btn' class="btn btn-lg btn-outline-dark">S'inscrire</button>
 						</div>
 
 						<!-- login -->

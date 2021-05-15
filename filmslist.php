@@ -46,7 +46,7 @@
 				<?php for ($cat=0; $cat<count($categories); $cat++) : ?>
 					<?php if (count($categories[$cat]['films']) > 0) : ?>
 						<div class="row space-before-row">
-							<h3>Dans la catégorie <?php echo $categories[$cat]['nom'] ; ?></h3>
+							<h3 class="subsubtitle">Dans la catégorie <?php echo $categories[$cat]['nom'] ; ?></h3>
 						</div>
 
 						<?php 

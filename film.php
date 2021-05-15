@@ -147,7 +147,7 @@
 				</div>
 
 				<div class="row">
-					<h3 class='create-space-row dodo-blue'>Vous aimerez peut-être</h3>
+					<h3 class='create-space-row 3 subsubtitle'>Vous aimerez peut-être</h3>
 				</div>
 				<div class="row">
 					<?php if ($same_real['res']) : ?>
@@ -189,7 +189,7 @@
 				</div>
 
 				<div class="row space-before-row">
-					<h2>Commentaires:</h2>
+					<h3 class="subsubtitle">Commentaires:</h2>
 				</div>
 
 				<?php include ("elements/forum.php"); ?>

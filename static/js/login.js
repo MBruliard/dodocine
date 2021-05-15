@@ -135,11 +135,11 @@ $(document).ready(function() {
 		$("#signup-container").show();
 		$("#login-container").hide();
 
-		$("#signup-btn").addClass("btn-primary");
-		$("#login-btn").addClass("btn-outline-primary");
+		$("#signup-btn").addClass("btn-dark");
+		$("#login-btn").addClass("btn-outline-dark");
 
-		$("#signup-btn").removeClass("btn-outline-primary");
-		$("#login-btn").removeClass("btn-primary");
+		$("#signup-btn").removeClass("btn-outline-dark");
+		$("#login-btn").removeClass("btn-dark");
 	});
 
 
@@ -151,11 +151,11 @@ $(document).ready(function() {
 		$("#signup-container").hide();
 		$("#login-container").show();
 
-		$("#login-btn").addClass("btn-primary");
-		$("#signup-btn").addClass("btn-outline-primary");
+		$("#login-btn").addClass("btn-dark");
+		$("#signup-btn").addClass("btn-outline-dark");
 
-		$("#login-btn").removeClass("btn-outline-primary");
-		$("#signup-btn").removeClass("btn-primary");
+		$("#login-btn").removeClass("btn-outline-dark");
+		$("#signup-btn").removeClass("btn-dark");
 	});
 	
 });

@@ -3,9 +3,6 @@
  * @brief CSS pour la page "espace/paramètres" d'un utilisateur
  */
 
-body {
-	background-color: orange;
-}
 .title-menu-param {
 	padding-top: 10px;
 	padding-bottom:20px;

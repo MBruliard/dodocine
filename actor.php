@@ -92,13 +92,13 @@
 				</div>
 
 				<div class="row">
-					<h3 class='dodo-blue'>Filmographie</h3>
+					<h3 class='subtitle'>Filmographie</h3>
 				</div>
 
 				<!-- acteur -->
 				<?php if (count($as_actor) > 0) : ?>
 					<div class="row">
-						<h4 class="dodo-taupe">En tant qu'acteur</h4> 
+						<h4 class="subsubtitle">En tant qu'acteur/actrice</h4> 
 					</div>
 
 					<?php
@@ -110,7 +110,7 @@
 				<!-- realisateur -->
 				<?php if (count($as_real) > 0) : ?>
 					<div class="row">
-						<h4 class="dodo-taupe">En tant que réalisateur</h4>
+						<h4 class="subsubtitle">En tant que réalisateur</h4>
 					</div>
 
 					<?php

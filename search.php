@@ -42,52 +42,54 @@
 		require_once("elements/head.php"); 
 	?>
 
-	<body class="d-flex flex-column" style="position:relative; z-index:1;">
+	<body class="d-flex flex-column">
 		<div class="flex-grow-1 flex-shrink-0">
 			<?php require("elements/navigation.php"); ?>
 			
-			<div class="container">
-				<h1>Votre recherche pour '<?php if (isset($_POST['search-input-navbar'])) { echo $_POST['search-input-navbar']; } ?>'</h1>
-				<!-- si pas de résultat -->
-				<?php if (!isset($results_search['films']) && (!isset($results_search['ind']))) :?>
-					<div class="row">
-						<div class="col">
-							<div id="no-result-search">
-								<p>Oops !</p>
-								<p>Il semblerait qu'aucun film, ni acteur ne corresponde à votre recherche...</p>
-							</div>
-						</div>
+			<!-- si pas de résultat -->
+			<?php if (!isset($results_search['films']) && (!isset($results_search['ind']))) :?>
+				<div id="no-result-search">
+					<div class="jumbotron jumbotron-fluid">
+						<h1 class="display-4 text-white">Oops !</h1>
 					</div>
-				<?php endif ?>
+					
+					<h3 class="align-center">
+						Il semblerait qu'aucun film ou acteur ne corresponde à votre recherche ... Désolé !
+					</h3>
+				</div>				
+			<?php else: ?>
+				<div class="container">
+					<h1>Votre recherche pour '<?php if (isset($_POST['search-input-navbar'])) { echo $_POST['search-input-navbar']; } ?>'</h1>
+					<!-- les films -->
+					<?php if (isset($results_search['films'])) : ?>
+						<div class="films-results-search">
+							<div class="row space-before-row">
+								<div class="col">
+									<h4>Les films pouvant correspondre à votre recherche</h4>
+								</div>
+							</div>
+							<?php
+								$films_array = $results_search['films'];
+								include ("elements/films-slider.php");
+							?>
+						</div>
+					<?php endif ?>
 
-				<!-- les films -->
-				<?php if (isset($results_search['films'])) : ?>
-					<div class="films-results-search">
-						<div class="row space-before-row">
-							<div class="col">
-								<h4>Les films pouvant correspondre à votre recherche</h4>
+					<!-- les acteurs -->
+					<?php if (isset($results_search['ind'])) : ?>
+						<div class="actors-results-search">
+							<div class="row space-before-row">
+								<div class="col">
+									<h4>Les acteurs/réalisateurs pouvant correspondre à votre recherche</h4>
+								</div>
 							</div>
+							
 						</div>
-						<?php
-							$films_array = $results_search['films'];
-							include ("elements/films-slider.php");
-						?>
-					</div>
-				<?php endif ?>
-
-				<!-- les acteurs -->
-				<?php if (isset($results_search['ind'])) : ?>
-					<div class="actors-results-search">
-						<div class="row space-before-row">
-							<div class="col">
-								<h4>Les acteurs/réalisateurs pouvant correspondre à votre recherche</h4>
-							</div>
-						</div>
-						
-					</div>
-				<?php endif ?>
-						
-			</div>
+					<?php endif ?>
+				</div>
+			<?php endif ?>
+					
+			
 
 		</div>
 		<?php require ("elements/footer.php"); ?>

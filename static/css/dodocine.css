@@ -4,7 +4,6 @@
  */
 
 /* DEFINITION DES COULEURS*/
-.dodo-background {background-color: #D5ECC2;}
 .dodo-taupe {color: #AD6C80;}
 .dodo-purple {color: #350B40;}
 .dodo-blue {color: #94B5C0;}
@@ -14,7 +13,7 @@
 /* Les titres */
 html, body {
 	height:100%;
-    background-color: #F5F5F5;
+    /*background-color: #F5F5F5;*/
 }
 
 .main-container {
@@ -25,7 +24,7 @@ h1 {
 	font-size: 70%;
     text-transform: uppercase;
     margin:0;
-    color: #FFFFFF;
+    color:black;
     padding-top: 2rem;
     padding-bottom: 4rem; 
     text-align: center;
@@ -37,6 +36,19 @@ h2 {
 	text-align: center;
 }
 
+.subtitle {
+    color: black;
+    margin-top:30px;
+    text-transform: uppercase;
+}
+
+.subsubtitle {
+    color: #334443;
+    margin-top:20px;
+    border-bottom: 1px solid #334443;
+    
+}
+
 a {
 	color: #AD6C80;
 }
@@ -46,6 +58,7 @@ nav {
     border: 1px solid rgba(0,0,0,0.04);
     background-color: #ffffff;
 }
+
 
 nav a {
     color: black;
@@ -92,8 +105,6 @@ nav .dropdown-item:hover {
 
 /* carousel */
 .dodo-carousel {
-	height: 400px;
-	width: auto;
 	text-align:center;
 	background-color: #e0e0e0;
 }
@@ -108,34 +119,27 @@ nav .dropdown-item:hover {
 /* dodo-card */
 .dodo-card {
 	margin:5px;
+    max-height:550px;
 }
 
-.dodo-card-header {
-	font-size:1.2em;
-	color:#350B40;
-	font-weight: bold;
-}
 
 #dodo-card-btn {
 	color: white;
 	background-color: #350B40;
+    margin-bottom:10px;
 }
 
-.dodo-card-content {
-	text-align:center;
-	vertical-align: center;
-	font-weight: bold;
-	font-style:italic;
+
+#dodo-card-btn:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
-.dodo-card-btn {
-    color: blue;
-}
 
-.card-img-top { /* unused*/
+.card-img-top {
 	width: 100%;
-    height: 20vw;
-    object-fit: scale-down;
+    height: 400px;
+    object-fit: fill
 }
 
 
@@ -145,12 +149,12 @@ nav .dropdown-item:hover {
 	margin-bottom: 20px;
 	width: 100%;
     height: 30vw;
-    object-fit: scale-down;
+    object-fit: contain;
 }
 
 /* */
 .category-name {
-	color: #EE99A0;
+	color: #350B40;
 	font-size: 1.1em;
 	font-weight: bold;
 }
@@ -176,7 +180,7 @@ nav .dropdown-item:hover {
 
 /* Gestion des images */
 .max-size-for-responsive {
-	width:80%;
+	object-fit: contain;
 	height:auto;
 	margin-right: auto;
 	margin-left: auto;
@@ -215,7 +219,8 @@ nav .dropdown-item:hover {
 
 
 .space-before-row {
-	margin-top: 20px;
+	margin-top: 30px;
+    margin-bottom:10px;
 }
 
 /* Alignement */
