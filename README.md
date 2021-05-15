@@ -34,7 +34,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
 ## References:
 
 * le site de Pixabay pour des images libres de droit
-* construction du gif avec GIMP 
 
 ## TODO:
 
@@ -57,9 +56,15 @@ Pour afficher la documentation, ouvrir dans le navigateur
     * utilisateurs
     * films
 
-* Modifier le CSS des boutons pour la connexion/inscription
-
 * mettre un lien sur les derniers films à l'affiche
+
+* faire la partie favoris
+
+* réorganisation des fonction sql 
+
+* supprimer des messages dans le forum
+
+* checker mini-size login
 
 
 ### Bonus : PHP

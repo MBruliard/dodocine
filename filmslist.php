@@ -37,7 +37,7 @@
 
 			<?php require('elements/navigation.php'); ?>
 			<div class="jumbotron jumbotron-fluid">
-				<h1>Notre catalogue de films</h1>
+				<h1 class="display-4 text-white">Notre catalogue de films</h1>
 				<p class="lead">Parce qu'il y toujours quelque chose à regarder</p>
 			</div>
 
