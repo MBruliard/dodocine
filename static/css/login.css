@@ -14,14 +14,11 @@
 }
 
 .center-container {
-	margin-top: 8vw;
-	display: flex;
-   	justify-content: center;
-   	align-items: flex-start;
+    margin-top: 8vw;
 }
 
 .form-container {
 	margin: auto;
-	width: 40%;
 	padding: 10px;
 }
+

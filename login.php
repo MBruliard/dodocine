@@ -36,10 +36,10 @@
 	?>
 
 	<body class="d-flex flex-column login-body">
-
+		<div class="container-fluid">
 		<!-- n'est pas responsive ... utilisé les colonnes de bootstrap -->
-		<div class="center-container">
-		
+		<div class="row">
+			<div class="offset-md-3 offset-sm-1 col-md-6 col-sm-10 center-container">
 				<div class="card form-container">
 					<div class="card-header">
 						<h4 class="align-center" id='login-title'>Se Connecter</h4>
@@ -59,7 +59,9 @@
 
 					</div>
 				</div>
+			</div>
 		</div>
+	</div>
 
 		<?php 
 			$js_addon = "<script src='static/js/login.js'></script>";
