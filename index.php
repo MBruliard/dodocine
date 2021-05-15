@@ -29,7 +29,7 @@
 
 			<?php require('elements/navigation.php'); ?>
 			<div class="jumbotron jumbotron-fluid">
-				<h1 class="display-4">Bienvenue sur DodoCiné!</h1>
+				<h1 class="display-4 text-white">Bienvenue sur DodoCiné!</h1>
 				<p class="lead">Sortez le plaid et installez vous confortablement pour binge-watcher avec nous !</p>
 			</div>
 

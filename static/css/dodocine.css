@@ -14,6 +14,7 @@
 /* Les titres */
 html, body {
 	height:100%;
+    background-color: #F5F5F5;
 }
 
 .main-container {
@@ -21,14 +22,17 @@ html, body {
 }
 
 h1 {
-	padding-top: 2rem;
-	padding-bottom: 4rem;
-	color: #350B40; 
-	text-align: center;
+	font-size: 70%;
+    text-transform: uppercase;
+    margin:0;
+    color: #FFFFFF;
+    padding-top: 2rem;
+    padding-bottom: 4rem; 
+    text-align: center;
 }
 
 h2 {
-	color: #94B5C0;
+	color: black;
 	margin-bottom: :20px;
 	text-align: center;
 }
@@ -186,4 +190,24 @@ a {
    max-height: 200px;
    box-sizing: border-box;
    z-index: 1001;
+}
+
+
+/**/
+.jumbotron{
+
+    background-image: url(../img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center center;
+    -webkit-background-size:cover;
+    background-attachment: fixed;   
+}
+
+.jumbotron p{
+
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+
 }
