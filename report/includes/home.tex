@@ -3,7 +3,11 @@
     Commençons par vous présenter la page centrale de notre site: la page d'accueil. Il s'agit de la page que les visiteurs voient en premier c'est pourquoi nous l'avons construite de manière épurée et fonctionnelle. 
 
     \medskip
-    \todo{image de la page d'accueil}
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[width=15cm]{img/page_accueil.png}
+        \caption{Page d'accueil de notre site}
+    \end{figure}
 
     \section{Les composants de la page d'accueil}
         
@@ -11,12 +15,34 @@
 
         Afin de simplifier son inclusion et son interaction avec l'ensemble de la page, nous avons fait le choix d'utiliser l'élément "carousel" intégré dans le framework Bootstrap, et qui gère de façon automatique les actions dynamiques autour du "carousel".
 
-
         \medskip
+        En plus de cela, nous mettons en avant un acteur/réalisateur ainsi qu'un film aléatoirement avec la possibilité de visiter leur fiche pour plus d'informations.
 
 
     \section{La barre de navigation}
 
+        Nous avons décomposé la barre de navigation en 2 parties: sur la gauche, le visiteur peut naviguer entre la page d'accueil et la liste de films disponibles sur le site (via l'onglet "Cinéma"). Sur la droite, le visiteur peut se connecter, ou s'inscrire (en créant son compte). 
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=16cm]{img/navigation.png}
+            \caption{notre barre de navigation vu par un simple visiteur}
+        \end{figure}
+
+        Si le visiteur s'est connecté, alors la barre de navigation change: à la place du bouton de connexion, il voit apparaitre son pseudonyme et peut accèder à son espace personnel, ou se déconnecter.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=16cm]{img/navigation-connect.png}
+            \caption{notre barre de navigation lorsque le visiteur est connecté}
+        \end{figure}
+
+
         \subsection{mise en place d'une recherche auto-complétée}
 
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=16cm]{img/recherche-auto.png}
+            \caption{Recherche auto-complétée}
+        \end{figure}
 
