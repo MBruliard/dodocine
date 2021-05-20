@@ -10,6 +10,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<h5 style="text-align:center;">Paramètres du compte</h5>
+		<hr>
 	</div>
 </div>
 

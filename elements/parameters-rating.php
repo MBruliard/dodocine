@@ -13,6 +13,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<h5 style="text-align:center;">Statistiques du compte</h5>
+		<hr>
 	</div>
 </div>
 

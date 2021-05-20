@@ -9,6 +9,7 @@
 <div class="row">
 	<div class="col-sm-12">
 		<h5 style="text-align:center;">Apparence</h5>
+		<hr>
 	</div>
 </div>
 

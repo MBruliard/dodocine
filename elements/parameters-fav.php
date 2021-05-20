@@ -9,6 +9,7 @@
 <div class="row">
     <div class="col-md-12">
         <h5 style="text-align:center;">Mes films favoris</h5>
+        <hr>
     </div>
 </div>
 

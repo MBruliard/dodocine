@@ -51,13 +51,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
     * utilisateurs
     * films
 
-* réorganisation des fonction sql 
-
-
-### Bonus : PHP
-* Apparence dans Paramètres Utilisateurs:
-	* faire JS associé au dark mode
-
 
 
 

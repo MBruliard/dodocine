@@ -34,8 +34,8 @@
 <html lang='fr'>
 
 	<?php
-		$title_page = "Fiche Film";
-		$css_addon = "<link rel='stylesheet' href='static/css/rating.css' /><link rel='stylesheet' href='static/css/slider.js' />";
+		$title_page = "Fiche Acteur | " . $ind['values']['prenom'] . " " . $ind['values']['nom'];
+		$css_addon = "<link rel='stylesheet' href='static/css/rating.css' /><link rel='stylesheet' href='static/css/slider.css' />";
 		require("elements/head.php"); 
 	?>
 
@@ -54,6 +54,9 @@
 							<?php
 								if ($ind['res']) {
 									echo $ind['values']['photo'];
+								}
+								else {
+									echo '/static/img/template_img.jpg';
 								}
 							?>
 						/>
