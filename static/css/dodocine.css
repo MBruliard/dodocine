@@ -154,9 +154,10 @@ nav .dropdown-item:hover {
 .dodo-present-img {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	width: 100%;
-    height: 30vw;
-    object-fit: contain;
+	max-height: 450px;
+    width: auto;
+    object-fit: fill;
+    align-items: center;
 }
 
 /* */
@@ -206,6 +207,8 @@ nav .dropdown-item:hover {
     display: flex;
     align-items: center;
 }
+
+
 
 
 

@@ -54,12 +54,6 @@ $(document).ready(function() {
 
 });
 
-$(".btn").click(function() {
-    alert("oops");
-});
-$('.forum-delete-btn').click(function () {
-    alert('delete');
-}); 
 
 /** 
  * Reset les erreurs possibles sur la fenetre modale

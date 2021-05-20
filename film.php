@@ -70,8 +70,8 @@
 				<!-- presentation -->
 				<div class="row space-before-row">
 
-					<div class="col-md-4 col-sm-12">
-						<img class="img-fluid" src=
+					<div class="col-md-4 col-sm-12 align-center">
+						<img class="dodo-present-img" src=
 							<?php 
 								if($film['res']) {
 									echo $film['values']['photo'];
@@ -82,6 +82,15 @@
 
 							?>
 							/>
+
+							<?php if(isset($_SESSION['user'])): ?>
+								<div class="fav-buttons-div align-center">
+									<button id="add-fav-button" class="btn btn-danger btn-sm"><i class="fas fa-plus-circle"></i> Mes Favoris</button>
+									<button id='remove-fav-button' class="btn btn-outline-danger btn-sm">
+										<i class="fas fa-minus-circle"></i> Mes Favoris
+									</button>
+								</div>
+							<?php endif ?>
 					</div> 
 
 					<div class="col-md-8 col-sm-12">
@@ -198,7 +207,7 @@
 			
 		<?php require("elements/footer.php"); ?>
 		<?php 
-			$js_addon = "<script src='static/js/rating.js'></script><script src='static/js/forum.js'></script>";
+			$js_addon = "<script src='static/js/rating.js'></script><script src='static/js/forum.js'></script><script src='static/js/favoris.js'></script>";
 			require("elements/js_files.php"); 
 		?>
 	</body>

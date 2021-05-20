@@ -42,7 +42,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
 
 
 ### Rapport:
-* Construction de la base de données avec Modele entité association -> rapport
 * Remplissage de la base de données:
 	* forum : remplissage partiel de la table -> remplissage manuel directement dans la base de données ?
 
@@ -52,16 +51,7 @@ Pour afficher la documentation, ouvrir dans le navigateur
     * utilisateurs
     * films
 
-* faire la partie favoris
-
 * réorganisation des fonction sql 
-
-* checker mini-size login
-
-* partie notation :
-    * ajouter le javascript sur le nombre de messages postés
-    * supprimer les notes 
-    * n'afficher que les 5 derniers posts
 
 
 ### Bonus : PHP

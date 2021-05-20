@@ -19,7 +19,8 @@
 		exit();
 	}
 
-	$nb_msg = count(getMessagesFromUser($db, $_SESSION['user']));
+	$messages_posted = getMessagesFromUser($db, $_SESSION['user']);
+	$favoris_films = getFavFilmsFromUser($db, $_SESSION['user'])
 ?>
 
 <!DOCTYPE html>
@@ -63,11 +64,11 @@
 							</li>
 							<button id="menu-rating" class="list-group-item d-flex justify-content-between buttonalign-items-center active">
 								Mes notes et messages
-								<span class="badge badge-primary badge-pill"><?php echo $nb_msg; ?></span>
+								<span class="badge badge-primary badge-pill"><?php echo count($messages_posted); ?></span>
 							</button>
 							<button id="menu-fav" class="list-group-item d-flex justify-content-between align-items-center">
 								Mes Favoris
-								<span class="badge badge-primary badge-pill">14</span>
+								<span class="badge badge-primary badge-pill"><?php echo count($favoris_films); ?></span>
 							</button>
 							<button id="menu-looking" class="list-group-item d-flex justify-content-between align-items-center">
 								Apparence

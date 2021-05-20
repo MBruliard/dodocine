@@ -322,5 +322,54 @@
 		return $res;
 	}
 
+	/**
+	 * Ajoute un film aux favoris d'un utilisateur
+	 */
+	function addFilmToUserFav($db, $id_film, $id_user) : void {
+		$q = $db->prepare("INSERT INTO favoris (id_film, id_user) VALUES (:film, :pseudo)");
+		$q->execute([
+			'film' => $id_film,
+			'pseudo' => $id_user
+		]);
+	}
+
+	/**
+	 * Supprime un film aux favoris d'un utilisateur
+	 */
+	function removeFilmToUserFav($db, $id_film, $id_user) : void {
+		$q = $db->prepare("DELETE FROM favoris WHERE id_film = :film AND id_user = :pseudo");
+		$q->execute([
+			'film' => $id_film,
+			'pseudo' => $id_user
+		]);
+	}
+
+	/**
+	 * indique si un film appartient aux favoris d'un utilisateur
+	 */
+	function isFavForUser($db, $id_film, $id_user) : bool {
+		$q = $db->prepare("SELECT * FROM favoris WHERE id_film = :film AND id_user = :pseudo");
+		$q->execute([
+			'film' => $id_film,
+			'pseudo' => $id_user
+		]);
+
+		if ($q->fetch() == 0) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Récupère tous les films favoris d'un utilisateur et les renvoient dans un array
+	 */
+	function getFavFilmsFromUser($db, $id_user) : array {
+		$q = $db->prepare("SELECT * FROM favoris INNER JOIN films ON favoris.id_film = films.id_film WHERE id_user = :pseudo");
+		$q->execute([
+			'pseudo' => $id_user
+		]);
+
+		return $q->fetchAll();
+	}
 
 ?>

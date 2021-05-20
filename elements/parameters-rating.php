@@ -8,8 +8,6 @@
 
 <?php 
 	$rated_films = getRatingsFromUser($db, $_SESSION['user']);
-
-	$messages_posted = getMessagesFromUser($db, $_SESSION['user']);
 ?>
 
 <div class="row">
