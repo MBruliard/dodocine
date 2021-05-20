@@ -4,7 +4,7 @@
  */
 
 var isFav = false;
-var id_film = (new URLSearchParams(window.location.search)).get('id_film'); 
+var idfilm = (new URLSearchParams(window.location.search)).get('id_film'); 
 
 $(document).ready(function() {
     update_fav_button();
@@ -18,12 +18,13 @@ $("#add-fav-button").click(function () {
         url: "fav-response.php",
         method: "POST",
         data: {
-            id_film: id_film,
-            addfav: true
+            addfav: idfilm
         }, 
         dataType: "json",
         success: function(data) {
-            update_fav_button();
+            if (data.res) {
+                update_fav_button();
+            }
         },
         error: function(xhr, textStatus, errorThrown) {
                 alert(errorThrown);
@@ -39,12 +40,13 @@ $("#remove-fav-button").click(function () {
         url: "fav-response.php",
         method: "POST",
         data: {
-            id_film: id_film,
-            delfav: true
+            delfav: idfilm
         }, 
         dataType: "json",
         success: function(data) {
-            update_fav_button();
+            if (data.res) {
+                update_fav_button();
+            }
         },
         error: function(xhr, textStatus, errorThrown) {
                 alert(errorThrown);
@@ -58,25 +60,27 @@ $("#remove-fav-button").click(function () {
  */
 function update_fav_button() {
     $.ajax({
-        url: "fav-response.php",
-        method: "GET",
-        data: {
-            id_film: id_film
-        }, 
-        dataType: "json",
+       url: "fav-response.php",
+       method: "GET",
+       data: {id_film: idfilm}, 
+       dataType: "json",
         success: function(data) {
             if (data.res) {
-                $("#add-fav-button").hide();
-                $('#remove-fav-button').show();
-            }
-            else {
-                $("#add-fav-button").show();
-                $("#remove-fav-button").hide();
+                if (data.value) {
+                    $("#add-fav-button").hide();
+                    $('#remove-fav-button').show();
+                }
+                else {
+                    $("#add-fav-button").show();
+                    $("#remove-fav-button").hide();
+                }
             }
         },
         error: function(xhr, textStatus, errorThrown) {
-                alert(errorThrown);
+            alert(errorThrown);
         }
+     }).done(function (data) {
+        console.log(data)
     });
    
 };

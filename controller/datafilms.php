@@ -357,6 +357,8 @@
 		if ($q->fetch() == 0) {
 			return false;
 		}
+
+
 		return true;
 	}
 
