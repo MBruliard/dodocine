@@ -23,7 +23,7 @@ Il s'agit d'un projet universitaire
 
 Une documentation des sources du projet est disponible. Ecrite à l'aide du logiciel Doxygen, elle est disponible sous format HTML
 
-Pour relancer la compilation de la documentation
+Pour lancer la compilation de la documentation
 > ```doxygen Doxyfile```
 
 
@@ -34,22 +34,9 @@ Pour afficher la documentation, ouvrir dans le navigateur
 ## References:
 
 * le site de Pixabay pour des images libres de droit
-
-## TODO:
-
 * Choisir de nouvelles teintes de couleurs sur colorhunt
 	* https://colorhunt.co/palette/219763
-
-
-### Rapport:
-* Remplissage de la base de données:
-	* forum : remplissage partiel de la table -> remplissage manuel directement dans la base de données ?
-
-* Mise en production du site
-
-* écriture des parties :
-    * utilisateurs
-    * films
+* L'ensemble des images d'acteurs comme de films sont des images libres de droit, provenant de wikimedia
 
 
 

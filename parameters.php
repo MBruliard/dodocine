@@ -70,9 +70,9 @@
 								Mes Favoris
 								<span class="badge badge-primary badge-pill"><?php echo count($favoris_films); ?></span>
 							</button>
-							<button id="menu-looking" class="list-group-item d-flex justify-content-between align-items-center">
+<!-- 							<button id="menu-looking" class="list-group-item d-flex justify-content-between align-items-center">
 								Apparence
-							</button>
+							</button> -->
 							<button id="menu-param" class="list-group-item d-flex justify-content-between align-items-center">
 								Paramètres du compte
 							</button>

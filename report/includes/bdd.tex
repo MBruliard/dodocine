@@ -1,6 +1,6 @@
 \chapter{Architecture du site web}
 
-    Pour ce projet, nous avons essayer de tirer parti du dynamisme de PHP en créant de multiples fichiers annexes qui seront appelés de multiples fois dans différentes pages. Ces fichiers sont regroupés dans le dossier \f{elements}. On y retrouve notamment des parties de codes réutilisées pour chaque page de notre site
+    Pour ce projet, nous avons essayé de tirer parti du dynamisme de PHP en créant de multiples fichiers annexes appelés à de multiples reprises dans différentes pages. Ces fichiers sont regroupés dans le dossier \f{elements}. On y retrouve notamment des parties de codes réutilisées pour chaque page de notre site
 
     \begin{itemize}
         \item \f{elements/head.php} contient la balise 'head' que nous rappelons pour chaque page de notre site. Nous lui avons ajouté deux variables , \f{\$title\_page} qui permet de changer le titre de la page au besoin ainsi que \f{\$css\_addon}, qui prend une chaine de caractères pour ajouter des liens vers des fichiers css supplémentaires.
@@ -23,7 +23,7 @@
         
 
         \bigskip
-        Pour ce projet, nous avons fait le choix d'utiliser le système de gestion de base de données nommé SQLite et non pas MySQL, principalement afin de pouvoir avoir un hébergement gratuit de notre site pour sa présentation. Cependant, si SQLite est adaptée pour un projet universitaire, il engendre des ralentissements de navigation lorsque la base de données est imposante et lorsque le nombre de visiteurs sur le site est grand.
+        Pour ce projet, nous avons fait le choix d'utiliser le système de gestion de base de données nommé SQLite et non pas MySQL, principalement afin de pouvoir avoir un hébergement gratuit de notre site pour sa présentation. Cependant, si SQLite est adaptée pour un projet universitaire, il engendre des ralentissements de navigation lorsque la taille de la base de données ou le traffic de visites dépassent un certain seuil.
 
         \medskip
         On remarque, que dans l'écriture de requêtes SQL avec PDO, SQLite ferme automatique la connexion à la base de données contrairement à MySQL.

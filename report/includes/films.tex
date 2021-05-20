@@ -1,44 +1,78 @@
 \chapter{Présentation des films} % nom du chapitre
 
 
-\section{Présentation des films disponibles sur le site} 
+    \section{Présentation des films disponibles sur le site} 
 
-            On propose sur cette page de retrouver tous les films disponibles sur la plateforme. L'utilisateur peut ainsi rechercher le film qu'il désire, en tapant directement le nom du film dans la barre de recherche, ou plus simplement en parcourant les différentes listes présentées.
+        Nous proposons dans l'onglet "Cinéma" de notre menu de navigation, la liste complète des films disponibles sur notre site. De cette façon, le visiteur peut découvrir au gré de ses envies de nouveaux films.
 
-            Chaque liste de films (présentée sous la forme d'un "slider carousel"\footnote{Pour la mise en place du "slider carousel", nous nous sommes largement inspirées du code source présenté par {\bfseries WebShalla} dans \href{https://www.youtube.com/watch?v=Gi4CTYOs7J4}{cette vidéo} }) correspond à une catégorie de films.
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=16cm]{img/list-films.png}
+            \caption{Page Cinéma de notre site}
+        \end{figure}
 
-            Ou alors là je viens de trouver un framework qui s'appelle {\bfseries \href{Flickity}{https://flickity.metafizzy.co} } qui à l'air vraiment top alors on va essayer. Ce framework est en "open-source" (licence GPLv3) pour les projets personnels et universitaires ce qui nous convient parfaitement.
+        \medskip
+        Les films sont ici regroupés par catégorie et présentés sous la forme d'un "slider carousel". Nous avons notamment trouvé un framework {\bfseries \href{Flickity}{https://flickity.metafizzy.co} } open-source (licence GPLv3) pour les projets personnels et universitaires que nous avons choisi ici d'utiliser. Ce framework est "responsive" et donc s'adapte parfaitement à notre site.
 
+        \medskip
+        L'affichage des "slider carousel" est géré automatiquement: pour chaque catégorie, nous récupérons via une requête PDO l'ensemble des films correspondant à la catégorie dans un tableau (array en PHP). Nous appelons ensuite le script PHP \f{elements/films-slider.php} auquel on applique le tableau de films. 
 
+        \bigskip
         \section{Page de présentation d'un film}
 
-            \subsection{Construction du système de notation des films}
-                2 fonctionnalités : Afficher la note du film donné par les utilisateurs ET faire noter le film par l'utilisateur
 
-                \subsubsection{Mise en place du système de notation pour l'utilisateur}
+            En cliquant sur un film de notre liste, le visiteur peut afficher une fiche descriptive du film sur laquelle sont renseignées des informations telles que l'année de sortie du film, son réalisateur, les acteurs principaux y ayant participés, etc.
 
-                    On utilisera u système de notation allant de 1 à 5 pour noter les films et sera visualiser par un système d'étoiles.
-
-                    Les étoiles ici proviennent du framework "Font Awesome".
-
-                    \bigskip
-                    Mise en place de AJAX: deux formats de retour possibles: XML ou JSON. Comme le XML est généralement plus lourd et plus compliqué à manier, on préfère utiliser ici le JSON.
-
-                    Ici on a simplement, une méthode POST qui renvoie 3 choses: l'ID de l'utilisateur, l'ID du film à noter et la note. On pourrait presque simplement renvoyer du HTML ou passer directement les arguments dans la fenetre
-
-
-            \subsection{Fonctions supplémentaires:}
-
-                On propose à l'utilisateur des films en lien avec le film sélectionné:
+            \medskip
+            En plus de cela,  on propose à l'utilisateur des films en lien avec le film sélectionné:
                 \begin{itemize}
                     \item un film de même catégorie
                     \item un film fait par le même réalisateur
                     \item un autre film dans lequel a joué un des acteurs
                 \end{itemize}
 
-                POur cela on va utiliser des requetes SQL (via PDO de PHP) pour récupérer les résultats puis nous tirerons au hasard un des ses résultats pour l'afficher à l'aide d'une fonction incluse dans PHP : "array\_rand"
+                Pour cela on va utiliser des requetes SQL (via PDO de PHP) pour récupérer les résultats puis nous tirerons au hasard un des ses résultats pour l'afficher à l'aide d'une fonction incluse dans PHP : "array\_rand". L'algorithme se révèle en réalité très semblable à celui utilisé pour l'affichage aléatoire d'un acteur et d'un film sur la page d'accueil du site.
 
-\subsection{Gestion du forum relatif au film}
+            \medskip
+
+            Enfin, nous proposons aux utilisateurs ayant un compte sur notre site plusieurs fonctionnalités supplémentaires:
+            \begin{itemize}
+                \item noter un film
+                \item ajouter un film à ses favoris\footnote{c.f. section sur l'espace membre}
+                \item écrire dans le forum
+            \end{itemize}
+
+
+            \subsection{Construction du système de notation des films}
+
+                Pour ce faire, nous utilisons un système de notation très à la mode en ce moment: la notation par étoiles (5 étoiles maximum). Les films sont alors notés sur 5.
+
+                \boiteinfo{Font Awesome}{
+                    Les étoiles, ainsi que la plupart des icônes présentes sur les boutons de notre site proviennent du framework \erd{Font Awesome}.
+                }
+
+                La note du film est la moyenne de toutes les notes données par les utilisateurs du site. De plus, un utilisateur connecté peut noter/modifier sa note sur un film en cliquant simplement sur le bouton "Noter ce film". Une fenêtre modale (une fenêtre modale intégrée à Boostrap) apparait alors pour que l'utilisateur entre sa note.
+
+                \begin{figure}
+                    \centering
+                    \includegraphics[width=9cm]{img/noter-film.png}
+                    \caption{Fenêtre modale permettant de noter un film}
+                \end{figure}
+
+                \bigskip
+                L'enregistrement de la note de l'utilisateur, et la mise à jour de la note globale du film se fait ensuite via AJAX.\footnote{Nous avons fait le choix de n'utiliser que le format JSON pour le transfert de données via AJAX car celui-ci est moins lourd et plus simple à manier}. On utilise une méthode POST qui renvoie 3 choses: l'ID de l'utilisateur, l'ID du film à noter et la note.
+
+                \medskip
+                Lorsque la fenêtre modale se referme, la fonction AJAX met directement à jour les informations sur la note.
+
+            
+            \subsection{Gestion du forum relatif au film}
+
+                \begin{figure}[!ht]
+                    \centering
+                    \includegraphics[width=16cm]{img/espace-commentaires.png}
+                    \caption{Exemple d'espace commentaire (ici pour le film {\itshape Lucy})}
+                \end{figure}
 
                 Dans ce projet, on considère que les utilisateurs connectés peuvent écrire dans le forum du film pour discuter entre eux. Si un visteur du site n'a pas de compte, il peut lire les messages postés mais ne peut pas écrire ou répondre à des messages.
 
@@ -46,48 +80,27 @@
                 Un utilisateur connecté peut:
                 \begin{itemize}
                     \item écrire un message dans le forum du film
-                    \item répondre à un message déjà posté (via le petit bouton) \todo{faire une capture d'écran pour montrer}
                     \item supprimer un message qu'il a posté auparavant
                 \end{itemize}
 
 
-                \bigskip
-                Idées à mettre en place si on a le temps:
-                \begin{itemize}
-                    \item créer des filtres pour éviter les insultes dans les messages
-                    \item créer des tables en cas de trop nombreux messages pour ne pas avoir des pages trop longues 
-                \end{itemize}
+                
 
                 \bigskip
-                Fichiers :
-                \begin{itemize}
-                    \item "elements/forum-message.php" : pour écrire un message
-                    \item "elements/forum".php pour la gestion du forum. Il sera appelé pour chaque film
-                    \item "static/css/forum.css" pour le style
-                    \item "static/js/forum.js" pour la gestion des evenements
-                    \item "controller/dataforum.php" pour les fônctions faisant appel a la base de données
-                    \item "forum-response.php" pour les appels ajax
-                \end{itemize}
-
-                Finalement le fichier "elements/forum-message.php" n'est pas utilisé dans la construction du forum... A la place on passe directement cette partie du code dans le fichier "forum-response.php" pour renvoyer du code html. Ce n'est pas très joli au niveau du code mais ça marche et c'est la seule méthode que j'ai trouvé...
-
-
-
-                \subsection{Mise en place des messages dans le forum}
-
-
-                    Lors de l'appel Ajax, nous utilisons le script \f{forum-response.php} qui va écrire automatiquement le code HTML correspondant à chaque message relatif au film dont parle le forum. 
-
-                    En plus d'afficher le message, son auteur et la date à laquelle le message a été posté, nous créons deux boutons:
-
+                \boiteinfo{Liste des fichiers utilisés}{
                     \begin{itemize}
-                        \item le bouton de réponse, visible pour tous les utilisateurs connectés
-                        \item le bouton de suppression du message, visible uniquement par l'auteur du dit message
+                        \item \f{elements/forum-message.php} : pour écrire un message
+                        \item \f{elements/forum".php} pour la gestion du forum. Il sera appelé pour chaque film
+                        \item \f{static/css/forum.css} pour le style
+                        \item \f{static/js/forum.js} pour la gestion des evenements
+                        \item \f{controller/dataforum.php} pour les fônctions faisant appel a la base de données
+                        \item \f{forum-response.php} pour les appels ajax
                     \end{itemize}
+                }
 
-                    Nous construisons deux classes associées \f{forum-reply-btn} et \f{forum-delete-btn} ce qui nous permettra de les appeler plus smplement dans le script javascript/Jquery associé \f{static/js/forum.js}.
+                
 
-                    
-                    \subsubsection{Repondre à un message ou le supprimer}
+                Finalement le fichier \f{elements/forum-message.php} n'est pas utilisé dans la construction du forum car nous ne sommes pas parvenu à faire l'appel succesif. A la place, nous écrivons directement la partie HTML à l'aide de l'appel de \f{forum-response.php} via AJAX. Ce n'est probablement pas la méthode la plus simple, ou la plus efficiente mais il s'agit de la seule méthode que nous avons trouvée...
 
-                        Un utilisateur peut supprimer son message à tout moment. 
+                \medskip
+                En plus d'afficher le message, son auteur et la date à laquelle il a été posté, nous créons un bouton permettant à un utilisateur de supprimé son propre post. Ce bouton n'est bien sûr visible que par lui lorsqu'il est connecté à son compte.

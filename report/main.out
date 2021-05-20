@@ -12,13 +12,9 @@
 \BOOKMARK [1][-]{section.3.2}{L'espace membre associ\351 \340 un compte}{chapter.3}% 12
 \BOOKMARK [2][-]{subsection.3.2.1}{Rappels des notes et des messages post\351s}{section.3.2}% 13
 \BOOKMARK [2][-]{subsection.3.2.2}{Param\350tres du compte}{section.3.2}% 14
-\BOOKMARK [0][-]{chapter.4}{Pr\351sentation des films}{}% 15
-\BOOKMARK [1][-]{section.4.1}{Pr\351sentation des films disponibles sur le site}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.2}{Page de pr\351sentation d'un film}{chapter.4}% 17
-\BOOKMARK [2][-]{subsection.4.2.1}{Construction du syst\350me de notation des films}{section.4.2}% 18
-\BOOKMARK [3][-]{subsubsection.4.2.1.1}{Mise en place du syst\350me de notation pour l'utilisateur}{subsection.4.2.1}% 19
-\BOOKMARK [2][-]{subsection.4.2.2}{Fonctions suppl\351mentaires:}{section.4.2}% 20
-\BOOKMARK [2][-]{subsection.4.2.3}{Gestion du forum relatif au film}{section.4.2}% 21
-\BOOKMARK [2][-]{subsection.4.2.4}{Mise en place des messages dans le forum}{section.4.2}% 22
-\BOOKMARK [3][-]{subsubsection.4.2.4.1}{Repondre \340 un message ou le supprimer}{subsection.4.2.4}% 23
-\BOOKMARK [0][-]{chapter*.9}{Conclusion}{}% 24
+\BOOKMARK [2][-]{subsection.3.2.3}{Favoris}{section.3.2}% 15
+\BOOKMARK [0][-]{chapter.4}{Pr\351sentation des films}{}% 16
+\BOOKMARK [1][-]{section.4.1}{Pr\351sentation des films disponibles sur le site}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.2}{Page de pr\351sentation d'un film}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.2.1}{Construction du syst\350me de notation des films}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.2}{Gestion du forum relatif au film}{section.4.2}% 20

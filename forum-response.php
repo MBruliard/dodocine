@@ -48,11 +48,7 @@
 
                                         <div class='forum-buttons'>";
 
-                if (isset($_SESSION['user'])) {
-                    $to_print = $to_print . "<button id='forum-reply-btn-" . $row['id_msg'] ."' class='btn btn-outline-primary btn-sm forum-reply-btn' data-toggle='tooltip' data-placement='bottom' title='Répondre à ce message'>
-                                                <i class='fas fa-reply'></i>
-                                            </button>";
-                
+                if (isset($_SESSION['user'])) {    
 
                     if ($_SESSION['user'] == $row['id_user']) {
                         $to_print = $to_print . "<a id='forum-delete-btn-'" . $row['id_msg'] . "' class='btn btn-outline-danger btn-sm forum-delete-btn' data-toggle='tooltip' data-placement='bottom' title='Supprimer le message' href='forum-response.php?id_film=" . $row['id_film'] . "&delete_msg=" . $row['id_msg'] . "'>

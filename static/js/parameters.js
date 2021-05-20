@@ -22,11 +22,11 @@
 
  	});
 
- 	$('#menu-looking').click(function() {
- 		deactivate_menu();
- 		$('#menu-looking').addClass('active');
- 		$('#menu-content-looking').show();
- 	});
+ 	// $('#menu-looking').click(function() {
+ 	// 	deactivate_menu();
+ 	// 	$('#menu-looking').addClass('active');
+ 	// 	$('#menu-content-looking').show();
+ 	// });
 
  	$('#menu-fav').click(function() {
  		deactivate_menu();
