@@ -11,7 +11,7 @@
 	<?php for ($i=0; $i<count($films_array); $i++) : ?> 
 		<div class="carousel-cell film-slider-item">
 			<a href=<?php echo "'" . "film.php?id_film=" . $films_array[$i]['id_film'] . "'" ?> >
-				<img src=<?php echo "'" . $films_array[$i]['photo'] . "'"; ?> />
+				<img class="img-dodo-slider" src=<?php echo "'" . $films_array[$i]['photo'] . "'"; ?> />
 			</a>		
 		</div>
 	<?php endfor ?>

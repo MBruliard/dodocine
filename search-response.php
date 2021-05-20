@@ -19,6 +19,18 @@ if(isset($_POST['search'])){
     } else {
       echo '<a href="#" class="list-group-item border-1" style="text-decoration:none">pas de suggestion...</a>';
     }
+
+    $q = $db->prepare("SELECT prenom || ' ' || nom as label, id_individu FROM individus WHERE UPPER(nom) LIKE UPPER(:search) OR UPPER(prenom) LIKE UPPER(:search)");
+    $q->execute(["search" => "%" . $_POST['search'] . "%"]);
+
+    $response = $q->fetchAll();
+    if ($response) {
+      foreach ($response as $row) {
+        echo '<a href="/actor.php?id_ind='. $row['id_individu'] .'" class="list-group-item list-group-item-action border-1 search-results-item">' . $row['label'] . '</a>';
+      }
+    } else {
+      echo '<a href="#" class="list-group-item border-1" style="text-decoration:none">pas de suggestion...</a>';
+    }
 }
 
 

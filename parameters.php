@@ -18,6 +18,8 @@
 		header ("location: /index.php");
 		exit();
 	}
+
+	$nb_msg = count(getMessagesFromUser($db, $_SESSION['user']));
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +63,7 @@
 							</li>
 							<button id="menu-rating" class="list-group-item d-flex justify-content-between buttonalign-items-center active">
 								Mes notes et messages
-								<span class="badge badge-primary badge-pill">14</span>
+								<span class="badge badge-primary badge-pill"><?php echo $nb_msg; ?></span>
 							</button>
 							<button id="menu-fav" class="list-group-item d-flex justify-content-between align-items-center">
 								Mes Favoris

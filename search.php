@@ -29,7 +29,6 @@
 		if (count($response) > 0) {
 			$results_search['ind'] = $response;
 		}
-
 	}
 ?>
 
@@ -82,6 +81,16 @@
 								<div class="col">
 									<h4>Les acteurs/réalisateurs pouvant correspondre à votre recherche</h4>
 								</div>
+							</div>
+
+							<div class="main-carousel">
+								<?php for ($i=0; $i<count($results_search['ind']); $i++) : ?> 
+									<div class="carousel-cell film-slider-item">
+										<a href=<?php echo "'" . "actor.php?id_ind=" . $results_search['ind'][$i]['id_individu'] . "'" ?> >
+											<img class="img-dodo-slider" src=<?php echo "'" . $results_search['ind'][$i]['photo'] . "'"; ?> />
+										</a>		
+									</div>
+								<?php endfor ?>
 							</div>
 							
 						</div>

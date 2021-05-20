@@ -55,30 +55,6 @@
 	</div>
 </div>
 
-<?php if(count($rated_films) > 0) : ?>
-<div class="row space-before-row">
-	<div class="col-sm-12">
-		<h5>Les derniers films notés</h5>
-		<table class="table">
-  			<thead>
-				<tr>
-					<th scope="col">Film</th>
-					<th scope="col">Note</th>
-				</tr>
-  			</thead>
-  			<tbody>
-  				<?php for ($i=0; $i<count($rated_films); $i++) : ?>
-				<tr>
-					<td><?php echo $rated_films[$i]['titre'] ; ?></td>
-					<td><?php echo $rated_films[$i]['note']  .'/5'; ?></td>
-				</tr>
-				<?php endfor ?>
-			</tbody>
-		</table>
-	</div>
-</div>
-<?php endif ?>
-
 <div class="row space-before-row">
 	<div class="col-sm-12">
 		<h5>Les derniers messages:</h5>
@@ -90,7 +66,7 @@
 				</tr>
   			</thead>
   			<tbody>
-  				<?php for ($i=0; $i<count($messages_posted); $i++) : ?>
+  				<?php for ($i=0; $i<min(count($messages_posted), 5); $i++) : ?>
 				<tr>
 					<td><?php echo "<a href='/film.php?id_film=" . $messages_posted[$i]['id_film'] . "'>" . $messages_posted[$i]['titre'] . "</a>"; ?></td>
 					<td>
