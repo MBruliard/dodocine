@@ -70,3 +70,24 @@
                 \end{itemize}
 
                 Finalement le fichier "elements/forum-message.php" n'est pas utilisé dans la construction du forum... A la place on passe directement cette partie du code dans le fichier "forum-response.php" pour renvoyer du code html. Ce n'est pas très joli au niveau du code mais ça marche et c'est la seule méthode que j'ai trouvé...
+
+
+
+                \subsection{Mise en place des messages dans le forum}
+
+
+                    Lors de l'appel Ajax, nous utilisons le script \f{forum-response.php} qui va écrire automatiquement le code HTML correspondant à chaque message relatif au film dont parle le forum. 
+
+                    En plus d'afficher le message, son auteur et la date à laquelle le message a été posté, nous créons deux boutons:
+
+                    \begin{itemize}
+                        \item le bouton de réponse, visible pour tous les utilisateurs connectés
+                        \item le bouton de suppression du message, visible uniquement par l'auteur du dit message
+                    \end{itemize}
+
+                    Nous construisons deux classes associées \f{forum-reply-btn} et \f{forum-delete-btn} ce qui nous permettra de les appeler plus smplement dans le script javascript/Jquery associé \f{static/js/forum.js}.
+
+                    
+                    \subsubsection{Repondre à un message ou le supprimer}
+
+                        Un utilisateur peut supprimer son message à tout moment. 

@@ -194,15 +194,15 @@
 	 * @return $t_last array de string de taille 3 contenant les urls des images
 	 */
 	function getThreeLastFilms($db): array {
-		$q = $db->query("SELECT photo FROM films ORDER BY annee DESC, titre ASC");
+		$q = $db->query("SELECT id_film, photo FROM films ORDER BY annee DESC, titre ASC");
 		$res = $q->fetchAll();
 
 		while(count($res) < 3) {
-			$res[count($res)] = "/static/img/template_img.jpg";
+			$res[count($res)] = ['id_film' => '#', 'photo' => "/static/img/template_img.jpg"];
 		}
 
 		// on ne renvoie que les 3 premieres entrees de array
-		$t_res = [0 => $res[0]['photo'], 1 => $res[1]['photo'], 2 => $res[2]['photo']];
+		$t_res = [0 => $res[0], 1 => $res[1], 2 => $res[2]];
 
 		return $t_res;
 	}

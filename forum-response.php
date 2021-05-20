@@ -11,6 +11,12 @@
     require_once("controller/dataforum.php");
     session_start();
 
+    if ((isset($_GET['delete_msg'])) && (isset($_GET['id_film']))) {
+        deleteMessage($db, $_GET['delete_msg']);
+        header ("location: film.php?id_film=" . $_GET['id_film']);
+    }
+    
+
     if (isset($_POST['new_message'])) {
         
         if (isset($_POST['id_response'])) {
@@ -25,9 +31,7 @@
 
 
     if (isset($_GET['id_film'])) {
-            $q = $db->prepare("SELECT * FROM forum WHERE id_film = :id ORDER BY date DESC");
-            $q->execute(['id' => $_GET['id_film']]);
-            $res = $q->fetchAll();
+            $res = getMessagesAboutFilm($db, $_GET['id_film']);
 
 
             foreach ($res as $row) {
@@ -45,15 +49,15 @@
                                         <div class='forum-buttons'>";
 
                 if (isset($_SESSION['user'])) {
-                    $to_print = $to_print . "<button type='button' id='forum-reply-btn' class='btn btn-outline-primary btn-sm' data-toggle='tooltip' data-placement='bottom' title='Répondre à ce message'>
+                    $to_print = $to_print . "<button id='forum-reply-btn-" . $row['id_msg'] ."' class='btn btn-outline-primary btn-sm forum-reply-btn' data-toggle='tooltip' data-placement='bottom' title='Répondre à ce message'>
                                                 <i class='fas fa-reply'></i>
                                             </button>";
                 
 
                     if ($_SESSION['user'] == $row['id_user']) {
-                        $to_print = $to_print . "<button type='button' id='forum-delete-btn' class='btn btn-outline-danger btn-sm' data-toggle='tooltip' data-placement='bottom' title='Supprimer le message'>
+                        $to_print = $to_print . "<a id='forum-delete-btn-'" . $row['id_msg'] . "' class='btn btn-outline-danger btn-sm forum-delete-btn' data-toggle='tooltip' data-placement='bottom' title='Supprimer le message' href='forum-response.php?id_film=" . $row['id_film'] . "&delete_msg=" . $row['id_msg'] . "'>
                                                     <i class='fas fa-trash-alt'></i>
-                                                </button>";
+                                                </a>";
                     }
                 }
                  

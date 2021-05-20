@@ -39,7 +39,8 @@ $(document).ready(function() {
                 }
                 else {
                     $('#modal-new-message').modal('hide');
-                }   
+                }
+                update_messages();   
             },
             error: function (response, status, xhr) {
                 alert(xhr);
@@ -51,10 +52,14 @@ $(document).ready(function() {
 
     });
 
-
-
 });
 
+$(".btn").click(function() {
+    alert("oops");
+});
+$('.forum-delete-btn').click(function () {
+    alert('delete');
+}); 
 
 /** 
  * Reset les erreurs possibles sur la fenetre modale

@@ -10,7 +10,6 @@
 	session_start();
 
 	require("controller/datafilms.php");
-	//global $db;
 
 	// RÉCUPÉRER ID dans URL
 	if (!isset($_GET['id_film'])) {

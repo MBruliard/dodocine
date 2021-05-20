@@ -19,13 +19,19 @@
   </ol>
   <div class="carousel-inner dodo-carousel">
     <div class="carousel-item active">
-      <img class="d-block w-100" src=<?php echo $carousel_img[0] ?> alt="First slide">
+      <a href=<?php echo 'film.php?id_film=' . $carousel_img[0]['id_film']; ?>>
+        <img class="d-block w-100" src=<?php echo $carousel_img[0]['photo'] ?> alt="First slide">
+      </a>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src=<?php echo $carousel_img[1] ?> alt="Second slide">
+      <a href=<?php echo 'film.php?id_film=' . $carousel_img[1]['id_film']; ?>>
+        <img class="d-block w-100" src=<?php echo $carousel_img[1]['photo'] ?> alt="First slide">
+      </a>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src=<?php echo $carousel_img[2] ?> alt="Third slide">
+      <a href=<?php echo 'film.php?id_film=' . $carousel_img[2]['id_film']; ?>>
+        <img class="d-block w-100" src=<?php echo $carousel_img[2]['photo'] ?> alt="First slide">
+      </a>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

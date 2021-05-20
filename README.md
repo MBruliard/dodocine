@@ -56,27 +56,14 @@ Pour afficher la documentation, ouvrir dans le navigateur
     * utilisateurs
     * films
 
-* mettre un lien sur les derniers films à l'affiche
-
 * faire la partie favoris
 
 * réorganisation des fonction sql 
-
-* supprimer des messages dans le forum
 
 * checker mini-size login
 
 
 ### Bonus : PHP
-* Architecture page Film
-	* ajout du film en favori
-
-* Architecture de la page filmslist.php
-	* construire un tooltip pour un film avec son nom, sa note et l'ajout possible en favori
-
-### Section Utilisateurs
-* proposer d'enregistrer des films favoris (à ajouter dans BDD + un bouton dans filmographie)
-
 * Apparence dans Paramètres Utilisateurs:
 	* faire JS associé au dark mode
 

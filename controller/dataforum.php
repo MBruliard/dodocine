@@ -54,6 +54,21 @@
         return $q->fetchAll();
     }
 
+    /**
+     * supprime un message d'un forum
+     * @param $db la base de données
+     * @param $id_msg l'identifiant du message
+     */
+    function deleteMessage($db, $id_msg) : void {
+
+        // on commence par enlever le message dans les reponses possibles
+        $q = $db->prepare("UPDATE forum SET id_msg_ans = NULL WHERE id_msg_ans = :id");
+        $q->execute(["id" => $id_msg]);
+
+        $q = $db->prepare("DELETE FROM forum WHERE id_msg = :id");
+        $q->execute(["id" => $id_msg]);
+    }
+
 
     /**
      * Renvoie tous les messages postés par un même utilisateur 
