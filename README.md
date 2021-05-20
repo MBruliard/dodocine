@@ -49,10 +49,6 @@ Pour afficher la documentation, ouvrir dans le navigateur
 * Mise en production du site
 
 * écriture des parties :
-    * architecture des pages
-    * base de données
-    * accueil
-    * navigation
     * utilisateurs
     * films
 
@@ -61,6 +57,11 @@ Pour afficher la documentation, ouvrir dans le navigateur
 * réorganisation des fonction sql 
 
 * checker mini-size login
+
+* partie notation :
+    * ajouter le javascript sur le nombre de messages postés
+    * supprimer les notes 
+    * n'afficher que les 5 derniers posts
 
 
 ### Bonus : PHP
